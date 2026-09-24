@@ -1,32 +1,32 @@
 {
   "meta": {
     "school": "THẦY PHẠM VĂN TIẾN THPT BỈM SƠN",
-    "title": "ĐỀ KIỂM TRA NĂNG LỰC THI VÀO LỚP 10 THPT NĂM HỌC 2025 – 2026",
+    "title": "ĐỀ KIỂM TRA NĂNG LỰC THI VÀO LỚP 10 THPT",
     "subtitle": "Môn thi: TIẾNG ANH",
     "durationMin": 60,
     "pointsPerQuestion": 0.2,
     "shuffleBlocks": false,
-    "startTime": "2026-09-23T14:00:00+07:00",
-    "endTime": "2026-09-25T14:00:00+07:00"
+    "startTime": "2026-09-24T00:00:00+07:00",
+    "endTime": "2026-09-26T00:00:00+07:00"
   },
   "passages": [
     {
       "id": "p1",
       "badge": "PART C. READING (3.0 points) – I. Điền từ trong khung (Câu 26–30)",
       "title": "READING PASSAGE 1",
-      "content": "<p><b>Choose the most suitable word from the box to fill in each gap.</b></p><div style=\"margin:0 0 12px;padding:8px 12px;border:1px dashed #94a3b8;border-radius:8px;text-align:center\"><b>to &nbsp;–&nbsp; pollution &nbsp;–&nbsp; so &nbsp;–&nbsp; playing &nbsp;–&nbsp; higher</b></div>Twenty years ago, people tried to leave the suburbs for cities, but nowadays many people are reluctant to make such a move. They say that compared to suburban areas, city life has many drawbacks.<br><br>The high cost of living is the first disadvantage. The bigger the city is, the <b>(26)</b> ______ the cost of living is. Accommodation and petrol are expensive. Food and drinks are also pricey.<br><br>Apart from that, city people seem to suffer from more noise and air <b>(27)</b> ______. The dense population, overcrowded neighborhoods, busy traffic, and big construction sites make cities noisy as well. These are harmful <b>(28)</b> ______ people’s health, such as increasing their stress levels, disturbing their sleep, and making them suffer from breathing problems.<br><br>Lack of space is another drawback of city life. House prices are high in the city, <b>(29)</b> ______ people tend to live in smaller houses or in apartment blocks. Many cities lack spaces for outdoor activities; therefore, teenagers often hang out at shopping malls or in entertainment complexes instead of <b>(30)</b> ______ sports outdoors."
+      "content": "\u003cp\u003e\u003cb\u003eRead the following passage and choose the most suitable word from the ones given in the box to fill in each gap.\u003c/b\u003e\u003c/p\u003e\u003cdiv style=\"margin:0 0 12px;padding:8px 12px;border:1px dashed #94a3b8;border-radius:8px;text-align:center\"\u003e\u003cb\u003eto \u0026nbsp;–\u0026nbsp; pollution \u0026nbsp;–\u0026nbsp; so \u0026nbsp;–\u0026nbsp; playing \u0026nbsp;–\u0026nbsp; higher\u003c/b\u003e\u003c/div\u003eTwenty years ago, people tried to leave the suburbs for cities, but nowadays many people are reluctant to make such a move. They say that compared to suburban areas, city life has many drawbacks.\u003cbr\u003e\u003cbr\u003eThe high cost of living is the first disadvantage. The bigger the city is, the \u003cb\u003e(26)\u003c/b\u003e ______ the cost of living is. Accommodation and petrol are expensive. Food and drinks are also pricey.\u003cbr\u003e\u003cbr\u003eApart from that, city people seem to suffer from more noise and air \u003cb\u003e(27)\u003c/b\u003e ______. The dense population, overcrowded neighborhoods, busy traffic, and big construction sites make cities noisy as well. These are harmful \u003cb\u003e(28)\u003c/b\u003e ______ people’s health, such as increasing their stress levels, disturbing their sleep, and making them suffer from breathing problems.\u003cbr\u003e\u003cbr\u003eLack of space is another drawback of city life. House prices are high in the city, \u003cb\u003e(29)\u003c/b\u003e ______ people tend to live in smaller houses or in apartment blocks. Many cities lack spaces for outdoor activities; therefore, teenagers often hang out at shopping malls or in entertainment complexes instead of \u003cb\u003e(30)\u003c/b\u003e ______ sports outdoors."
     },
     {
       "id": "p2",
       "badge": "PART C. READING – II. Chọn đáp án điền vào chỗ trống (Câu 31–35)",
       "title": "READING PASSAGE 2",
-      "content": "<p><b>Choose the best answer A, B, C or D to fill in each blank.</b></p>Many health experts believe that children and young people today are more unhealthy than they used to be. So why has this happened?<br><br>One reason is bad eating habits. They eat too <b>(31)</b> ______ fast food like hamburgers and pizzas and not enough fruits and vegetables. In <b>(32)</b> ______ United States, many children have been eating fast food regularly since they were young. In fact, almost one-third of American children aged four to nineteen have been eating fast food nearly all the time. They also don’t do exercises and <b>(33)</b> ______ much time watching TV, surfing the Internet, playing computer games.<br><br>So how can you change your habits if you have been following an unhealthy <b>(34)</b> ______ for a long time? First, you change your diet and eat more vegetables. Next, find an activity <b>(35)</b> ______ you enjoy. Why not try something different like rock climbing or hiking? Many young people have found that becoming fit and healthy can be a lot of fun."
+      "content": "\u003cp\u003e\u003cb\u003eRead the following passage and choose the best answer A, B, C or D to fill in each blank.\u003c/b\u003e\u003c/p\u003eMany health experts believe that children and young people today are more unhealthy than they used to be. So why has this happened?\u003cbr\u003e\u003cbr\u003eOne reason is bad eating habits. They eat too \u003cb\u003e(31)\u003c/b\u003e ______ fast food like hamburgers and pizzas and not enough fruits and vegetables. In \u003cb\u003e(32)\u003c/b\u003e ______ United States, many children have been eating fast food regularly since they were young. In fact, almost one-third of American children aged four to nineteen have been eating fast food nearly all the time. They also don’t do exercises and \u003cb\u003e(33)\u003c/b\u003e ______ much time watching TV, surfing the Internet, playing computer games.\u003cbr\u003e\u003cbr\u003eSo how can you change your habits if you have been following an unhealthy \u003cb\u003e(34)\u003c/b\u003e ______ for a long time? First, you change your diet and eat more vegetables. Next, find an activity \u003cb\u003e(35)\u003c/b\u003e ______ you enjoy. Why not try something different like rock climbing or hiking? Many young people have found that becoming fit and healthy can be a lot of fun."
     },
     {
       "id": "p3",
       "badge": "PART C. READING – III. Đọc hiểu (Câu 36–40)",
       "title": "READING PASSAGE 3",
-      "content": "<p><b>Read the passage and answer the questions by choosing the best answer A, B, C or D.</b></p>Cell phones are an important part of our society and their main use is communication. <b>They</b> keep students in touch with the rest of the world by giving them the power to interact with it. In the old days, if you forgot to bring your lunch, you had to rely on the school office calling home for you. Now, students have the ability to solve their own problems and handle certain emergencies on their own.<br><br>Cell phones also allow students to keep in touch with their friends and students at other schools. While not directly beneficial to education, better relationships can lead to higher self-esteem and reduce isolation, which is good for everybody. In the same way, camera features allow students to capture the kinds of memories that help build a solid school culture. In some cases, they can act as documentation of misbehaviors because they <b>provide</b> evidence of students’ bad behaviors.<br><br>Academically, the cell phone can record a video or an audio of the lessons that may need to be reviewed later. And just imagine if classes could be easily recorded for students who are absent. What if they could even be streamed and seen from home instantly?"
+      "content": "\u003cp\u003e\u003cb\u003eRead the following passage and answer the questions by choosing the best answer A, B, C or D.\u003c/b\u003e\u003c/p\u003eCell phones are an important part of our society and their main use is communication. \u003cb\u003eThey\u003c/b\u003e keep students in touch with the rest of the world by giving them the power to interact with it. In the old days, if you forgot to bring your lunch, you had to rely on the school office calling home for you. Now, students have the ability to solve their own problems and handle certain emergencies on their own.\u003cbr\u003e\u003cbr\u003eCell phones also allow students to keep in touch with their friends and students at other schools. While not directly beneficial to education, better relationships can lead to higher self-esteem and reduce isolation, which is good for everybody. In the same way, camera features allow students to capture the kinds of memories that help build a solid school culture. In some cases, they can act as documentation of misbehaviors because they \u003cb\u003eprovide\u003c/b\u003e evidence of students’ bad behaviors.\u003cbr\u003e\u003cbr\u003eAcademically, the cell phone can record a video or an audio of the lessons that may need to be reviewed later. And just imagine if classes could be easily recorded for students who are absent. What if they could even be streamed and seen from home instantly?"
     }
   ],
   "questions": [
@@ -36,10 +36,10 @@
       "instruction": "I. Choose the word whose underlined part is pronounced differently from that of the others in each question.",
       "stem": "Write A, B, C or D on your answer sheet.",
       "opts": [
-        "need<u>ed</u>",
-        "look<u>ed</u>",
-        "help<u>ed</u>",
-        "watch<u>ed</u>"
+        "need\u003cu\u003eed\u003c/u\u003e",
+        "look\u003cu\u003eed\u003c/u\u003e",
+        "help\u003cu\u003eed\u003c/u\u003e",
+        "watch\u003cu\u003eed\u003c/u\u003e"
       ],
       "answer": "A"
     },
@@ -49,10 +49,10 @@
       "instruction": "I. Choose the word whose underlined part is pronounced differently from that of the others in each question.",
       "stem": "Write A, B, C or D on your answer sheet.",
       "opts": [
-        "pl<u>ea</u>se",
-        "cl<u>ea</u>r",
-        "t<u>ea</u>",
-        "cl<u>ea</u>n"
+        "pl\u003ceu\u003ee\u003c/u\u003ease",
+        "cl\u003ceu\u003ee\u003c/u\u003ear",
+        "t\u003ceu\u003ee\u003c/u\u003ea",
+        "cl\u003ceu\u003ee\u003c/u\u003ean"
       ],
       "answer": "B"
     },
@@ -62,10 +62,10 @@
       "instruction": "I. Choose the word whose underlined part is pronounced differently from that of the others in each question.",
       "stem": "Write A, B, C or D on your answer sheet.",
       "opts": [
-        "<u>th</u>ink",
-        "<u>th</u>in",
-        "<u>th</u>ank",
-        "<u>th</u>ough"
+        "\u003cu\u003eth\u003c/u\u003eink",
+        "\u003cu\u003eth\u003c/u\u003ein",
+        "\u003cu\u003eth\u003c/u\u003eank",
+        "\u003cu\u003eth\u003c/u\u003eough"
       ],
       "answer": "D"
     },
@@ -100,7 +100,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "I. Supply the correct form of the verb in brackets.",
-      "stem": "My father (<b>jog</b>) ______ in the park every morning.",
+      "stem": "My father (\u003cb\u003ejog\u003c/b\u003e) __________ in the park every morning.",
       "answers": [
         "jogs"
       ]
@@ -110,7 +110,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "I. Supply the correct form of the verb in brackets.",
-      "stem": "The students enjoy (<b>play</b>) ______ soccer after school.",
+      "stem": "The students enjoy (\u003cb\u003eplay\u003c/b\u003e) _____________ soccer after school.",
       "answers": [
         "playing"
       ]
@@ -120,7 +120,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "I. Supply the correct form of the verb in brackets.",
-      "stem": "They (<b>cook</b>) ______ dinner when the light went out.",
+      "stem": "They (\u003cb\u003ecook\u003c/b\u003e) __________ dinner when the light went out.",
       "answers": [
         "were cooking"
       ]
@@ -130,7 +130,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "I. Supply the correct form of the verb in brackets.",
-      "stem": "My teacher suggested that we (<b>collect</b>) ______ waste paper for the recycling program.",
+      "stem": "My teacher suggested that we (\u003cb\u003ecollect\u003c/b\u003e) _____ waste paper for the recycling program.",
       "answers": [
         "collect",
         "should collect"
@@ -141,7 +141,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "I. Supply the correct form of the verb in brackets.",
-      "stem": "I (<b>have</b>) ______ a calculator, I would lend it to you now.",
+      "stem": "I (\u003cb\u003ehave\u003c/b\u003e) _________ a calculator, I would lend it to you now.",
       "answers": [
         "had"
       ]
@@ -151,7 +151,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "II. Supply the correct form of the words in capital to complete the sentences.",
-      "stem": "Doing exercises regularly maintains your mental and ______ health. (<b>PHYSICS</b>)",
+      "stem": "Doing exercises regularly maintains your mental and ________ health. (\u003cb\u003ePHYSICS\u003c/b\u003e)",
       "answers": [
         "physical"
       ]
@@ -161,7 +161,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "II. Supply the correct form of the words in capital to complete the sentences.",
-      "stem": "Nowadays, students can use several AI tools to ______ their English. (<b>IMPROVEMENT</b>)",
+      "stem": "Nowadays, students can use several AI tools to ________ their English. (\u003cb\u003eIMPROVEMENT\u003c/b\u003e)",
       "answers": [
         "improve"
       ]
@@ -171,7 +171,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "II. Supply the correct form of the words in capital to complete the sentences.",
-      "stem": "You should be careful when using ______ which contain chemicals. (<b>PRODUCE</b>)",
+      "stem": "You should be careful when using ________ which contain chemicals. (\u003cb\u003ePRODUCE\u003c/b\u003e)",
       "answers": [
         "products"
       ]
@@ -181,7 +181,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "II. Supply the correct form of the words in capital to complete the sentences.",
-      "stem": "She speaks English ______ after living in Britain for several years. (<b>FLUENT</b>)",
+      "stem": "She speaks English ________ after living in Britain for several years. (\u003cb\u003eFLUENT\u003c/b\u003e)",
       "answers": [
         "fluently"
       ]
@@ -191,7 +191,7 @@
       "type": "text",
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "II. Supply the correct form of the words in capital to complete the sentences.",
-      "stem": "The island has a very beautiful beach, but sadly, it is quite ______. (<b>ACCESS</b>)",
+      "stem": "The island has a very beautiful beach, but sadly, it is quite ________. (\u003cb\u003eACCESS\u003c/b\u003e)",
       "answers": [
         "inaccessible"
       ]
@@ -200,7 +200,7 @@
       "n": 16,
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "III. Choose the word or phrase that best fits the gap in each of the following sentences.",
-      "stem": "She gave me ______ orange yesterday.",
+      "stem": "She gave me ________ orange yesterday.",
       "opts": [
         "a",
         "an",
@@ -213,7 +213,7 @@
       "n": 17,
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "III. Choose the word or phrase that best fits the gap in each of the following sentences.",
-      "stem": "She has a meeting ______ Monday, but I’m not sure.",
+      "stem": "She has a meeting ________ Monday, but I’m not sure.",
       "opts": [
         "at",
         "in",
@@ -226,7 +226,7 @@
       "n": 18,
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "III. Choose the word or phrase that best fits the gap in each of the following sentences.",
-      "stem": "The new film is about a poor little girl ______ can speak several languages.",
+      "stem": "The new film is about a poor little girl ________ can speak several languages.",
       "opts": [
         "who",
         "whose",
@@ -239,7 +239,7 @@
       "n": 19,
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "III. Choose the word or phrase that best fits the gap in each of the following sentences.",
-      "stem": "Mai drives ______ than her brother.",
+      "stem": "Mai drives ________ than her brother.",
       "opts": [
         "more carefully",
         "as careful",
@@ -252,7 +252,7 @@
       "n": 20,
       "section": "PART B. VOCABULARY AND GRAMMAR (4.0 points)",
       "instruction": "III. Choose the word or phrase that best fits the gap in each of the following sentences.",
-      "stem": "Mr. Brown, a foreign tourist, is talking to the tour guide.<br><b>Mr. Brown:</b> “Thank you for showing us around the Temple of Literature.”<br><b>The tour guide:</b> “______.”",
+      "stem": "Mr. Brown, a foreign tourist, is talking to the tour guide.\u003cbr\u003e\u003cb\u003eMr. Brown:\u003c/b\u003e \"Thank you for showing us around the Temple of Literature.\"\u003cbr\u003e\u003cb\u003eThe tour guide:\u003c/b\u003e \"________.\"",
       "opts": [
         "That’s a good idea",
         "Yes, I’d love to",
@@ -446,7 +446,7 @@
     {
       "n": 37,
       "passageId": "p3",
-      "stem": "The word “<b>they</b>” in paragraph 1 refers to ______.",
+      "stem": "The word “\u003cb\u003ethey\u003c/b\u003e” in paragraph 1 refers to ______.",
       "opts": [
         "students",
         "cell phones",
@@ -470,7 +470,7 @@
     {
       "n": 39,
       "passageId": "p3",
-      "stem": "The word “<b>provide</b>” in paragraph 2 is <b>CLOSEST</b> in meaning to ______.",
+      "stem": "The word “\u003cb\u003eprovide\u003c/b\u003e” in paragraph 2 is \u003cb\u003eCLOSEST\u003c/b\u003e in meaning to ______.",
       "opts": [
         "advise",
         "promise",
@@ -496,12 +496,11 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "I. Rewrite each of the following sentences, beginning as shown so that the meaning stays the same.",
-      "stem": "My sister doesn’t have a laptop to study online.<br>→ My sister wishes she ______",
+      "stem": "My sister doesn’t have a laptop to study online.\u003cbr\u003e→ My sister wishes she ______________________________________.",
       "lead": "My sister wishes she",
       "multiline": true,
       "answers": [
-        "had a laptop to study online",
-        "had a laptop to study online at home"
+        "had a laptop to study online"
       ]
     },
     {
@@ -509,15 +508,14 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "I. Rewrite each of the following sentences, beginning as shown so that the meaning stays the same.",
-      "stem": "“I am going to travel to Ireland for vacation next month,” said John.<br>→ John said ______",
+      "stem": "“I am going to travel to Ireland for vacation next month,” said John.\u003cbr\u003e→ John said _________________________________________________.",
       "lead": "John said",
       "multiline": true,
       "answers": [
         "he was going to travel to Ireland for vacation the following month",
         "he was going to travel to Ireland for vacation the next month",
         "he would travel to Ireland for vacation the following month",
-        "he would travel to Ireland for vacation the next month",
-        "he was going to travel to Ireland for vacation the month after"
+        "he would travel to Ireland for vacation the next month"
       ]
     },
     {
@@ -525,12 +523,12 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "I. Rewrite each of the following sentences, beginning as shown so that the meaning stays the same.",
-      "stem": "If you don’t hurry up, you will miss the bus.<br>→ Unless ______",
+      "stem": "If you don’t hurry up, you will miss the bus.\u003cbr\u003e→ Unless ___________________________________________________.",
       "lead": "Unless",
       "multiline": true,
       "answers": [
         "you hurry up, you will miss the bus",
-        "you hurry up, you’ll miss the bus"
+        "you hurry up, you'll miss the bus"
       ]
     },
     {
@@ -538,7 +536,7 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "I. Rewrite each of the following sentences, beginning as shown so that the meaning stays the same.",
-      "stem": "Eating junk food is not good for teenagers.<br>→ It is not ______",
+      "stem": "Eating junk food is not good for teenagers.\u003cbr\u003e→ It is not ___________________________________________________.",
       "lead": "It is not",
       "multiline": true,
       "answers": [
@@ -550,7 +548,7 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "I. Rewrite each of the following sentences, beginning as shown so that the meaning stays the same.",
-      "stem": "Though my mother was tired, she managed to finish her work.<br>→ Tired ______",
+      "stem": "Though my mother was tired, she managed to finish her work.\u003cbr\u003e→ Tired ____________________________________________________.",
       "lead": "Tired",
       "multiline": true,
       "answers": [
@@ -565,7 +563,7 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "II. Rewrite each of the following sentences, using the given words so that it keeps the same meaning. Do not change the form of the words given.",
-      "stem": "My sister often collected dolls when she was young. (<b>USED</b>)<br>→ My sister ______",
+      "stem": "My sister often collected dolls when she was young. (\u003cb\u003eUSED\u003c/b\u003e)\u003cbr\u003e→ My sister _________________________________________________.",
       "lead": "My sister",
       "multiline": true,
       "answers": [
@@ -578,11 +576,12 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "II. Rewrite each of the following sentences, using the given words so that it keeps the same meaning. Do not change the form of the words given.",
-      "stem": "I know a Japanese restaurant. The restaurant serves excellent sushi. (<b>WHICH</b>)<br>→ I know ______",
+      "stem": "I know a Japanese restaurant. The restaurant serves excellent sushi. (\u003cb\u003eWHICH\u003c/b\u003e)\u003cbr\u003e→ I know ____________________________________________________.",
       "lead": "I know",
       "multiline": true,
       "answers": [
-        "a Japanese restaurant which serves excellent sushi"
+        "a Japanese restaurant which serves excellent sushi",
+        "a Japanese restaurant that serves excellent sushi"
       ]
     },
     {
@@ -590,7 +589,7 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "II. Rewrite each of the following sentences, using the given words so that it keeps the same meaning. Do not change the form of the words given.",
-      "stem": "The worker was so lazy that no manager wanted to hire him. (<b>SUCH</b>)<br>→ He was ______",
+      "stem": "The worker was so lazy that no manager wanted to hire him. (\u003cb\u003eSUCH\u003c/b\u003e)\u003cbr\u003e→ He was ____________________________________________________.",
       "lead": "He was",
       "multiline": true,
       "answers": [
@@ -602,7 +601,7 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "II. Rewrite each of the following sentences, using the given words so that it keeps the same meaning. Do not change the form of the words given.",
-      "stem": "They had no bread left when I came to the local bakery yesterday. (<b>RAN</b>)<br>→ They ______",
+      "stem": "They had no bread left when I came to the local bakery yesterday. (\u003cb\u003eRAN\u003c/b\u003e)\u003cbr\u003e→ They _____________________________________________________.",
       "lead": "They",
       "multiline": true,
       "answers": [
@@ -614,7 +613,7 @@
       "type": "text",
       "section": "PART D. WRITING (2.0 points)",
       "instruction": "II. Rewrite each of the following sentences, using the given words so that it keeps the same meaning. Do not change the form of the words given.",
-      "stem": "The aim of this charity organization is to prioritize the needs of street children. (<b>GIVE</b>)<br>→ The aim of this charity organization is ______",
+      "stem": "The aim of this charity organization is to prioritize the needs of street children. (\u003cb\u003eGIVE\u003c/b\u003e)\u003cbr\u003e→ The aim of this charity organization is __________________________.",
       "lead": "The aim of this charity organization is",
       "multiline": true,
       "answers": [
