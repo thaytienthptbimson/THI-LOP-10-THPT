@@ -1,6 +1,3 @@
-// Dán toàn bộ mã này vào Apps Script của bảng tính (Tiện ích mở rộng > Apps Script), thay mã cũ.
-// Sau đó: Triển khai > Quản lý bản triển khai > Chỉnh sửa (bút chì) > Phiên bản: Mới > Triển khai.
-// Giữ nguyên URL /exec; quyền truy cập: "Bất kỳ ai".
 
 const ADMIN_PIN = '28011981';   // đổi thành mã PIN quản trị của bạn (khớp với PIN đăng nhập)
 const SHEET_NAME = 'KetQua';    // bảng điểm
