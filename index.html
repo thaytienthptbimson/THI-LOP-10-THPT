@@ -168,21 +168,31 @@ input:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0
           <button class="btn primary sm" onclick="ExamEngine.resumeSession()">Tiếp tục làm bài</button>
           <button class="btn sm" onclick="ExamEngine.discardSession()">Xóa và bắt đầu lại</button>
         </div>
-        <h3 style="margin-top:0">Thông tin thí sinh</h3>
-        <div class="form-field">
-          <label>Họ và tên thí sinh *</label>
-          <input type="text" id="inpName" placeholder="Nguyễn Văn A" autocomplete="off">
+        
+        <!-- BỔ SUNG: Vùng hiển thị nút Xem Đáp Án khi hết hạn -->
+        <div id="expiredReviewBox" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:14px;margin-bottom:16px;text-align:center">
+            <b style="color:var(--ok);display:block;margin-bottom:8px">Đã kết thúc thời gian làm bài</b>
+            <p style="font-size:13.5px;margin:0 0 12px;color:var(--mut)">Bạn có thể xem lại đề và đáp án chi tiết.</p>
+            <button class="btn primary" onclick="ExamEngine.viewAnswersOnly()">Xem đề & đáp án</button>
         </div>
-        <div class="form-field">
-          <label>Lớp / Phòng thi *</label>
-          <input type="text" id="inpClass" placeholder="9A1" autocomplete="off">
+
+        <div id="loginFormWrap">
+            <h3 style="margin-top:0">Thông tin thí sinh</h3>
+            <div class="form-field">
+            <label>Họ và tên thí sinh *</label>
+            <input type="text" id="inpName" placeholder="Nguyễn Văn A" autocomplete="off">
+            </div>
+            <div class="form-field">
+            <label>Lớp / Phòng thi *</label>
+            <input type="text" id="inpClass" placeholder="9A1" autocomplete="off">
+            </div>
+            <div class="form-field">
+            <label>Số báo danh (SBD)</label>
+            <input type="text" id="inpSbd" placeholder="00123" autocomplete="off">
+            </div>
+            <div class="err-msg" id="lobbyErr"></div>
+            <button class="btn primary" id="btnStartExam" style="width:100%;padding:12px" onclick="ExamEngine.startNewSession()">Bắt Đầu Làm Bài</button>
         </div>
-        <div class="form-field">
-          <label>Số báo danh (SBD)</label>
-          <input type="text" id="inpSbd" placeholder="00123" autocomplete="off">
-        </div>
-        <div class="err-msg" id="lobbyErr"></div>
-        <button class="btn primary" style="width:100%;padding:12px" onclick="ExamEngine.startNewSession()">Bắt Đầu Làm Bài</button>
         <div style="text-align:center;margin-top:16px">
           <a href="javascript:void(0)" style="font-size:13px;color:var(--mut)" onclick="AdminEngine.promptPin()">Khu vực quản trị giáo viên</a>
         </div>
@@ -195,6 +205,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0
             <li>Các đáp án trắc nghiệm sẽ được <b>xáo trộn ngẫu nhiên</b>, phần tự luận và thứ tự câu hỏi được giữ nguyên.</li>
             <li>Hết giờ hệ thống sẽ tự động nộp bài.</li>
             <li>Hệ thống có bộ đếm theo dõi số lần rời khỏi màn hình.</li>
+            <li>Chỉ được xem đáp án sau khi thời gian làm bài kết thúc.</li>
           </ul>
         </div>
       </div>
@@ -461,10 +472,6 @@ input:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0
 <script>
 'use strict';
 
-// LƯU Ý QUAN TRỌNG:
-// Đường link trực tiếp của Google Sheets đã được tích hợp dưới đây theo đúng yêu cầu của bạn.
-// TUY NHIÊN, trình duyệt sẽ chặn (lỗi CORS) không cho phép gửi dữ liệu trực tiếp vào file Sheets này.
-// Bạn BẮT BUỘC phải tạo một Web App từ file Sheets đó và dán link Web App (có đuôi /exec) vào đây.
 const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxsWAiCV_30KE5vAGI_X8IX85IakXJDjx6GMH7xnSCtS5taqDl68qBOyGcFWEEU27UzAw/exec";
 
 const ADMIN_SECRET_PIN = "28011981"; 
@@ -565,8 +572,28 @@ const ExamEngine = {
       const err = document.getElementById('lobbyErr');
       if(err) err.textContent = 'Lỗi phân tích dữ liệu đề thi.';
     }
+    
+    // BỔ SUNG: Kiểm tra luôn thời hạn ngay khi tải trang
     this.renderLobbyInfo();
-    this.checkResume();
+    
+    const now = Date.now();
+    const meta = this.rawExamData.meta;
+    let isExpired = false;
+    
+    if (meta.endTime) {
+        const endMs = new Date(meta.endTime).getTime();
+        if (now > endMs) isExpired = true;
+    }
+    
+    if (isExpired) {
+        document.getElementById('loginFormWrap').style.display = 'none';
+        document.getElementById('expiredReviewBox').style.display = 'block';
+    } else {
+        document.getElementById('loginFormWrap').style.display = 'block';
+        document.getElementById('expiredReviewBox').style.display = 'none';
+        this.checkResume();
+    }
+    
     this.bindGlobalKeys();
   },
 
@@ -683,6 +710,10 @@ const ExamEngine = {
       }
       if (now > endMs) {
         err.textContent = `Đã quá hạn. Bài thi kết thúc lúc ${new Date(meta.endTime).toLocaleString('vi-VN', { hour12: false, dateStyle: 'short', timeStyle: 'short' })}.`;
+        
+        // BỔ SUNG: Ẩn form nhập và hiện nút xem đáp án nếu bấm start khi đã quá giờ
+        document.getElementById('loginFormWrap').style.display = 'none';
+        document.getElementById('expiredReviewBox').style.display = 'block';
         return;
       }
     }
@@ -793,15 +824,21 @@ const ExamEngine = {
 
       if (this.isReviewMode) {
         const uAns = this.session.answers[q.n];
-        let isCorrect = false;
-        if (q.type === 'text') {
-            isCorrect = this.checkTextAnswer(uAns, q);
-        } else {
-            isCorrect = (uAns === q.answer);
-        }
         
-        if (isCorrect) btn.classList.add('correct');
-        else btn.classList.add('wrong');
+        // BỔ SUNG: Xử lý riêng khi chỉ xem đáp án (chưa từng chọn đáp án)
+        if (this.session.isViewOnly) {
+            btn.classList.add('done'); // Chỉ tô màu báo hiệu câu có thể xem
+        } else {
+            let isCorrect = false;
+            if (q.type === 'text') {
+                isCorrect = this.checkTextAnswer(uAns, q);
+            } else {
+                isCorrect = (uAns === q.answer);
+            }
+            
+            if (isCorrect) btn.classList.add('correct');
+            else btn.classList.add('wrong');
+        }
       } else {
         const uAns = this.session.answers[q.n];
         if (uAns && String(uAns).trim().length > 0) btn.classList.add('done');
@@ -860,21 +897,33 @@ const ExamEngine = {
 
     if (q.type === 'text') {
         const uAns = escapeHtml(this.session.answers[q.n] || '');
-        optsBox.innerHTML = `<input type="text" class="txt-answer" id="txtAns_${q.n}" placeholder="Nhập câu trả lời..." value="${uAns}" ${this.isReviewMode ? 'disabled' : ''} autocomplete="off">`;
         
-        if (!this.isReviewMode) {
-            const inp = document.getElementById(`txtAns_${q.n}`);
-            inp.oninput = (e) => {
-                this.session.answers[q.n] = e.target.value;
-                this.saveSession();
-                this.updatePaletteStatus();
-            };
+        // BỔ SUNG: Không hiện input nếu đang ở chế độ Chỉ Xem Đáp Án (isViewOnly)
+        if (this.isReviewMode && this.session.isViewOnly) {
+            // Không render input
         } else {
+            optsBox.innerHTML = `<input type="text" class="txt-answer" id="txtAns_${q.n}" placeholder="Nhập câu trả lời..." value="${uAns}" ${this.isReviewMode ? 'disabled' : ''} autocomplete="off">`;
+            
+            if (!this.isReviewMode) {
+                const inp = document.getElementById(`txtAns_${q.n}`);
+                inp.oninput = (e) => {
+                    this.session.answers[q.n] = e.target.value;
+                    this.saveSession();
+                    this.updatePaletteStatus();
+                };
+            }
+        }
+        
+        if (this.isReviewMode) {
             const isCorrect = this.checkTextAnswer(this.session.answers[q.n], q);
+            
+            // BỔ SUNG: Ẩn phần đánh giá đúng sai nếu là chế độ chỉ xem (vì chưa làm bài)
+            const evalHtml = this.session.isViewOnly ? '' : `<div>Câu trả lời của bạn: <b style="color:${isCorrect ? 'var(--ok)' : 'var(--bad)'}">${uAns || 'Chưa trả lời'}</b></div>`;
+            
             revBox.innerHTML = `
-              <div style="background:#f8fafc;border-left:4px solid ${isCorrect ? 'var(--ok)' : 'var(--bad)'};padding:12px;border-radius:0 8px 8px 0">
+              <div style="background:#f8fafc;border-left:4px solid ${this.session.isViewOnly ? 'var(--brand)' : (isCorrect ? 'var(--ok)' : 'var(--bad)')};padding:12px;border-radius:0 8px 8px 0">
                 <div>Đáp án chuẩn: <b style="color:var(--ok)">${escapeHtml(q.answer)}</b></div>
-                <div>Câu trả lời của bạn: <b style="color:${isCorrect ? 'var(--ok)' : 'var(--bad)'}">${uAns || 'Chưa trả lời'}</b></div>
+                ${evalHtml}
               </div>
             `;
         }
@@ -886,11 +935,14 @@ const ExamEngine = {
           lbl.className = 'opt-label';
 
           const isChosen = this.session.answers[q.n] === letKey;
-          if (isChosen) lbl.classList.add('selected');
+          
+          if (!this.session.isViewOnly && isChosen) {
+             lbl.classList.add('selected');
+          }
 
           if (this.isReviewMode) {
             if (letKey === q.answer) lbl.classList.add('is-correct');
-            else if (isChosen && letKey !== q.answer) lbl.classList.add('is-wrong');
+            else if (!this.session.isViewOnly && isChosen && letKey !== q.answer) lbl.classList.add('is-wrong');
           }
 
           lbl.innerHTML = `
@@ -905,7 +957,6 @@ const ExamEngine = {
         });
 
         if (this.isReviewMode) {
-          const uAns = this.session.answers[q.n];
           revBox.innerHTML = `
             <div style="background:#f8fafc;border-left:4px solid var(--brand);padding:12px;border-radius:0 8px 8px 0">
               <div>Đáp án chuẩn: <b style="color:var(--ok)">${q.answer}</b></div>
@@ -1046,8 +1097,16 @@ const ExamEngine = {
   },
 
   onHeaderAction() {
-    if (this.isReviewMode) this.backToResult();
-    else this.openSubmitDialog();
+    // BỔ SUNG: Chặn hành động click Header nếu đang ở chế độ Chỉ Xem
+    if (this.isReviewMode) {
+        if (this.session && this.session.isViewOnly) {
+            this.exitToLobby();
+        } else {
+            this.backToResult();
+        }
+    } else {
+        this.openSubmitDialog();
+    }
   },
 
   backToResult() {
@@ -1066,11 +1125,56 @@ const ExamEngine = {
     this.renderPalette();
     this.showQuestion(0);
   },
+  
+  // BỔ SUNG: Hàm xem đáp án dành cho người chưa làm bài
+  viewAnswersOnly() {
+      this.examData = this.rawExamData; // Lấy dữ liệu đề gốc chưa xáo trộn
+      
+      this.session = {
+          user: { name: 'Thí sinh' },
+          answers: {},
+          flags: {},
+          curIndex: 0,
+          isViewOnly: true // Đánh dấu cờ chỉ xem
+      };
+      
+      this.isReviewMode = true;
+      const tm = document.getElementById('examTimer');
+      tm.textContent = 'Chỉ xem đáp án';
+      tm.classList.remove('urgent');
+      document.getElementById('btnSubmit').textContent = '← Trang chủ';
+      
+      document.getElementById('examHeaderTitle').textContent = this.examData.meta.title;
+      document.getElementById('examUserTag').innerHTML = `<b>Chế độ xem</b>`;
+      
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById('scrExam').classList.add('active');
+      
+      this.renderPalette();
+      this.showQuestion(0);
+  },
 
   exitToLobby() {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('scrLobby').classList.add('active');
     this.checkResume();
+    
+    // BỔ SUNG: Check lại thời gian khi ra sảnh để ẩn hiện form phù hợp
+    const now = Date.now();
+    const meta = this.rawExamData.meta;
+    let isExpired = false;
+    if (meta.endTime) {
+        const endMs = new Date(meta.endTime).getTime();
+        if (now > endMs) isExpired = true;
+    }
+    
+    if (isExpired) {
+        document.getElementById('loginFormWrap').style.display = 'none';
+        document.getElementById('expiredReviewBox').style.display = 'block';
+    } else {
+        document.getElementById('loginFormWrap').style.display = 'block';
+        document.getElementById('expiredReviewBox').style.display = 'none';
+    }
   },
 
   bindGlobalKeys() {
@@ -1089,7 +1193,8 @@ const ExamEngine = {
     });
 
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden && this.session && !this.session.submitted && !this.isReviewMode) {
+      // BỔ SUNG: Không đếm tab nếu đang ở chế độ xem đáp án
+      if (document.hidden && this.session && !this.session.submitted && !this.isReviewMode && !this.session.isViewOnly) {
         this.session.tabSwitches = (this.session.tabSwitches || 0) + 1;
         this.saveSession();
         showToast('Cảnh báo: Bạn vừa rời khỏi màn hình làm bài!');
@@ -1164,7 +1269,15 @@ const AdminEngine = {
     if (!s) return null;
     setStorage(KEYS.SCHEDULE, s);
     ExamEngine.applySchedule(s);
-    ExamEngine.renderLobbyInfo();
+    
+    // BỔ SUNG: Re-init toàn bộ UI để nhận lịch mới (ẩn/hiện form login)
+    const wasAdmin = document.getElementById('scrAdmin').classList.contains('active');
+    ExamEngine.init();
+    if(wasAdmin) {
+        document.querySelectorAll('.screen').forEach(sc => sc.classList.remove('active'));
+        document.getElementById('scrAdmin').classList.add('active');
+    }
+    
     showToast('Đã lưu lịch thi.');
     return s;
   },
@@ -1175,6 +1288,11 @@ const AdminEngine = {
     ExamEngine.renderLobbyInfo();
     this.loadScheduleForm();
     showToast('Đã khôi phục lịch thi mặc định.');
+    
+    // BỔ SUNG: Reset lại UI Lobby
+    ExamEngine.init();
+    document.querySelectorAll('.screen').forEach(sc => sc.classList.remove('active'));
+    document.getElementById('scrAdmin').classList.add('active');
   },
 
   copyLink() {
