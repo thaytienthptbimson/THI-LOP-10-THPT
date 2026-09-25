@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đề thi Tuyển sinh lớp 10 THPT - Tiếng Anh (Sở Thanh Hoá 2025-2026)</title>
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f3f5f8;--card:#ffffff;--text:#1c2230;--muted:#667085;--border:#e2e6ee;--accent:#2f6fed;--ok:#1a8754;--bad:#d92d20;--chip:#eef1f6}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161b;--card:#1d2027;--text:#e8eaef;--muted:#9aa2b1;--border:#2b2f38;--chip:#262a33}}:root[data-theme="dark"]{--bg:#14161b;--card:#1d2027;--text:#e8eaef;--muted:#9aa2b1;--border:#2b2f38;--chip:#262a33}*{box-sizing:border-box}html{scroll-padding-top:76px}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--card);border-bottom:1px solid var(--border);padding:.55rem 1rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}header h1{font-size:.92rem;margin:0;flex:1;min-width:180px;font-weight:600}#timer{font-weight:700;font-variant-numeric:tabular-nums;padding:.25rem .6rem;border-radius:8px;background:var(--chip)}#progress{color:var(--muted);font-size:.85rem}#submitBtn,#resetBtn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:.5rem 1rem;font-weight:600;cursor:pointer}#resetBtn{background:var(--muted);display:none}#layout{display:flex;gap:1rem;max-width:980px;margin:0 auto;padding:1rem;align-items:flex-start}#navwrap{position:sticky;top:calc(58px + env(safe-area-inset-top,0px));width:190px;flex-shrink:0}#navgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.6rem}.navbtn{border:1px solid var(--border);background:var(--chip);color:var(--text);border-radius:6px;padding:.35rem 0;font-size:.8rem;cursor:pointer}.navbtn.done{background:var(--accent);color:#fff;border-color:var(--accent)}#exam{flex:1;min-width:0}.note{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}.part{font-size:1.05rem;margin:1.3rem 0 .3rem}.pts{color:var(--muted);font-weight:400;font-size:.85rem}.sub{font-size:.9rem;color:var(--muted);margin:.7rem 0 .5rem}.wordbank{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 1rem}.wordbank span{background:var(--chip);border:1px solid var(--border);border-radius:6px;padding:.2rem .6rem;font-size:.85rem}.passage{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;margin-bottom:1rem;overflow-x:auto}.passage p{margin:.5rem 0}.qcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;margin-bottom:.7rem;scroll-margin-top:76px}.qnum{font-size:.78rem;color:var(--muted);margin-bottom:.3rem}.stem{margin:.3rem 0}.given{color:var(--muted);font-weight:600}.opts{display:flex;flex-direction:column;gap:.35rem;margin-top:.4rem}.opt{display:flex;gap:.4rem;align-items:flex-start;cursor:pointer}.oletter{font-weight:600}.blank{border:1px solid var(--border);border-radius:6px;padding:.25rem .5rem;background:var(--bg);color:var(--text);font-size:.95rem}.blank.wide{width:min(420px,100%)}.hint{color:var(--bad);font-size:.82rem}div.hint{margin-top:.4rem}span.hint{margin:0 0 0 .5rem;display:inline-block}#resultbox{display:none;max-width:980px;margin:0 auto 2rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem}.qcard.ok,.qcard.bad{border-width:2px}.ok{border-color:var(--ok)}.bad{border-color:var(--bad)}@media (max-width:720px){#layout{flex-direction:column;padding:.6rem}#navwrap{position:static;width:100%}#navgrid{grid-template-columns:repeat(10,1fr)}}</style>
+</head>
+<body>
+<header>
+  <h1>KỲ THI TUYỂN SINH LỚP 10 THPT — TIẾNG ANH (Sở GD&ĐT Thanh Hoá, 2025–2026)</h1>
+  <span id="timer">60:00</span>
+  <span id="progress">0/50</span>
+  <button id="submitBtn">Nộp bài</button>
+  <button id="resetBtn">Làm lại</button>
+</header>
+<div id="layout">
+  <div id="navwrap"><div id="navgrid"></div></div>
+  <main id="exam"></main>
+</div>
+<div id="resultbox"></div>
+<script>
+// Keys: i=id t=type(mc|fill|mcinline|write) p=prompt o=options a=answer(idx|array) g=given s=start acc=accepted answers
+const BLOCKS = [
+{part:'A',label:`PART A. PHONETICS`,pts:1.0,sub:`I`,instr:`Chọn từ có phần gạch chân được phát âm khác với các từ còn lại.`,qs:[
+{i:1,t:'mc',o:[`needed`,`looked`,`helped`,`watched`],a:0},
+{i:2,t:'mc',o:[`please`,`clear`,`tea`,`clean`],a:1},
+{i:3,t:'mc',o:[`think`,`thin`,`thank`,`though`],a:3},
+]},
+{part:'A',sub:`II`,instr:`Chọn từ có trọng âm khác với các từ còn lại.`,qs:[
+{i:4,t:'mc',o:[`remind`,`worker`,`collect`,`relax`],a:1},
+{i:5,t:'mc',o:[`historic`,`delicious`,`relation`,`quality`],a:3},
+]},
+{part:'B',label:`PART B. VOCABULARY AND GRAMMAR`,pts:4.0,sub:`I`,instr:`Chia đúng dạng của động từ trong ngoặc.`,qs:[
+{i:6,t:'fill',p:`My father (jog) ___ in the park every morning.`,acc:[`jogs`]},
+{i:7,t:'fill',p:`The students enjoy (play) ___ soccer after school.`,acc:[`playing`]},
+{i:8,t:'fill',p:`They (cook) ___ dinner when the light went out.`,acc:[`were cooking`]},
+{i:9,t:'fill',p:`My teacher suggested that we (collect) ___ waste paper for the recycling program.`,acc:[`collect`]},
+{i:10,t:'fill',p:`I (have) ___ a calculator, I would lend it to you now.`,acc:[`had`]},
+]},
+{part:'B',sub:`II`,instr:`Chia đúng dạng của từ viết hoa trong ngoặc.`,qs:[
+{i:11,t:'fill',p:`Doing exercises regularly maintains your mental and ___ health. (PHYSICS)`,acc:[`physical`]},
+{i:12,t:'fill',p:`Nowadays, students can use several AI tools to ___ their English. (IMPROVEMENT)`,acc:[`improve`]},
+{i:13,t:'fill',p:`You should be careful when using ___ which contain chemicals. (PRODUCE)`,acc:[`products`]},
+{i:14,t:'fill',p:`She speaks English ___ after living in Britain for several years. (FLUENT)`,acc:[`fluently`]},
+{i:15,t:'fill',p:`The island has a very beautiful beach, but sadly, it is quite ___. (ACCESS)`,acc:[`inaccessible`]},
+]},
+{part:'B',sub:`III`,instr:`Chọn phương án đúng nhất.`,qs:[
+{i:16,t:'mc',p:`She gave me ___ orange yesterday.`,o:[`a`,`an`,`the`,`Ø`],a:1},
+{i:17,t:'mc',p:`She has a meeting ___ Monday, but I'm not sure.`,o:[`at`,`in`,`on`,`to`],a:2},
+{i:18,t:'mc',p:`The new film is about a poor little girl ___ can speak several languages.`,o:[`who`,`whose`,`whom`,`which`],a:0},
+{i:19,t:'mc',p:`Mai drives ___ than her brother.`,o:[`more carefully`,`as careful`,`carefully`,`more careful`],a:0},
+{i:20,t:'mc',p:`Mr. Brown: "Thank you for showing us around the Temple of Literature."\nThe tour guide: "___."`,o:[`That's a good idea`,`Yes, I'd love to`,`Of course`,`You are welcome`],a:3},
+{i:21,t:'mc',p:`My grandmother doesn't know ___ to use the washing machine.`,o:[`whom`,`what`,`how`,`which`],a:2},
+{i:22,t:'mc',p:`We missed the bus this morning ___ we got up late.`,o:[`despite`,`although`,`because`,`because of`],a:2},
+{i:23,t:'mc',p:`My uncle ___ his living by selling bread on the streets.`,o:[`does`,`has`,`takes`,`earns`],a:3},
+{i:24,t:'mc',p:`The government is ___ a plan to solve the traffic problem in big cities.`,o:[`carrying out`,`looking up`,`looking after`,`turning off`],a:0},
+{i:25,t:'mc',p:`Extended families with three or four ___ living under one roof still remain in this region.`,o:[`customs`,`generations`,`traditions`,`relatives`],a:1},
+]},
+{part:'C',label:`PART C. READING`,pts:3.0,sub:`I`,instr:`Điền một từ thích hợp trong khung vào mỗi chỗ trống.`,
+wordbank:[`to`,`pollution`,`so`,`playing`,`higher`],
+passage:`Twenty years ago, people tried to leave the suburbs for cities, but nowadays many people are reluctant to make such a move. They say that compared to suburban areas, city life has many drawbacks.
+
+The high cost of living is the first disadvantage. The bigger the city is, the {{26}} the cost of living is. Accommodation and petrol are expensive. Food and drinks are also pricey.
+
+Apart from that, city people seem to suffer from more noise and air {{27}}. The dense population, overcrowded neighborhoods, busy traffic, and big construction sites make cities noisy as well. These are harmful {{28}} people's health, such as increasing their stress levels, disturbing their sleep, and making them suffer from breathing problems.
+
+Lack of space is another drawback of city life. House prices are high in the city, {{29}} people tend to live in smaller houses or in apartment blocks. Many cities lack spaces for outdoor activities; therefore, teenagers often hang out at shopping malls or in entertainment complexes instead of {{30}} sports outdoors.`,
+qs:[
+{i:26,t:'blank',acc:[`higher`]},{i:27,t:'blank',acc:[`pollution`]},{i:28,t:'blank',acc:[`to`]},{i:29,t:'blank',acc:[`so`]},{i:30,t:'blank',acc:[`playing`]},
+]},
+{part:'C',sub:`II`,instr:`Chọn phương án đúng nhất A, B, C hoặc D cho mỗi chỗ trống.`,
+passage:`Many health experts believe that children and young people today are more unhealthy than they used to be. So why has this happened?
+
+One reason is bad eating habits. They eat too {{31}} fast food like hamburgers and pizzas and not enough fruits and vegetables. In {{32}} United States, many children have been eating fast food regularly since they were young. In fact, almost one-third of American children aged four to nineteen have been eating fast food nearly all the time. They also don't do exercises and {{33}} much time watching TV, surfing the Internet, playing computer games.
+
+So how can you change your habits if you have been following an unhealthy {{34}} for a long time? First, you change your diet and eat more vegetables. Next, find an activity {{35}} you enjoy. Why not try something different like rock climbing or hiking? Many young people have found that becoming fit and healthy can be a lot of fun.`,
+qs:[
+{i:31,t:'selblank',o:[`many`,`a little`,`a few`,`much`],a:3},
+{i:32,t:'selblank',o:[`a`,`an`,`the`,`Ø`],a:2},
+{i:33,t:'selblank',o:[`take`,`spend`,`make`,`let`],a:1},
+{i:34,t:'selblank',o:[`action`,`hobby`,`lifestyle`,`balance`],a:2},
+{i:35,t:'selblank',o:[`who`,`which`,`when`,`why`],a:1},
+]},
+{part:'C',sub:`III`,instr:`Đọc đoạn văn và chọn đáp án đúng nhất A, B, C hoặc D.`,
+passage:`Cell phones are an important part of our society and their main use is communication. <u>They</u> keep students in touch with the rest of the world by giving them the power to interact with it. In the old days, if you forgot to bring your lunch, you had to rely on the school office calling home for you. Now, students have the ability to solve their own problems and handle certain emergencies on their own.
+
+Cell phones also allow students to keep in touch with their friends and students at other schools. While not directly beneficial to education, better relationships can lead to higher self-esteem and reduce isolation, which is good for everybody. In the same way, camera features allow students to capture the kinds of memories that help build a solid school culture. In some cases, they can act as documentation of misbehaviors because they <u>provide</u> evidence of students' bad behaviors.
+
+Academically, the cell phone can record a video or an audio of the lessons that may need to be reviewed later. And just imagine if classes could be easily recorded for students who are absent. What if they could even be streamed and seen from home instantly?`,
+qs:[
+{i:36,t:'mc',p:`What is the main idea of the passage?`,o:[`The importance of cell phones in communication and education.`,`Cell phones will be used as cameras to capture memories.`,`How to use some electronic devices in communication and education.`,`Cell phones can be used as an excellent recorder.`],a:0},
+{i:37,t:'mc',p:`The word "they" in paragraph 1 refers to ___.`,o:[`students`,`cell phones`,`uses`,`societies`],a:1},
+{i:38,t:'mc',p:`According to the passage, cell phones help students ___.`,o:[`interact with the world`,`handle the household chores`,`write their lectures`,`increase isolation`],a:0},
+{i:39,t:'mc',p:`The word "provide" in paragraph 2 is CLOSEST in meaning to ___.`,o:[`advise`,`promise`,`offer`,`decide`],a:2},
+{i:40,t:'mc',p:`Which of the following is TRUE according to the passage?`,o:[`Cell phones only help students entertain themselves.`,`Nowadays, students can solve their problems without cell phones.`,`Cell phones help students write their assignments at school.`,`Students can record the lessons for later review.`],a:3},
+]},
+{part:'D',label:`PART D. WRITING`,pts:2.0,sub:`I`,instr:`Viết lại câu sao cho nghĩa không đổi, bắt đầu bằng từ cho sẵn.`,qs:[
+{i:41,t:'write',orig:`My sister doesn't have a laptop to study online.`,s:`My sister wishes she`,acc:[`had a laptop to study online`]},
+{i:42,t:'write',orig:`"I am going to travel to Ireland for vacation next month," said John.`,s:`John said`,acc:[`he was going to travel to ireland for vacation the following month`,`that he was going to travel to ireland for vacation the following month`]},
+{i:43,t:'write',orig:`If you don't hurry up, you will miss the bus.`,s:`Unless`,acc:[`you hurry up you will miss the bus`]},
+{i:44,t:'write',orig:`Eating junk food is not good for teenagers.`,s:`It is not`,acc:[`good for teenagers to eat junk food`]},
+{i:45,t:'write',orig:`Though my mother was tired, she managed to finish her work.`,s:`Tired`,acc:[`as my mother was she managed to finish her work`,`though my mother was she managed to finish her work`]},
+]},
+{part:'D',sub:`II`,instr:`Viết lại câu dùng từ cho sẵn (không đổi dạng từ).`,qs:[
+{i:46,t:'write',orig:`My sister often collected dolls when she was young.`,g:`USED`,s:`My sister`,acc:[`used to collect dolls when she was young`]},
+{i:47,t:'write',orig:`I know a Japanese restaurant. The restaurant serves excellent sushi.`,g:`WHICH`,s:`I know`,acc:[`a japanese restaurant which serves excellent sushi`]},
+{i:48,t:'write',orig:`The worker was so lazy that no manager wanted to hire him.`,g:`SUCH`,s:`He was`,acc:[`such a lazy worker that no manager wanted to hire him`]},
+{i:49,t:'write',orig:`They had no bread left when I came to the local bakery yesterday.`,g:`RAN`,s:`They`,acc:[`had run out of bread when i came to the local bakery yesterday`]},
+{i:50,t:'write',orig:`The aim of this charity organization is to prioritize the needs of street children.`,g:`GIVE`,s:`The aim of this charity organization is`,acc:[`to give priority to the needs of street children`]},
+]},
+];
+
+const TOTAL_Q=50, PT=0.2;
+let timeLeft=60*60, timerId=null, submitted=false;
+const norm=s=>(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+const L=i=>String.fromCharCode(65+i);
+const allQ=()=>BLOCKS.flatMap(b=>b.qs.map(q=>({...q,part:b.part})));
+
+function renderBlankText(text,mode){
+return text.replace(/\{\{(\d+)\}\}/g,(m,id)=>mode==='input'
+? `<input type="text" class="blank" data-id="${id}" autocomplete="off" size="9">`
+: `<span class="dropwrap" data-slot="${id}"></span>`);
+}
+function q_mc(q){
+const opts=q.o.map((op,idx)=>`<label class="opt"><input type="radio" name="q${q.i}" value="${idx}"><span class="oletter">${L(idx)}.</span> ${op}</label>`).join('');
+const p=q.p?`<p class="stem">${q.p.replace(/\n/g,'<br>')}</p>`:'';
+return `<div class="qcard" data-id="${q.i}"><div class="qnum">Câu ${q.i}</div>${p}<div class="opts">${opts}</div></div>`;
+}
+function q_fill(q){
+const stem=q.p.replace('___',`<input type="text" class="blank" data-id="${q.i}" autocomplete="off" size="14">`);
+return `<div class="qcard" data-id="${q.i}"><div class="qnum">Câu ${q.i}</div><p class="stem">${stem}</p></div>`;
+}
+function q_write(q){
+const g=q.g?`<span class="given">(${q.g})</span>`:'';
+return `<div class="qcard" data-id="${q.i}"><div class="qnum">Câu ${q.i}</div><p class="stem">${q.orig} ${g}</p>
+<p class="stem">&rarr; ${q.s} <input type="text" class="blank wide" data-id="${q.i}" autocomplete="off"></p></div>`;
+}
+function renderBlocks(){
+let html='<p class="note">Làm bài trực tiếp bên dưới, dùng ô lưới bên trái để chuyển câu nhanh. Bấm "Nộp bài" để xem điểm và đáp án đúng; hết giờ hệ thống sẽ tự động nộp.</p>';
+for(const b of BLOCKS){
+if(b.label) html+=`<h2 class="part">${b.label} <span class="pts">(${b.pts.toFixed(1)} điểm)</span></h2>`;
+html+=`<h3 class="sub">${b.sub}. ${b.instr}</h3>`;
+if(b.wordbank) html+=`<div class="wordbank">${b.wordbank.map(w=>`<span>${w}</span>`).join('')}</div>`;
+if(b.passage){
+const mode=b.qs[0].t==='blank'?'input':'select';
+const paras=b.passage.split('\n\n').map(p=>`<p>${p}</p>`).join('');
+html+=`<div class="passage">${renderBlankText(paras,mode)}</div>`;
+}
+for(const q of b.qs){
+if(q.t==='mc') html+=q_mc(q);
+else if(q.t==='fill') html+=q_fill(q);
+else if(q.t==='write') html+=q_write(q);
+}
+}
+return html;
+}
+function mountInlineBlanks(){
+for(const b of BLOCKS){ if(!b.passage) continue;
+for(const q of b.qs){ if(q.t!=='selblank') continue;
+const c=document.querySelector(`[data-slot="${q.i}"]`); if(!c) continue;
+const sel=document.createElement('select');
+sel.className='blank sel'; sel.dataset.id=q.i;
+sel.innerHTML=`<option value="">--</option>`+q.o.map((op,idx)=>`<option value="${idx}">${L(idx)}. ${op}</option>`).join('');
+c.replaceWith(sel);
+}
+}
+}
+function buildNav(){
+const grid=document.getElementById('navgrid');
+grid.innerHTML=Array.from({length:TOTAL_Q},(_,k)=>`<button class="navbtn" data-nav="${k+1}">${k+1}</button>`).join('');
+grid.addEventListener('click',e=>{
+const b=e.target.closest('.navbtn'); if(!b) return;
+document.querySelector(`[data-id="${b.dataset.nav}"]`)?.scrollIntoView({behavior:'smooth',block:'center'});
+});
+}
+function isAnswered(q){
+if(q.t==='mc') return !!document.querySelector(`input[name="q${q.i}"]:checked`);
+if(q.t==='selblank') return (document.querySelector(`select[data-id="${q.i}"]`)?.value||'')!=='';
+return (document.querySelector(`input[data-id="${q.i}"]`)?.value||'').trim().length>0;
+}
+function updateProgress(){
+let done=0;
+for(const q of allQ()){
+const a=isAnswered(q);
+document.querySelector(`.navbtn[data-nav="${q.i}"]`)?.classList.toggle('done',a);
+if(a) done++;
+}
+document.getElementById('progress').textContent=`${done}/${TOTAL_Q}`;
+}
+const fmtTime=s=>`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+function startTimer(){
+document.getElementById('timer').textContent=fmtTime(timeLeft);
+timerId=setInterval(()=>{
+timeLeft--;
+document.getElementById('timer').textContent=fmtTime(timeLeft);
+if(timeLeft<=0){ clearInterval(timerId); doSubmit(true); }
+},1000);
+}
+function checkAnswer(q){
+if(q.t==='mc'){ const s=document.querySelector(`input[name="q${q.i}"]:checked`); return !!s && +s.value===q.a; }
+if(q.t==='selblank'){ const s=document.querySelector(`select[data-id="${q.i}"]`); return !!s && s.value!=='' && +s.value===q.a; }
+const inp=document.querySelector(`input[data-id="${q.i}"]`);
+if(!inp) return false;
+const val=norm(inp.value);
+return (q.acc||[]).some(a=>norm(a)===val);
+}
+function mark(q,ok){
+const t=document.querySelector(`[data-id="${q.i}"]`); if(!t) return;
+t.classList.add(ok?'ok':'bad');
+if(ok) return;
+const txt=(q.t==='mc'||q.t==='selblank')?`Đáp án đúng: ${L(q.a)}. ${q.o[q.a]}`:`Gợi ý: ${(q.acc&&q.acc[0])||''}`;
+const inline=(t.tagName==='INPUT'||t.tagName==='SELECT');
+t.insertAdjacentHTML(inline?'afterend':'beforeend', `<${inline?'span':'div'} class="hint">${txt}</${inline?'span':'div'}>`);
+}
+function doSubmit(auto){
+if(submitted) return;
+if(!auto && !confirm('Bạn có chắc muốn nộp bài?')) return;
+submitted=true; clearInterval(timerId);
+let correct=0; const byPart={A:0,B:0,C:0,D:0};
+for(const q of allQ()){
+const ok=checkAnswer(q);
+mark(q,ok);
+if(ok){ correct++; byPart[q.part]+=PT; }
+}
+document.querySelectorAll('input,select').forEach(el=>el.disabled=true);
+const box=document.getElementById('resultbox');
+box.innerHTML=`<strong>Điểm: ${(correct*PT).toFixed(1)} / 10.0</strong> — Đúng ${correct}/${TOTAL_Q} câu.<br>
+A: ${byPart.A.toFixed(1)}/1.0 &nbsp; B: ${byPart.B.toFixed(1)}/4.0 &nbsp; C: ${byPart.C.toFixed(1)}/3.0 &nbsp; D: ${byPart.D.toFixed(1)}/2.0
+<br><small>Phần D được chấm theo mẫu; nếu diễn đạt khác nhưng đúng nghĩa, hãy tự đối chiếu bằng gợi ý màu đỏ.</small>`;
+box.style.display='block';
+document.getElementById('submitBtn').style.display='none';
+document.getElementById('resetBtn').style.display='inline-block';
+box.scrollIntoView({behavior:'smooth'});
+}
+function init(){
+document.getElementById('exam').innerHTML=renderBlocks();
+mountInlineBlanks();
+buildNav();
+const exam=document.getElementById('exam');
+exam.addEventListener('input',updateProgress);
+exam.addEventListener('change',updateProgress);
+updateProgress();
+startTimer();
+document.getElementById('submitBtn').addEventListener('click',()=>doSubmit(false));
+document.getElementById('resetBtn').addEventListener('click',()=>location.reload());
+}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
