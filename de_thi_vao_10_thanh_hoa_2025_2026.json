@@ -1,0 +1,537 @@
+{
+  "exam": {
+    "title": "ĐỀ KIỂM TRA NĂNG LỰC THI VÀO LỚP 10 THPT",
+    "subject": "Tiếng Anh",
+    "source": "ĐỀ TI MẪU, năm học 2025-2026",
+    "durationMinutes": 60,
+    "totalQuestions": 50,
+    "totalPoints": 10.0
+  },
+  "parts": [
+    {
+      "id": "A",
+      "title": "PART A. PHONETICS",
+      "points": 1.0,
+      "sections": [
+        {
+          "sectionNumber": "I",
+          "instruction": "Choose the word whose underlined part is pronounced differently from that of the others in each question. Write A, B, C or D on your answer sheet.",
+          "questionType": "phonetics_sound",
+          "questions": [
+            {
+              "id": 1,
+              "options": {
+                "A": "needed",
+                "B": "looked",
+                "C": "helped",
+                "D": "watched"
+              },
+              "underlined": "ed",
+              "answer": "A"
+            },
+            {
+              "id": 2,
+              "options": {
+                "A": "please",
+                "B": "clear",
+                "C": "tea",
+                "D": "clean"
+              },
+              "underlined": "ea",
+              "answer": "B"
+            },
+            {
+              "id": 3,
+              "options": {
+                "A": "think",
+                "B": "thin",
+                "C": "thank",
+                "D": "though"
+              },
+              "underlined": "th",
+              "answer": "D"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "II",
+          "instruction": "Choose the word whose stress pattern is different from that of the others in each question. Write A, B, C or D on your answer sheet.",
+          "questionType": "stress_pattern",
+          "questions": [
+            {
+              "id": 4,
+              "options": {
+                "A": "remind",
+                "B": "worker",
+                "C": "collect",
+                "D": "relax"
+              },
+              "answer": "B"
+            },
+            {
+              "id": 5,
+              "options": {
+                "A": "historic",
+                "B": "delicious",
+                "C": "relation",
+                "D": "quality"
+              },
+              "answer": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "PART B. VOCABULARY AND GRAMMAR",
+      "points": 4.0,
+      "sections": [
+        {
+          "sectionNumber": "I",
+          "instruction": "Supply the correct form of the verb in brackets. Write the answers on your answer sheet.",
+          "questionType": "verb_form",
+          "questions": [
+            {
+              "id": 6,
+              "sentence": "My father (jog) ________ in the park every morning.",
+              "wordGiven": "jog",
+              "answer": "jogs"
+            },
+            {
+              "id": 7,
+              "sentence": "The students enjoy (play) ________ soccer after school.",
+              "wordGiven": "play",
+              "answer": "playing"
+            },
+            {
+              "id": 8,
+              "sentence": "They (cook) ________ dinner when the light went out.",
+              "wordGiven": "cook",
+              "answer": "were cooking"
+            },
+            {
+              "id": 9,
+              "sentence": "My teacher suggested that we (collect) ________ waste paper for the recycling program.",
+              "wordGiven": "collect",
+              "answer": "collect"
+            },
+            {
+              "id": 10,
+              "sentence": "I (have) ________ a calculator, I would lend it to you now.",
+              "wordGiven": "have",
+              "answer": "had"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "II",
+          "instruction": "Supply the correct form of the words in capital to complete the sentences. Write the answers on your answer sheet.",
+          "questionType": "word_form",
+          "questions": [
+            {
+              "id": 11,
+              "sentence": "Doing exercises regularly maintains your mental and ________ health.",
+              "wordGiven": "PHYSICS",
+              "answer": "physical"
+            },
+            {
+              "id": 12,
+              "sentence": "Nowadays, students can use several AI tools to ________ their English.",
+              "wordGiven": "IMPROVEMENT",
+              "answer": "improve"
+            },
+            {
+              "id": 13,
+              "sentence": "You should be careful when using ________ which contain chemicals.",
+              "wordGiven": "PRODUCE",
+              "answer": "products"
+            },
+            {
+              "id": 14,
+              "sentence": "She speaks English ________ after living in Britain for several years.",
+              "wordGiven": "FLUENT",
+              "answer": "fluently"
+            },
+            {
+              "id": 15,
+              "sentence": "The island has a very beautiful beach, but sadly, it is quite ________.",
+              "wordGiven": "ACCESS",
+              "answer": "inaccessible"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "III",
+          "instruction": "Choose the word or phrase that best fits the gap in each of the following sentences. Write A, B, C or D on your answer sheet.",
+          "questionType": "multiple_choice",
+          "questions": [
+            {
+              "id": 16,
+              "sentence": "She gave me ________ orange yesterday.",
+              "options": {
+                "A": "a",
+                "B": "an",
+                "C": "the",
+                "D": "Ø"
+              },
+              "answer": "B"
+            },
+            {
+              "id": 17,
+              "sentence": "She has a meeting ________ Monday, but I'm not sure.",
+              "options": {
+                "A": "at",
+                "B": "in",
+                "C": "on",
+                "D": "to"
+              },
+              "answer": "C"
+            },
+            {
+              "id": 18,
+              "sentence": "The new film is about a poor little girl ________ can speak several languages.",
+              "options": {
+                "A": "who",
+                "B": "whose",
+                "C": "whom",
+                "D": "which"
+              },
+              "answer": "A"
+            },
+            {
+              "id": 19,
+              "sentence": "Mai drives ________ than her brother.",
+              "options": {
+                "A": "more carefully",
+                "B": "as careful",
+                "C": "carefully",
+                "D": "more careful"
+              },
+              "answer": "A"
+            },
+            {
+              "id": 20,
+              "dialogue": [
+                {
+                  "speaker": "Mr. Brown (a foreign tourist)",
+                  "line": "Thank you for showing us around the Temple of Literature."
+                },
+                {
+                  "speaker": "The tour guide",
+                  "line": "________."
+                }
+              ],
+              "options": {
+                "A": "That's a good idea",
+                "B": "Yes, I'd love to",
+                "C": "Of course",
+                "D": "You are welcome"
+              },
+              "answer": "D"
+            },
+            {
+              "id": 21,
+              "sentence": "My grandmother doesn't know ________ to use the washing machine.",
+              "options": {
+                "A": "whom",
+                "B": "what",
+                "C": "how",
+                "D": "which"
+              },
+              "answer": "C"
+            },
+            {
+              "id": 22,
+              "sentence": "We missed the bus this morning ________ we got up late.",
+              "options": {
+                "A": "despite",
+                "B": "although",
+                "C": "because",
+                "D": "because of"
+              },
+              "answer": "C"
+            },
+            {
+              "id": 23,
+              "sentence": "My uncle ________ his living by selling bread on the streets.",
+              "options": {
+                "A": "does",
+                "B": "has",
+                "C": "takes",
+                "D": "earns"
+              },
+              "answer": "D"
+            },
+            {
+              "id": 24,
+              "sentence": "The government is ________ a plan to solve the traffic problem in big cities.",
+              "options": {
+                "A": "carrying out",
+                "B": "looking up",
+                "C": "looking after",
+                "D": "turning off"
+              },
+              "answer": "A"
+            },
+            {
+              "id": 25,
+              "sentence": "Extended families with three or four ________ living under one roof still remain in this region.",
+              "options": {
+                "A": "customs",
+                "B": "generations",
+                "C": "traditions",
+                "D": "relatives"
+              },
+              "answer": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "PART C. READING",
+      "points": 3.0,
+      "sections": [
+        {
+          "sectionNumber": "I",
+          "instruction": "Read the following passage and choose the most suitable word from the ones given in the box to fill in each gap. Write the answers on your answer sheet.",
+          "questionType": "cloze_word_bank",
+          "wordBank": [
+            "to",
+            "pollution",
+            "so",
+            "playing",
+            "higher"
+          ],
+          "passage": "Twenty years ago, people tried to leave the suburbs for cities, but nowadays many people are reluctant to make such a move. They say that compared to suburban areas, city life has many drawbacks.\n\nThe high cost of living is the first disadvantage. The bigger the city is, the (26) ________ the cost of living is. Accommodation and petrol are expensive. Food and drinks are also pricey.\n\nApart from that, city people seem to suffer from more noise and air (27) ________. The dense population, overcrowded neighborhoods, busy traffic, and big construction sites make cities noisy as well. These are harmful (28) ________ people's health, such as increasing their stress levels, disturbing their sleep, and making them suffer from breathing problems.\n\nLack of space is another drawback of city life. House prices are high in the city, (29) ________ people tend to live in smaller houses or in apartment blocks. Many cities lack spaces for outdoor activities; therefore, teenagers often hang out at shopping malls or in entertainment complexes instead of (30) ________ sports outdoors.",
+          "questions": [
+            {
+              "id": 26,
+              "answer": "higher"
+            },
+            {
+              "id": 27,
+              "answer": "pollution"
+            },
+            {
+              "id": 28,
+              "answer": "to"
+            },
+            {
+              "id": 29,
+              "answer": "so"
+            },
+            {
+              "id": 30,
+              "answer": "playing"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "II",
+          "instruction": "Read the following passage and choose the best answer A, B, C or D to fill in each blank. Write the answers on your answer sheet.",
+          "questionType": "cloze_multiple_choice",
+          "passage": "Many health experts believe that children and young people today are more unhealthy than they used to be. So why has this happened?\n\nOne reason is bad eating habits. They eat too (31) ________ fast food like hamburgers and pizzas and not enough fruits and vegetables. In (32) ________ United States, many children have been eating fast food regularly since they were young. In fact, almost one-third of American children aged four to nineteen have been eating fast food nearly all the time. They also don't do exercises and (33) ________ much time watching TV, surfing the Internet, playing computer games.\n\nSo how can you change your habits if you have been following an unhealthy (34) ________ for a long time? First, you change your diet and eat more vegetables. Next, find an activity (35) ________ you enjoy. Why not try something different like rock climbing or hiking? Many young people have found that becoming fit and healthy can be a lot of fun.",
+          "questions": [
+            {
+              "id": 31,
+              "options": {
+                "A": "many",
+                "B": "a little",
+                "C": "a few",
+                "D": "much"
+              },
+              "answer": "D"
+            },
+            {
+              "id": 32,
+              "options": {
+                "A": "a",
+                "B": "an",
+                "C": "the",
+                "D": "Ø"
+              },
+              "answer": "C"
+            },
+            {
+              "id": 33,
+              "options": {
+                "A": "take",
+                "B": "spend",
+                "C": "make",
+                "D": "let"
+              },
+              "answer": "B"
+            },
+            {
+              "id": 34,
+              "options": {
+                "A": "action",
+                "B": "hobby",
+                "C": "lifestyle",
+                "D": "balance"
+              },
+              "answer": "C"
+            },
+            {
+              "id": 35,
+              "options": {
+                "A": "who",
+                "B": "which",
+                "C": "when",
+                "D": "why"
+              },
+              "answer": "B"
+            }
+          ]
+        },
+        {
+          "sectionNumber": "III",
+          "instruction": "Read the following passage and answer the questions by choosing the best answer A, B, C or D. Write the answers on your answer sheet.",
+          "questionType": "reading_comprehension",
+          "passage": "Cell phones are an important part of our society and their main use is communication. They keep students in touch with the rest of the world by giving them the power to interact with it. In the old days, if you forgot to bring your lunch, you had to rely on the school office calling home for you. Now, students have the ability to solve their own problems and handle certain emergencies on their own.\n\nCell phones also allow students to keep in touch with their friends and students at other schools. While not directly beneficial to education, better relationships can lead to higher self-esteem and reduce isolation, which is good for everybody. In the same way, camera features allow students to capture the kinds of memories that help build a solid school culture. In some cases, they can act as documentation of misbehaviors because they provide evidence of students' bad behaviors.\n\nAcademically, the cell phone can record a video or an audio of the lessons that may need to be reviewed later. And just imagine if classes could be easily recorded for students who are absent. What if they could even be streamed and seen from home instantly?",
+          "questions": [
+            {
+              "id": 36,
+              "question": "What is the main idea of the passage?",
+              "options": {
+                "A": "The importance of cell phones in communication and education.",
+                "B": "Cell phones will be used as cameras to capture memories.",
+                "C": "How to use some electronic devices in communication and education.",
+                "D": "Cell phones can be used as an excellent recorder."
+              },
+              "answer": "A"
+            },
+            {
+              "id": 37,
+              "question": "The word \"they\" in paragraph 1 refers to ________.",
+              "options": {
+                "A": "students",
+                "B": "cell phones",
+                "C": "uses",
+                "D": "societies"
+              },
+              "answer": "B"
+            },
+            {
+              "id": 38,
+              "question": "According to the passage, cell phones help students ________.",
+              "options": {
+                "A": "interact with the world",
+                "B": "handle the household chores",
+                "C": "write their lectures",
+                "D": "increase isolation"
+              },
+              "answer": "A"
+            },
+            {
+              "id": 39,
+              "question": "The word \"provide\" in paragraph 2 is CLOSEST in meaning to ________.",
+              "options": {
+                "A": "advise",
+                "B": "promise",
+                "C": "offer",
+                "D": "decide"
+              },
+              "answer": "C"
+            },
+            {
+              "id": 40,
+              "question": "Which of the following is TRUE according to the passage?",
+              "options": {
+                "A": "Cell phones only help students entertain themselves.",
+                "B": "Nowadays, students can solve their problems without cell phones.",
+                "C": "Cell phones help students write their assignments at school.",
+                "D": "Students can record the lessons for later review."
+              },
+              "answer": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "PART D. WRITING",
+      "points": 2.0,
+      "sections": [
+        {
+          "sectionNumber": "I",
+          "instruction": "Rewrite each of the following sentences, beginning as shown so that the meaning stays the same.",
+          "questionType": "sentence_rewrite_given_start",
+          "questions": [
+            {
+              "id": 41,
+              "originalSentence": "My sister doesn't have a laptop to study online.",
+              "sentenceStart": "My sister wishes she",
+              "sampleAnswer": "My sister wishes she had a laptop to study online."
+            },
+            {
+              "id": 42,
+              "originalSentence": "\"I am going to travel to Ireland for vacation next month,\" said John.",
+              "sentenceStart": "John said",
+              "sampleAnswer": "John said (that) he was going to travel to Ireland for vacation the following month."
+            },
+            {
+              "id": 43,
+              "originalSentence": "If you don't hurry up, you will miss the bus.",
+              "sentenceStart": "Unless",
+              "sampleAnswer": "Unless you hurry up, you will miss the bus."
+            },
+            {
+              "id": 44,
+              "originalSentence": "Eating junk food is not good for teenagers.",
+              "sentenceStart": "It is not",
+              "sampleAnswer": "It is not good for teenagers to eat junk food."
+            },
+            {
+              "id": 45,
+              "originalSentence": "Though my mother was tired, she managed to finish her work.",
+              "sentenceStart": "Tired",
+              "sampleAnswer": "Tired as/though my mother was, she managed to finish her work."
+            }
+          ]
+        },
+        {
+          "sectionNumber": "II",
+          "instruction": "Rewrite each of the following sentences, using the given words so that it keeps the same meaning. Do not change the form of the words given.",
+          "questionType": "sentence_rewrite_given_word",
+          "questions": [
+            {
+              "id": 46,
+              "originalSentence": "My sister often collected dolls when she was young.",
+              "wordGiven": "USED",
+              "sampleAnswer": "My sister used to collect dolls when she was young."
+            },
+            {
+              "id": 47,
+              "originalSentence": "I know a Japanese restaurant. The restaurant serves excellent sushi.",
+              "wordGiven": "WHICH",
+              "sampleAnswer": "I know a Japanese restaurant which serves excellent sushi."
+            },
+            {
+              "id": 48,
+              "originalSentence": "The worker was so lazy that no manager wanted to hire him.",
+              "wordGiven": "SUCH",
+              "sampleAnswer": "He was such a lazy worker that no manager wanted to hire him."
+            },
+            {
+              "id": 49,
+              "originalSentence": "They had no bread left when I came to the local bakery yesterday.",
+              "wordGiven": "RAN",
+              "sampleAnswer": "They had run out of bread when I came to the local bakery yesterday."
+            },
+            {
+              "id": 50,
+              "originalSentence": "The aim of this charity organization is to prioritize the needs of street children.",
+              "wordGiven": "GIVE",
+              "sampleAnswer": "The aim of this charity organization is to give priority to the needs of street children."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
