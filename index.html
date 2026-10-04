@@ -86,6 +86,126 @@ M("What is the main idea of the passage?",["The importance of cell phones in com
 "Cell phones are an important part of our society and their main use is communication. They keep students in touch with the rest of the world... Now, students have the ability to solve their own problems.")
 ],...E(9)]}]}
 ];
+const ADD=(t,g,e,qs)=>DATA[t].groups[g].ex[e].push(...qs);
+const W=(q,a,e)=>F(q+" ______.",a,e);
+/* Thẻ 1 · Thì & dạng của động từ · Bài 1 (câu 6-20) */
+ADD(0,0,0,[
+W("She (not/go) ____ to school on Sundays",["doesn't go","does not go"],"Hiện tại đơn, phủ định, chủ ngữ số ít"),
+W("We (watch) ____ TV when the phone rang","were watching","Quá khứ tiếp diễn + when + quá khứ đơn"),
+W("He decided (study) ____ abroad","to study","decide + to V"),
+W("My brother is good at (draw) ____","drawing","giới từ + V-ing"),
+W("I (visit) ____ Hue three times so far","have visited","so far → hiện tại hoàn thành"),
+W("The children (play) ____ in the garden now","are playing","now → hiện tại tiếp diễn"),
+W("If it rains tomorrow, we (stay) ____ at home",["will stay","'ll stay"],"Điều kiện loại 1"),
+W("She suggested (go) ____ to the cinema","going","suggest + V-ing"),
+W("The letter (send) ____ yesterday","was sent","Bị động quá khứ đơn"),
+W("They (live) ____ here since 2015",["have lived","'ve lived"],"since → hiện tại hoàn thành"),
+W("Would you mind (open) ____ the window","opening","mind + V-ing"),
+W("My mother (cook) ____ dinner at 6 p.m. yesterday","was cooking","Thời điểm xác định trong quá khứ → quá khứ tiếp diễn"),
+W("Lan wants (become) ____ a doctor","to become","want + to V"),
+W("English (speak) ____ all over the world","is spoken","Bị động hiện tại đơn"),
+W("When I arrived, the film already (start) ____","had started","Hành động xảy ra trước một mốc quá khứ → quá khứ hoàn thành")]);
+/* Thẻ 1 · Câu điều kiện & Wish · Bài 1 */
+ex1=[
+W("If I (be) ____ you, I would study harder",["were","was"],"Điều kiện loại 2"),
+W("I wish I (have) ____ more free time","had","Wish hiện tại → quá khứ đơn"),
+W("If she (study) ____ hard, she will pass the exam","studies","Loại 1: if + hiện tại đơn"),
+M("If I ______ rich, I would travel the world.",["am","were","will be","would be"],1),
+M("He wishes he ______ swim.",["can","could","will","would"],1,"Wish hiện tại → could"),
+W("If you heat ice, it (melt) ____","melts","Điều kiện loại 0 (sự thật hiển nhiên)"),
+M("Unless you ______ now, you will be late.",["leave","don't leave","left","will leave"],0,"Unless = if not, đã mang nghĩa phủ định"),
+W("I wish my brother (not/make) ____ so much noise",["didn't make","wouldn't make","did not make","would not make"]),
+M("If it ______ tomorrow, we will cancel the picnic.",["rains","rained","will rain","would rain"],0),
+M("What would you do if you ______ a million dollars?",["win","won","will win","would win"],1),
+W("She wishes she (live) ____ near the sea","lived"),
+M("If I ______ a bird, I would fly to you.",["am","were","will be","have been"],1),
+W("If he (not/hurry) ____, he will miss the bus",["doesn't hurry","does not hurry"]),
+M("I wish I ______ the answer now.",["know","knew","will know","had known"],1),
+M("If you ______ water to 100°C, it boils.",["heat","heated","will heat","would heat"],0),
+W("Unless she (study) ____ harder, she will fail","studies"),
+M("She wishes she ______ taller.",["is","were","will be","would be"],1),
+M("If I had a car, I ______ you to school.",["take","will take","would take","would have taken"],2),
+W("If we (not/protect) ____ the environment, the Earth will get hotter",["don't protect","do not protect"]),
+M("I don't have a bike. → I wish I ______ a bike.",["have","had","will have","would have"],1)];
+DATA[0].groups[1].ex[0]=ex1;
+/* Thẻ 1 · Mệnh đề quan hệ · Bài 1 (câu 3-20) */
+ADD(0,2,0,[
+M("The man ______ lives next door is a doctor.",["whom","which","who","whose"],2),
+M("This is the book ______ I bought yesterday.",["who","which","whose","where"],1),
+M("The girl ______ bike was stolen is crying.",["who","whom","whose","which"],2,"Chỉ sở hữu → whose"),
+M("Hanoi is the city ______ I was born.",["which","where","who","whose"],1,"Nơi chốn → where"),
+M("The teacher ______ we respect is very kind.",["whom","whose","where","which"],0),
+M("I like the house ______ has a big garden.",["who","whose","that","where"],2),
+M("That is the day ______ we first met.",["when","where","who","which"],0,"Thời gian → when"),
+M("The boy ______ I borrowed the book is my cousin.",["who","from whom","whose","which"],1),
+M("She has a friend ______ father is a pilot.",["who","whom","whose","which"],2),
+M("The film ______ we watched last night was boring.",["who","whose","where","which"],3),
+M("People ______ live in big cities often feel stressed.",["who","whom","whose","which"],0),
+M("The restaurant ______ we had dinner is very famous.",["which","where","who","whose"],1),
+M("The woman ______ I talked to is my new teacher.",["whom","whose","where","when"],0),
+M("The pen ______ you gave me doesn't work.",["who","whose","which","where"],2),
+M("My uncle, ______ lives in Da Nang, is a chef.",["who","which","whom","whose"],0),
+M("This is the school ______ my father used to teach.",["where","which","who","whose"],0),
+M("The students ______ studied hard passed the exam.",["who","whom","whose","where"],0),
+M("The car ______ my father bought is very fast.",["who","whose","that","where"],2)]);
+/* Thẻ 1 · So sánh · Bài 1 (câu 2-20) */
+ADD(0,3,0,[
+M("My house is ______ than yours.",["big","bigger","the biggest","more big"],1),
+M("She is the ______ student in my class.",["good","better","best","the best"],3),
+M("He runs ______ than his brother.",["fast","faster","more fast","fastest"],1),
+M("This exercise is as difficult ______ that one.",["more","much","as","than"],2),
+M("Today is ______ day of the year.",["hotter","the hottest","hottest","more hot"],1),
+M("The more you practice, ______ you become.",["the good","the better","better","the best"],1),
+M("English is ______ than Math for me.",["interesting","more interesting","most interesting","the more interesting"],1),
+M("Lan sings ______ than Hoa.",["beautiful","more beautiful","more beautifully","most beautifully"],2,"Trạng từ dài → more + adv"),
+W("This is the (expensive) ____ car in the shop","most expensive"),
+W("My sister is (tall) ____ than me","taller"),
+W("Peter drives (careful) ____ than Tom","more carefully"),
+W("Mount Everest is the (high) ____ mountain in the world","highest"),
+M("She isn't ______ her sister.",["as tall as","taller as","as taller as","tall as"],0),
+M("The weather today is ______ than yesterday.",["bad","worse","worst","badly"],1),
+M("This is ______ film I have ever seen.",["good","better","the best","best"],2),
+W("The (far) ____ you go, the colder it gets",["farther","further"]),
+M("He speaks English ______ than I do.",["fluent","more fluent","more fluently","fluently"],2),
+M("Nobody in my class is ______ than Nam.",["clever","cleverer","the cleverest","most clever"],1),
+W("Winter is (cold) ____ than autumn","colder")]);
+/* Thẻ 1 · Mạo từ & Giới từ · Bài 1 (câu 3-20) */
+ADD(0,4,0,[
+M("He is ______ honest man.",["a","an","the","Ø"],1,"honest bắt đầu bằng âm /ɒ/ (h câm) → an"),
+M("I have breakfast ______ 7 o'clock.",["in","on","at","to"],2),
+M("My birthday is ______ May.",["on","in","at","of"],1),
+M("______ sun rises in the east.",["A","An","The","Ø"],2),
+M("We go to school ______ Monday to Friday.",["from","since","on","at"],0),
+M("She lives ______ Hanoi.",["at","on","in","to"],2),
+M("He is interested ______ music.",["at","in","on","of"],1),
+M("I'm not good ______ math.",["in","at","on","with"],1),
+M("She was born ______ 2010.",["on","at","in","from"],2),
+M("They arrived ______ the airport early.",["in","to","at","on"],2),
+M("My mother is ______ university teacher.",["a","an","the","Ø"],0,"university bắt đầu bằng âm /j/ → a"),
+M("We often play football ______ the afternoon.",["in","on","at","by"],0),
+M("The party is ______ December 24th.",["in","at","on","by"],2),
+M("He is afraid ______ dogs.",["from","of","at","with"],1),
+M("I have ______ lunch at school.",["a","an","the","Ø"],3,"Không dùng mạo từ trước bữa ăn"),
+M("She is married ______ a doctor.",["with","to","for","at"],1),
+M("We study English ______ Tuesday morning.",["in","at","on","by"],2),
+M("______ Pacific Ocean is the largest ocean.",["A","An","The","Ø"],2)]);
+/* Thẻ 2 · Dạng 1 · Bài 1 (câu 6-20) */
+ADD(1,0,0,[
+M("Chọn từ có phần gạch chân phát âm khác: (-s)",["books","cats","pens","stops"],2,"pens /z/, còn lại /s/"),
+M("Chọn từ có phần gạch chân phát âm khác: (ea)",["teacher","clean","bread","please"],2,"bread /e/, còn lại /iː/"),
+M("Chọn từ có phần gạch chân phát âm khác: (ch)",["chair","machine","child","church"],1,"machine /ʃ/, còn lại /tʃ/"),
+M("Chọn từ có trọng âm khác:",["pollution","important","computer","energy"],3,"energy nhấn âm 1, còn lại nhấn âm 2"),
+M("Chọn từ có trọng âm khác:",["career","teacher","village","hobby"],0,"career nhấn âm 2, còn lại nhấn âm 1"),
+F("Nowadays, students can use several AI tools to ______ their English. (IMPROVEMENT)","improve","Cần động từ sau to"),
+F("You should be careful when using ______ which contain chemicals. (PRODUCE)","products","Danh từ số nhiều"),
+F("The island has a beautiful beach, but sadly, it is quite ______. (ACCESS)","inaccessible","in- + accessible"),
+F("Her ______ to the team was important. (CONTRIBUTE)","contribution","Sau sở hữu cách → danh từ"),
+F("Many people are ______ because of the economic crisis. (EMPLOY)","unemployed","un- + employed"),
+F("She gave us a very ______ answer. (HELP)","helpful","Tính từ trước danh từ"),
+F("The ______ of the film was very exciting. (END)","ending","Danh từ sau the"),
+F("Reading helps students gain more ______. (KNOW)","knowledge","Danh từ sau more"),
+F("It was ______ of him to forget my birthday. (KIND)","unkind","Ngữ cảnh phê phán → un- + kind"),
+F("Children should be ______ about their safety. (CARE)","careful","Tính từ sau be")]);
 /* ===== ĐỘNG CƠ ===== */
 const $=s=>document.querySelector(s);let T=0,CUR=null,TM=null,P={done:{}};
 try{P=JSON.parse(localStorage.getItem("on10_2627"))||P}catch(e){}
