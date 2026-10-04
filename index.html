@@ -74,10 +74,12 @@ input.f:disabled{opacity:1}
 @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media(max-width:480px){.g{padding:16px}.q{padding:16px}.grid{grid-template-columns:repeat(auto-fill,minmax(4.6rem,1fr))}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#fixed-pb { position: fixed; top: 0; left: 0; height: 4px; background: var(--accent); z-index: 9999; transition: width 0.4s cubic-bezier(.4,0,.2,1); width: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
 </style>
 
 </head>
 <body>
+<div id="fixed-pb"></div>
 <header>
   <h1>🎓 ÔN THI LỚP 10 THPT 2026-2027</h1>
   <div class="copyright">Bản quyền thuộc về Thầy Phạm Tiến - ĐT: 0943.930.787</div>
@@ -976,11 +978,11 @@ They gave priority ______ the elderly.|to|for|at|in|0
 My father is not used ______ spicy food.|to eating|eat|to eat|eating|0
 It was ______ a hard test that nobody passed.|so|such|too|very|1
 We have run ______ of sugar. Can you buy some?|out|off|up|from|0
-He often played chess when he was little. (USED) → He ______ chess when he was little.|used to play
-It was such a cold day that we stayed in. (SO) → The day ______ we stayed in.|was so cold that
-We have no more bread. (RUN) → We have ______ bread.|run out of
-Which sentence is correct?|I used to going there.|I used to go there.|I use to go there.|I am used go there.|1
-He ran so fast ______ nobody could catch him.|that|than|which|as|0`));
+We used to ______ in the river.|swim|swimming|swam|swum|0
+I'm not used ______ in public.|to speak|to speaking|speaking|speak|1
+My mother used to ______ me stories every night.|tell|telling|told|tells|0
+The test was so difficult ______ I failed.|that|than|as|which|0
+Parents give priority ______ their children's education.|to|for|on|at|0`));
 ADD(0,0,4,QS(`She (usually/walk) ____ to school.|usually walks
 We (have) ____ lunch when it began to rain.|were having
 He (work) ____ here since he graduated.|has worked;'s worked
@@ -1576,7 +1578,10 @@ function home(){
     if(!d)open=false;
   });
   
-  $("#pb").style.width=(L.length?dn/L.length*100:0)+"%";
+  const pct = (L.length?dn/L.length*100:0)+"%";
+  $("#pb").style.width=pct;
+  if($("#fixed-pb")) $("#fixed-pb").style.width=pct;
+  
   const nx=L.find(x=>st[x.k]=="open"),pc=L.length?Math.round(dn/L.length*100):0,
   hero=`<section class="hero"><div class="hs"><b>${dn}</b><small>Đã xong</small></div><div class="hs"><b>${L.length-dn}</b><small>Còn lại</small></div><div class="hs"><b>${pc}%</b><small>Tiến độ</small></div>`+(nx?`<button class="btn" onclick="go('${nx.k}')">▶ Học tiếp: ${nx.g.t.split("–")[0].trim()} · ${nx.g.exam?"Đề":"Bài"} ${nx.ei+1}</button>`:`<div class="all">🏆 Bạn đã hoàn thành thẻ này!</div>`)+`</section>`;
   
@@ -1588,13 +1593,33 @@ function home(){
 }
 
 function go(k){
-  CUR=flat(T).find(x=>x.k==k);
+  const target = flat(T).find(x=>x.k==k);
+  
+  // Ràng buộc: Nếu không phải Bài 1 (target.ei > 0) thì yêu cầu nhập mật khẩu
+  if (target.ei > 0) {
+    if (!localStorage.getItem("vip_unlocked_pt")) {
+      let pass = prompt("LH Thầy Phạm Tiến - ĐT: 0943.930.787 để làm tiếp!\n\nNhập mật khẩu để mở khoá:");
+      
+      // Đặt mật khẩu ở đây (Ví dụ mặc định là số điện thoại)
+      if (pass === "0943930787") { 
+        localStorage.setItem("vip_unlocked_pt", "true");
+        alert("Mở khoá thành công! Chúc bạn học tốt.");
+      } else {
+        if (pass !== null) alert("Mật khẩu không chính xác!");
+        return; // Dừng lại, không mở bài học
+      }
+    }
+  }
+  
+  CUR = target;
   draw();
 }
 
 function play(){
   const x=CUR,Q=x.q;
   $("#pb").style.width="0";
+  if($("#fixed-pb")) $("#fixed-pb").style.width="0";
+  
   $("#app").innerHTML=`<div class="top"><button class="btn s" onclick="CUR=null;clearInterval(TM);draw()">← Quay lại</button><b>${x.g.t.split("–")[0]} · ${x.g.exam?"Đề":"Bài"} ${x.ei+1}</b><span id="tm"></span></div><div id="res"></div>`+
   Q.map((q,i)=>`<div class="q" id="q${i}">${q.p?`<div class="p">${q.p}</div>`:""}<span class="n">Câu ${i+1}.</span>${q.q}`+
     (q.o?q.o.map((o,j)=>`<button class="o" onclick="pick(${i},${j})"><i>${"ABCD"[j]}</i><span>${o}</span></button>`).join(""):`<input class="f" id="f${i}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Nhập đáp án..." oninput="cnt()">`)+`<div class="e" id="e${i}"></div></div>`).join("")+
@@ -1622,7 +1647,10 @@ function pick(i,j){
 
 function cnt(){
   const n=CUR.q.filter((q,i)=>q.o?CUR.A[i]!=null:norm($("#f"+i)&&$("#f"+i).value)).length;
-  $("#ct").textContent=n+"/"+CUR.q.length+" câu";$("#pb").style.width=n/CUR.q.length*100+"%";
+  $("#ct").textContent=n+"/"+CUR.q.length+" câu";
+  const pct = n/CUR.q.length*100+"%";
+  $("#pb").style.width=pct;
+  if($("#fixed-pb")) $("#fixed-pb").style.width=pct;
 }
 
 function submit(){
