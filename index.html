@@ -1,461 +1,124 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÔN THI LỚP 10 THPT 2026-2027</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0fdfa; /* Light cyan/blue background */
-        }
-        
-        .glass-header {
-            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-        }
-
-        /* Custom scrollbar for modal */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
-        }
-
-        .card-hover:not(.locked) {
-            transition: all 0.3s ease;
-        }
-        .card-hover:not(.locked):hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
-            border-color: #3b82f6;
-        }
-        
-        .locked {
-            opacity: 0.65;
-            cursor: not-allowed;
-            background-color: #f8fafc;
-        }
-
-        .modal-enter {
-            animation: modalFadeIn 0.3s ease-out forwards;
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: scale(0.95) translateY(-10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        /* Touch friendly radio buttons */
-        .option-label input[type="radio"] {
-            width: 1.25rem;
-            height: 1.25rem;
-            accent-color: #2563eb;
-        }
-    </style>
-</head>
-<body class="text-slate-800 antialiased min-h-screen flex flex-col">
-
-    <header class="glass-header text-white shadow-lg pb-6 pt-8 px-4 text-center rounded-b-3xl mb-8">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-2xl md:text-4xl font-bold mb-2 tracking-tight">ÔN THI LỚP 10 THPT 2026-2027</h1>
-            <p class="text-blue-100 text-sm md:text-base font-medium">Bám sát cấu trúc đề thi Sở GD&ĐT Thanh Hóa</p>
-        </div>
-    </header>
-
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <!-- Tabs -->
-        <div class="bg-white p-2 rounded-2xl shadow-sm flex flex-col sm:flex-row gap-2 mb-8 border border-slate-100">
-            <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn flex-1 py-3 px-4 rounded-xl font-semibold text-sm transition-all text-blue-700 bg-blue-50 shadow-sm border border-blue-100">
-                <i class="fas fa-book-open mr-2"></i>Thẻ 1: Ngữ Pháp
-            </button>
-            <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn flex-1 py-3 px-4 rounded-xl font-semibold text-sm transition-all text-slate-500 hover:bg-slate-50 border border-transparent">
-                <i class="fas fa-tasks mr-2"></i>Thẻ 2: Các Dạng Bài
-            </button>
-            <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn flex-1 py-3 px-4 rounded-xl font-semibold text-sm transition-all text-slate-500 hover:bg-slate-50 border border-transparent">
-                <i class="fas fa-file-alt mr-2"></i>Thẻ 3: Đề Thi Mẫu
-            </button>
-        </div>
-
-        <!-- Exercise Grid -->
-        <div id="grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Cards will be injected here by JS -->
-        </div>
-    </main>
-
-    <!-- Quiz Modal -->
-    <div id="quiz-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-3xl max-h-[90vh] rounded-2xl shadow-2xl flex flex-col modal-enter relative">
-            
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-5 border-b border-slate-100">
-                <h2 id="modal-title" class="text-xl font-bold text-blue-700">Quiz Title</h2>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-red-500 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Modal Body (Questions) -->
-            <div id="modal-content" class="p-6 overflow-y-auto flex-grow space-y-8 bg-slate-50">
-                <!-- Questions injected here -->
-            </div>
-
-            <!-- Modal Footer (Submit & Feedback) -->
-            <div class="p-5 border-t border-slate-100 bg-white rounded-b-2xl">
-                <div id="quiz-feedback" class="hidden mb-4 p-4 rounded-xl font-medium text-center text-sm"></div>
-                <button id="submit-btn" onclick="submitQuiz()" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-lg shadow-md shadow-blue-500/30 transition-all active:scale-[0.98]">
-                    Nộp Bài & Kiểm Tra
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // ================= DATA STRUCTURE =================
-        const appData = {
-            tab1: [
-                {
-                    title: "Chủ điểm 1: Thì của Động từ",
-                    desc: "Luyện tập các thì cơ bản trong tiếng Anh.",
-                    questions: [
-                        { q: "My father (jog) __________ in the park every morning.", options: ["jogs", "jogging", "jogged", "is jogging"], ans: 0 },
-                        { q: "The students enjoy (play) _____________ soccer after school.", options: ["play", "to play", "playing", "played"], ans: 2 },
-                        { q: "They (cook) __________ dinner when the light went out.", options: ["cooked", "were cooking", "are cooking", "cook"], ans: 1 }
-                    ]
-                },
-                {
-                    title: "Chủ điểm 2: Cấu tạo từ (Word Form)",
-                    desc: "Biến đổi từ loại danh, động, tính, trạng.",
-                    questions: [
-                        { q: "Doing exercises regularly maintains your mental and ________ health. (PHYSICS)", options: ["physics", "physical", "physically", "physicist"], ans: 1 }
-                    ]
-                },
-                {
-                    title: "Chủ điểm 3: Giới từ & Mạo từ",
-                    desc: "Cách sử dụng In, On, At, A, An, The...",
-                    questions: [
-                        { q: "She gave me ________ orange yesterday.", options: ["a", "an", "the", "Ø"], ans: 1 },
-                        { q: "She has a meeting ________ Monday, but I’m not sure.", options: ["at", "in", "on", "to"], ans: 2 }
-                    ]
-                },
-                {
-                    title: "Chủ điểm 4: Mệnh đề quan hệ & Liên từ",
-                    desc: "Who, whom, which, that, because, although...",
-                    questions: [
-                        { q: "The new film is about a poor little girl ________ can speak several languages.", options: ["who", "whose", "whom", "which"], ans: 0 }
-                    ]
-                },
-                {
-                    title: "Chủ điểm 5: So sánh & Cấu trúc khác",
-                    desc: "So sánh hơn, nhất, bằng và các cấu trúc đặc biệt.",
-                    questions: [
-                        { q: "Mai drives ________ than her brother.", options: ["more carefully", "as careful", "carefully", "more careful"], ans: 0 }
-                    ]
-                }
-            ],
-            tab2: [
-                {
-                    title: "Dạng 1: Phát âm",
-                    desc: "Nhận biết âm tiết khác biệt.",
-                    questions: [
-                        { q: "Choose the word whose underlined part is pronounced differently: needed, looked, helped, watched", options: ["needed", "looked", "helped", "watched"], ans: 0 },
-                        { q: "Choose the word whose underlined part is pronounced differently: please, clear, tea, clean", options: ["please", "clear", "tea", "clean"], ans: 1 }
-                    ]
-                },
-                {
-                    title: "Dạng 2: Trọng âm",
-                    desc: "Xác định âm tiết mang trọng âm chính.",
-                    questions: [
-                        { q: "Choose the word whose stress pattern is different: remind, worker, collect, relax", options: ["remind", "worker", "collect", "relax"], ans: 1 }
-                    ]
-                },
-                // Placeholders for remaining types requested to reach 10 types
-                { title: "Dạng 3: Trắc nghiệm Từ vựng", desc: "Chọn từ phù hợp với ngữ cảnh.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 4: Tìm lỗi sai", desc: "Nhận diện lỗi ngữ pháp trong câu.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 5: Giao tiếp", desc: "Phản hồi tình huống giao tiếp.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 6: Cụm động từ", desc: "Phrasal verbs thông dụng.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 7: Đọc điền từ", desc: "Điền từ vào đoạn văn.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 8: Đọc hiểu", desc: "Trả lời câu hỏi theo đoạn văn.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 9: Viết lại câu", desc: "Viết lại câu giữ nguyên nghĩa.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Dạng 10: Nối câu", desc: "Kết hợp 2 câu đơn thành câu phức.", questions: [{ q: "Sample question?", options: ["A", "B", "C", "D"], ans: 0 }] }
-            ],
-            tab3: [
-                {
-                    title: "Đề thi thử Số 1",
-                    desc: "Đề mô phỏng chuẩn Sở Thanh Hóa.",
-                    questions: [
-                        { q: "Mai drives ________ than her brother.", options: ["more carefully", "as careful", "carefully", "more careful"], ans: 0 },
-                        { q: "We missed the bus this morning ______ we got up late.", options: ["despite", "although", "because", "because of"], ans: 2 },
-                        { q: "My uncle ______ his living by selling bread on the streets.", options: ["does", "has", "takes", "earns"], ans: 3 },
-                        { q: "The government is ______ a plan to solve the traffic problem in big cities.", options: ["carrying out", "looking up", "looking after", "turning off"], ans: 0 },
-                        { q: "The new film is about a poor little girl ________ can speak several languages.", options: ["who", "whose", "whom", "which"], ans: 0 }
-                    ]
-                },
-                // Placeholders for remaining tests up to 10
-                { title: "Đề thi thử Số 2", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 3", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 4", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 5", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 6", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 7", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 8", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 9", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] },
-                { title: "Đề thi thử Số 10", desc: "Đề mô phỏng chuẩn cấu trúc.", questions: [{ q: "Sample Question 1", options: ["A", "B", "C", "D"], ans: 0 }] }
-            ]
-        };
-
-        // ================= STATE MANAGEMENT =================
-        let currentTab = 'tab1';
-        let activeQuizIndex = null;
-        let isQuizSubmitted = false;
-
-        // Load progress from LocalStorage
-        let progress = JSON.parse(localStorage.getItem('thanhhoa_exam_progress_2026')) || {
-            tab1: 0, 
-            tab2: 0
-        };
-
-        function saveProgress() {
-            localStorage.setItem('thanhhoa_exam_progress_2026', JSON.stringify(progress));
-        }
-
-        // ================= UI RENDERING =================
-        function switchTab(tab) {
-            currentTab = tab;
-            
-            // Update Tab UI
-            const tabs = ['tab1', 'tab2', 'tab3'];
-            tabs.forEach(t => {
-                const btn = document.getElementById(`btn-${t}`);
-                if (t === tab) {
-                    btn.classList.add('text-blue-700', 'bg-blue-50', 'shadow-sm', 'border-blue-100');
-                    btn.classList.remove('text-slate-500', 'hover:bg-slate-50', 'border-transparent');
-                } else {
-                    btn.classList.remove('text-blue-700', 'bg-blue-50', 'shadow-sm', 'border-blue-100');
-                    btn.classList.add('text-slate-500', 'hover:bg-slate-50', 'border-transparent');
-                }
-            });
-
-            renderGrid();
-        }
-
-        function renderGrid() {
-            const container = document.getElementById('grid-container');
-            container.innerHTML = '';
-
-            const dataList = appData[currentTab];
-            
-            dataList.forEach((item, index) => {
-                // Tab 3 is freely accessible. Tab 1 & 2 use sequential unlocking.
-                const isLocked = (currentTab !== 'tab3') && (index > progress[currentTab]);
-                const isCompleted = (currentTab !== 'tab3') && (index < progress[currentTab]);
-                
-                const card = document.createElement('div');
-                card.className = `card-hover border-2 border-transparent bg-white rounded-2xl p-6 shadow-sm flex flex-col justify-between h-full ${isLocked ? 'locked' : 'cursor-pointer border-slate-100'}`;
-                
-                // Icon Logic
-                let iconHtml = '';
-                if (isLocked) {
-                    iconHtml = `<div class="w-10 h-10 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center mb-4"><i class="fas fa-lock"></i></div>`;
-                } else if (isCompleted) {
-                    iconHtml = `<div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-4"><i class="fas fa-check-circle"></i></div>`;
-                } else {
-                    iconHtml = `<div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-4"><i class="fas fa-play"></i></div>`;
-                }
-
-                card.innerHTML = `
-                    <div>
-                        ${iconHtml}
-                        <h3 class="text-lg font-bold text-slate-800 mb-2 leading-tight">${item.title}</h3>
-                        <p class="text-sm text-slate-500 mb-4">${item.desc}</p>
-                    </div>
-                    <div class="mt-auto">
-                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full">
-                            ${item.questions.length} câu hỏi
-                        </span>
-                        ${isLocked ? `<p class="text-xs text-red-500 mt-3 font-medium"><i class="fas fa-exclamation-circle mr-1"></i>Hoàn thành bài trước để mở</p>` : ''}
-                    </div>
-                `;
-
-                if (!isLocked) {
-                    card.onclick = () => openModal(index);
-                }
-                
-                container.appendChild(card);
-            });
-        }
-
-        // ================= QUIZ MODAL LOGIC =================
-        function openModal(index) {
-            activeQuizIndex = index;
-            isQuizSubmitted = false;
-            const item = appData[currentTab][index];
-            
-            document.getElementById('modal-title').innerText = item.title;
-            const content = document.getElementById('modal-content');
-            content.innerHTML = '';
-            
-            // Build Questions
-            item.questions.forEach((qObj, qIndex) => {
-                let optionsHtml = qObj.options.map((opt, optIndex) => `
-                    <label class="option-label flex items-start p-4 bg-white border border-slate-200 rounded-xl mb-3 cursor-pointer hover:bg-blue-50/50 hover:border-blue-300 transition-all">
-                        <input type="radio" name="q${qIndex}" value="${optIndex}" class="mt-0.5 mr-3 shrink-0 cursor-pointer">
-                        <span class="text-slate-700 font-medium leading-tight pt-0.5">${opt}</span>
-                    </label>
-                `).join('');
-
-                content.innerHTML += `
-                    <div class="question-block bg-white p-5 rounded-2xl shadow-sm border border-slate-100" id="qb-${qIndex}">
-                        <h4 class="font-bold text-slate-800 text-lg mb-4 flex items-start gap-2">
-                            <span class="bg-blue-100 text-blue-700 w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-sm">${qIndex + 1}</span>
-                            <span>${qObj.q}</span>
-                        </h4>
-                        <div class="options-container">
-                            ${optionsHtml}
-                        </div>
-                    </div>
-                `;
-            });
-
-            // Reset UI states
-            const feedback = document.getElementById('quiz-feedback');
-            feedback.className = 'hidden mb-4 p-4 rounded-xl font-medium text-center text-sm';
-            feedback.innerHTML = '';
-            
-            const submitBtn = document.getElementById('submit-btn');
-            submitBtn.innerText = 'Nộp Bài & Kiểm Tra';
-            submitBtn.onclick = submitQuiz;
-
-            // Show Modal
-            document.getElementById('quiz-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-
-        function closeModal() {
-            document.getElementById('quiz-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            activeQuizIndex = null;
-        }
-
-        function submitQuiz() {
-            if (isQuizSubmitted) {
-                closeModal();
-                return;
-            }
-
-            const item = appData[currentTab][activeQuizIndex];
-            const total = item.questions.length;
-            let score = 0;
-            let unanswered = false;
-
-            // Validate and Score
-            item.questions.forEach((qObj, qIndex) => {
-                const selected = document.querySelector(`input[name="q${qIndex}"]:checked`);
-                const qb = document.getElementById(`qb-${qIndex}`);
-                const labels = qb.querySelectorAll('.option-label');
-                
-                // Disable all inputs after submit
-                qb.querySelectorAll('input').forEach(input => input.disabled = true);
-
-                if (!selected) {
-                    unanswered = true;
-                    return; // Skip scoring logic for this question, but mark as unanswered
-                }
-
-                const selectedVal = parseInt(selected.value);
-                
-                // Styling feedback for correct/incorrect
-                labels.forEach((label, idx) => {
-                    label.classList.remove('hover:bg-blue-50/50', 'hover:border-blue-300', 'cursor-pointer');
-                    
-                    if (idx === qObj.ans) {
-                        // Highlight correct answer in Green
-                        label.classList.add('bg-green-50', 'border-green-400', 'ring-1', 'ring-green-400');
-                        label.innerHTML += `<i class="fas fa-check-circle text-green-500 ml-auto mt-1"></i>`;
-                    } else if (idx === selectedVal && selectedVal !== qObj.ans) {
-                        // Highlight wrong selection in Red
-                        label.classList.add('bg-red-50', 'border-red-400', 'ring-1', 'ring-red-400');
-                        label.innerHTML += `<i class="fas fa-times-circle text-red-500 ml-auto mt-1"></i>`;
-                    } else {
-                        label.classList.add('opacity-50'); // Dim others
-                    }
-                });
-
-                if (selectedVal === qObj.ans) score++;
-            });
-
-            const feedback = document.getElementById('quiz-feedback');
-            feedback.classList.remove('hidden');
-
-            if (unanswered) {
-                // Re-enable inputs if not fully answered so user can complete
-                item.questions.forEach((qObj, qIndex) => {
-                    const qb = document.getElementById(`qb-${qIndex}`);
-                    qb.querySelectorAll('input').forEach(input => input.disabled = false);
-                });
-                
-                feedback.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i>Vui lòng trả lời tất cả các câu hỏi!`;
-                feedback.className = 'mb-4 p-4 rounded-xl font-medium text-center text-sm bg-yellow-50 text-yellow-700 border border-yellow-200';
-                return;
-            }
-
-            // Evaluation logic
-            isQuizSubmitted = true;
-            const submitBtn = document.getElementById('submit-btn');
-            submitBtn.innerText = 'Đóng / Quay lại danh sách';
-
-            if (score === total) {
-                // 100% Score
-                let successMsg = `🎉 Xuất sắc! Bạn đúng ${score}/${total} câu.`;
-                
-                // Unlock logic for Tab 1 & Tab 2
-                if (currentTab !== 'tab3' && activeQuizIndex === progress[currentTab]) {
-                    // Check if it's not the last exercise
-                    if (progress[currentTab] < appData[currentTab].length - 1) {
-                        progress[currentTab]++;
-                        saveProgress();
-                        successMsg += `<br><span class="text-green-700 font-bold mt-2 inline-block">🔓 Đã mở khóa bài tập tiếp theo!</span>`;
-                        renderGrid(); // Refresh grid in background to show unlock
-                    } else {
-                        successMsg += `<br><span class="text-green-700 font-bold mt-2 inline-block">🏆 Bạn đã hoàn thành toàn bộ chủ điểm phần này!</span>`;
-                    }
-                }
-
-                feedback.innerHTML = successMsg;
-                feedback.className = 'mb-4 p-4 rounded-xl font-medium text-center bg-green-100 text-green-800 border border-green-300';
-            } else {
-                // Less than 100%
-                let msg = `❌ Bạn đúng ${score}/${total} câu.`;
-                if (currentTab !== 'tab3') {
-                    msg += `<br>Hãy làm lại và đạt 100% để mở khóa bài tiếp theo nhé!`;
-                }
-                feedback.innerHTML = msg;
-                feedback.className = 'mb-4 p-4 rounded-xl font-medium text-center bg-red-50 text-red-700 border border-red-200';
-                
-                // Allow user to try again immediately by resetting the button
-                submitBtn.innerText = 'Làm lại bài này';
-                submitBtn.onclick = () => {
-                    openModal(activeQuizIndex); // Re-open same index to reset
-                };
-            }
-        }
-
-        // Initialize the app on page load
-        window.onload = () => {
-            renderGrid();
-        };
-    </script>
-</body>
-</html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ôn thi lớp 10 THPT 2026-2027</title>
+<style>
+:root{--p:#4f46e5;--p2:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f4f5fb;--c:#fff;--t:#1e1b4b;--m:#6b7280;--l:#e5e7eb}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--t);padding-bottom:env(safe-area-inset-bottom)}
+header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:calc(14px + env(safe-area-inset-top)) 16px 0;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #0003}
+header h1{margin:0;font-size:1.05rem;letter-spacing:.3px}
+.bar{height:6px;background:#fff3;border-radius:9px;margin:8px 0 10px;overflow:hidden}.bar i{display:block;height:100%;background:#fde047;transition:width .3s}
+nav{display:flex;gap:6px}nav button{flex:1;border:0;background:#fff2;color:#fff;padding:11px 6px;font:600 .95rem inherit;border-radius:12px 12px 0 0;cursor:pointer}
+nav button.on{background:var(--bg);color:var(--p)}
+main{max-width:860px;margin:0 auto;padding:14px 14px 90px}
+.g{background:var(--c);border-radius:16px;padding:14px;margin-bottom:14px;box-shadow:0 1px 6px #0001}
+.g h2{margin:0 0 10px;font-size:1.02rem}.g small{color:var(--m);font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.ex{border:2px solid var(--l);background:#fff;border-radius:12px;min-height:56px;font:600 .9rem inherit;color:var(--t);cursor:pointer;padding:6px}
+.ex.open{border-color:var(--p);background:#eef2ff}.ex.done{border-color:var(--ok);background:#f0fdf4;color:var(--ok)}
+.ex.lock,.ex.soon{opacity:.5;cursor:not-allowed;background:#f3f4f6}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.btn{border:0;background:var(--p);color:#fff;font:700 1rem inherit;padding:13px 20px;border-radius:12px;cursor:pointer;min-height:48px}
+.btn.s{background:#fff;color:var(--p);border:2px solid var(--p)}
+.q{background:var(--c);border-radius:14px;padding:14px;margin-bottom:12px;border:2px solid transparent;box-shadow:0 1px 6px #0001}
+.q.ok{border-color:var(--ok)}.q.no{border-color:var(--no)}
+.p{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 12px;border-radius:8px;margin-bottom:10px;white-space:pre-line;font-size:.95rem}
+.n{font-weight:700;color:var(--p);margin-right:6px}
+.o{display:block;width:100%;text-align:left;border:2px solid var(--l);background:#fff;border-radius:10px;padding:12px;margin-top:8px;font:inherit;color:inherit;min-height:48px;cursor:pointer}
+.o.sel{border-color:var(--p);background:#eef2ff}.o.right{border-color:var(--ok);background:#f0fdf4}.o.wrong{border-color:var(--no);background:#fef2f2}
+input.f{width:100%;margin-top:8px;border:2px solid var(--l);border-radius:10px;padding:12px;font:inherit;min-height:48px}
+input.f:focus{outline:0;border-color:var(--p)}
+.e{margin-top:8px;font-size:.92rem;color:var(--m)}.e b{color:var(--no)}
+.fix{position:fixed;left:0;right:0;bottom:0;background:#fffe;backdrop-filter:blur(8px);padding:10px 14px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -2px 12px #0002;display:flex;gap:10px;align-items:center;z-index:6}
+.fix .btn{flex:1;max-width:420px;margin:0 auto}
+.res{text-align:center;padding:18px;border-radius:16px;margin-bottom:14px;color:#fff;font-weight:700}
+.res.ok{background:var(--ok)}.res.no{background:var(--no)}
+#tm{font-weight:700;color:var(--no)}
+</style></head><body>
+<header><h1>🎓 ÔN THI LỚP 10 THPT 2026-2027</h1><div class="bar"><i id="pb"></i></div>
+<nav id="nav"></nav></header><main id="app"></main>
+<script>
+/* ===== DỮ LIỆU ===== M(câu,[A,B,C,D],đáp án đúng 0-3,giải thích) | F(câu,đáp án hoặc [nhiều đáp án],giải thích)
+   Mỗi bài = mảng câu hỏi (20 câu). Bài rỗng [] = "Sắp có". Thêm {p:"đoạn văn"} vào câu đầu của đoạn để hiện bài đọc. */
+const M=(q,o,a,e,p)=>({q,o,a,e,p}),F=(q,a,e,p)=>({q,a:[].concat(a),e,p}),E=n=>Array.from({length:n},()=>[]);
+const DATA=[
+{name:"📘 Ngữ pháp",groups:[
+{t:"Thì & dạng của động từ",ex:[[
+F("My father (jog) ______ in the park every morning.","jogs","Hiện tại đơn, chủ ngữ số ít → jogs"),
+F("They (cook) ______ dinner when the light went out.","were cooking","Hành động đang diễn ra thì bị cắt ngang → quá khứ tiếp diễn"),
+F("The students enjoy (play) ______ soccer after school.","playing","enjoy + V-ing"),
+F("My teacher suggested that we (collect) ______ waste paper.",["collect","should collect"],"suggest that + S + (should) + V nguyên mẫu"),
+F("I (have) ______ a calculator, I would lend it to you now.","had","Câu điều kiện loại 2 → if + V quá khứ")
+],...E(4)]},
+{t:"Câu điều kiện & Wish",ex:E(5)},{t:"Mệnh đề quan hệ",ex:[[
+M("The new film is about a poor little girl ______ can speak several languages.",["who","whose","whom","which"],0,"Thay cho người, làm chủ ngữ → who"),
+M("I know a restaurant ______ serves excellent sushi.",["who","which","whom","whose"],1,"Thay cho vật, làm chủ ngữ → which")
+],...E(4)]},
+{t:"So sánh",ex:[[
+M("Mai drives ______ than her brother.",["more carefully","as careful","carefully","more careful"],0,"Trạng từ dài so sánh hơn: more + adv + than")
+],...E(4)]},
+{t:"Mạo từ & Giới từ",ex:[[
+M("She gave me ______ orange yesterday.",["a","an","the","Ø"],1,"orange bắt đầu bằng nguyên âm, nhắc lần đầu → an"),
+M("She has a meeting ______ Monday, but I’m not sure.",["at","in","on","to"],2,"on + thứ trong tuần")
+],...E(4)]},
+{t:"Liên từ (because / although / despite)",ex:[[
+M("We missed the bus this morning ______ we got up late.",["despite","although","because","because of"],2,"Sau chỗ trống là một mệnh đề chỉ nguyên nhân → because")
+],...E(4)]},
+{t:"Câu tường thuật",ex:E(5)},{t:"used to, such…that, run out of, give priority to…",ex:E(5)}]},
+{name:"🧩 Dạng bài",groups:[
+{t:"Dạng 1 – Ngữ âm, Từ vựng & Ngữ pháp (Part A + B)",ex:[[
+M("Chọn từ có phần gạch chân phát âm khác: (-ed)",["needed","looked","helped","watched"],0,"needed đọc /ɪd/, còn lại /t/"),
+M("Chọn từ có phần gạch chân phát âm khác: (th)",["think","thin","thank","though"],3,"though /ð/, còn lại /θ/"),
+M("Chọn từ có trọng âm khác:",["remind","worker","collect","relax"],1,"worker nhấn âm 1, còn lại nhấn âm 2"),
+F("Doing exercises regularly maintains your mental and ______ health. (PHYSICS)","physical","Cần tính từ bổ nghĩa cho health → physical"),
+F("She speaks English ______ after living in Britain for several years. (FLUENT)","fluently","Cần trạng từ bổ nghĩa cho speaks → fluently")
+],...E(9)]},
+{t:"Dạng 2 – Đọc hiểu & Viết lại câu (Part C + D)",ex:[[
+F("My sister doesn’t have a laptop to study online. → My sister wishes she ______.",["had a laptop to study online","had a laptop"],"Wish hiện tại → V quá khứ"),
+F("If you don’t hurry up, you will miss the bus. → Unless ______.","you hurry up, you will miss the bus","Unless = If … not"),
+F("My sister often collected dolls when she was young. (USED) → My sister ______.","used to collect dolls when she was young","used to + V nguyên mẫu")
+],...E(9)]},
+{t:"Dạng 3 – Đề thi (60 phút, 50 câu)",exam:1,ex:[[
+M("She has a meeting ______ Monday, but I’m not sure.",["at","in","on","to"],2,"on + thứ"),
+M("My grandmother doesn’t know ______ to use the washing machine.",["whom","what","how","which"],2,"know how to + V"),
+M("What is the main idea of the passage?",["The importance of cell phones in communication and education.","Cell phones will be used as cameras.","How to use some electronic devices.","Cell phones can be an excellent recorder."],0,"Bài viết nói về vai trò của điện thoại trong giao tiếp và giáo dục",
+"Cell phones are an important part of our society and their main use is communication. They keep students in touch with the rest of the world... Now, students have the ability to solve their own problems.")
+],...E(9)]}]}
+];
+/* ===== ĐỘNG CƠ ===== */
+const $=s=>document.querySelector(s);let T=0,CUR=null,TM=null,P={done:{}};
+try{P=JSON.parse(localStorage.getItem("on10_2627"))||P}catch(e){}
+const save=()=>{try{localStorage.setItem("on10_2627",JSON.stringify(P))}catch(e){}};
+const flat=t=>{const r=[];DATA[t].groups.forEach((g,gi)=>g.ex.forEach((q,ei)=>q.length&&r.push({k:t+"."+gi+"."+ei,gi,ei,q,g})));return r};
+const norm=s=>(s||"").toLowerCase().replace(/[’‘]/g,"'").replace(/[.\s]+$/,"").replace(/\s+/g," ").trim();
+function nav(){$("#nav").innerHTML=DATA.map((d,i)=>`<button class="${i==T&&!CUR?"on":""}" onclick="CUR=null;clearInterval(TM);T=${i};draw()">${d.name}</button>`).join("")}
+function draw(){nav();CUR?play():home();scrollTo(0,0)}
+function home(){const L=flat(T),st={};let open=true,dn=0;
+ L.forEach(x=>{const d=P.done[x.k];dn+=d?1:0;st[x.k]=d?"done":open?"open":"lock";if(!d)open=false});
+ $("#pb").style.width=(L.length?dn/L.length*100:0)+"%";
+ $("#app").innerHTML=DATA[T].groups.map((g,gi)=>`<section class="g"><h2>${g.t} <small>(${g.ex.filter((_,ei)=>P.done[T+"."+gi+"."+ei]).length}/${g.ex.length} bài)</small></h2><div class="grid">`+
+  g.ex.map((q,ei)=>{const k=T+"."+gi+"."+ei,s=q.length?st[k]:"soon",ic={done:"✅",open:"▶️",lock:"🔒",soon:"⏳"}[s];
+  return `<button class="ex ${s}" ${s=="open"||s=="done"?`onclick="go('${k}')"`:"disabled"}>${ic}<br>${g.exam?"Đề":"Bài"} ${ei+1}</button>`}).join("")+`</div></section>`).join("")}
+function go(k){CUR=flat(T).find(x=>x.k==k);draw()}
+function play(){const x=CUR,Q=x.q;$("#pb").style.width="0";
+ $("#app").innerHTML=`<div class="top"><button class="btn s" onclick="CUR=null;clearInterval(TM);draw()">← Quay lại</button><b>${x.g.t.split("–")[0]} · ${x.g.exam?"Đề":"Bài"} ${x.ei+1}</b><span id="tm"></span></div><div id="res"></div>`+
+ Q.map((q,i)=>`<div class="q" id="q${i}">${q.p?`<div class="p">${q.p}</div>`:""}<span class="n">Câu ${i+1}.</span>${q.q}`+
+  (q.o?q.o.map((o,j)=>`<button class="o" onclick="pick(${i},${j})">${"ABCD"[j]}. ${o}</button>`).join(""):`<input class="f" id="f${i}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Nhập đáp án..." oninput="cnt()">`)+`<div class="e" id="e${i}"></div></div>`).join("")+
+ `<div class="fix"><span id="ct"></span><button class="btn" id="sub" onclick="submit()">Nộp bài</button></div>`;
+ CUR.A=[];cnt();clearInterval(TM);
+ if(x.g.exam){let s=3600;const t=()=>{$("#tm").textContent="⏱ "+Math.floor(s/60)+":"+String(s%60).padStart(2,"0");if(s--<=0){clearInterval(TM);submit()}};t();TM=setInterval(t,1000)}}
+function pick(i,j){CUR.A[i]=j;document.querySelectorAll("#q"+i+" .o").forEach((b,k)=>b.classList.toggle("sel",k==j));cnt()}
+function cnt(){const n=CUR.q.filter((q,i)=>q.o?CUR.A[i]!=null:norm($("#f"+i)&&$("#f"+i).value)).length;$("#ct").textContent=n+"/"+CUR.q.length+" câu"}
+function submit(){clearInterval(TM);let ok=0;
+ CUR.q.forEach((q,i)=>{const el=$("#q"+i);let r;
+  if(q.o){r=CUR.A[i]===q.a;el.querySelectorAll(".o").forEach((b,k)=>{b.disabled=true;if(k==q.a)b.classList.add("right");else if(k==CUR.A[i])b.classList.add("wrong")})}
+  else{const f=$("#f"+i);f.disabled=true;r=q.a.map(norm).includes(norm(f.value))}
+  ok+=r;el.classList.add(r?"ok":"no");$("#e"+i).innerHTML=(r?"✅ ":"❌ ")+(q.o?"":"<b>Đáp án: "+q.a[0]+"</b><br>")+(q.e||"")});
+ const all=ok==CUR.q.length,L=flat(T),ix=L.findIndex(x=>x.k==CUR.k),nx=L[ix+1];
+ if(all){P.done[CUR.k]=1;save()}
+ $("#res").innerHTML=`<div class="res ${all?"ok":"no"}">${all?"🎉 Chính xác 100%! Bạn đã mở khoá bài tiếp theo.":`Đúng ${ok}/${CUR.q.length} câu. Cần đúng hết để qua bài – xem giải thích rồi làm lại nhé!`}</div>`;
+ $("#sub").outerHTML=all?(nx?`<button class="btn" onclick="go('${nx.k}')">Bài tiếp theo →</button>`:`<button class="btn" onclick="CUR=null;draw()">Hoàn thành thẻ 🏆</button>`):`<button class="btn" onclick="go('${CUR.k}')">Làm lại</button>`;
+ $("#ct").textContent="";scrollTo(0,0)}
+draw();
+</script></body></html>
