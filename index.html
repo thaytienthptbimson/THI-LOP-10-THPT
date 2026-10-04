@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Ôn thi lớp 10 THPT 2026-2027 - Bản quyền của Thầy Phạm Tiến - GV Tiếng Anh - Trường THPT BỈm Sơn</title>
+<title>ÔN THI LỚP 10 THPT 2026-2027 - Bản quyền thuộc về Thầy Phạm Tiến - GV Tiếng Anh - Trường THPT Bỉm Sơn</title>
 <style>
 :root{--p:#4f46e5;--p2:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f4f5fb;--c:#fff;--t:#1e1b4b;--m:#6b7280;--l:#e5e7eb}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -39,8 +39,7 @@ input.f:focus{outline:0;border-color:var(--p)}
 <header><h1>🎓 ÔN THI LỚP 10 THPT 2026-2027</h1><div class="bar"><i id="pb"></i></div>
 <nav id="nav"></nav></header><main id="app"></main>
 <script>
-/* ===== DỮ LIỆU ===== M(câu,[A,B,C,D],đáp án đúng 0-3,giải thích) | F(câu,đáp án hoặc [nhiều đáp án],giải thích)
-   Mỗi bài = mảng câu hỏi (20 câu). Bài rỗng [] = "Sắp có". Thêm {p:"đoạn văn"} vào câu đầu của đoạn để hiện bài đọc. */
+/* ===== DỮ LIỆU ===== M(câu,[A,B,C,D],đáp án đúng 0-3,giải thích) | F(câu,đáp án hoặc [nhiều đáp án],giải thích) */
 const M=(q,o,a,e,p)=>({q,o,a,e,p}),F=(q,a,e,p)=>({q,a:[].concat(a),e,p}),E=n=>Array.from({length:n},()=>[]);
 const DATA=[
 {name:"📘 Ngữ pháp",groups:[
@@ -88,7 +87,13 @@ M("What is the main idea of the passage?",["The importance of cell phones in com
 ];
 const ADD=(t,g,e,qs)=>DATA[t].groups[g].ex[e].push(...qs);
 const W=(q,a,e)=>F(q+" ______.",a,e);
-/* Thẻ 1 · Thì & dạng của động từ · Bài 1 (câu 6-20) */
+
+/* THÊM 2 CHỦ ĐIỂM NGỮ PHÁP MỚI */
+DATA[0].groups.push(
+  {t:"Câu bị động (Passive Voice)", ex: E(5)},
+  {t:"Câu hỏi đuôi (Tag questions)", ex: E(5)}
+);
+
 ADD(0,0,0,[
 W("She (not/go) ____ to school on Sundays",["doesn't go","does not go"],"Hiện tại đơn, phủ định, chủ ngữ số ít"),
 W("We (watch) ____ TV when the phone rang","were watching","Quá khứ tiếp diễn + when + quá khứ đơn"),
@@ -105,7 +110,6 @@ W("My mother (cook) ____ dinner at 6 p.m. yesterday","was cooking","Thời đi�
 W("Lan wants (become) ____ a doctor","to become","want + to V"),
 W("English (speak) ____ all over the world","is spoken","Bị động hiện tại đơn"),
 W("When I arrived, the film already (start) ____","had started","Hành động xảy ra trước một mốc quá khứ → quá khứ hoàn thành")]);
-/* Thẻ 1 · Câu điều kiện & Wish · Bài 1 */
 ex1=[
 W("If I (be) ____ you, I would study harder",["were","was"],"Điều kiện loại 2"),
 W("I wish I (have) ____ more free time","had","Wish hiện tại → quá khứ đơn"),
@@ -128,7 +132,6 @@ M("If I had a car, I ______ you to school.",["take","will take","would take","wo
 W("If we (not/protect) ____ the environment, the Earth will get hotter",["don't protect","do not protect"]),
 M("I don't have a bike. → I wish I ______ a bike.",["have","had","will have","would have"],1)];
 DATA[0].groups[1].ex[0]=ex1;
-/* Thẻ 1 · Mệnh đề quan hệ · Bài 1 (câu 3-20) */
 ADD(0,2,0,[
 M("The man ______ lives next door is a doctor.",["whom","which","who","whose"],2),
 M("This is the book ______ I bought yesterday.",["who","which","whose","where"],1),
@@ -148,7 +151,6 @@ M("My uncle, ______ lives in Da Nang, is a chef.",["who","which","whom","whose"]
 M("This is the school ______ my father used to teach.",["where","which","who","whose"],0),
 M("The students ______ studied hard passed the exam.",["who","whom","whose","where"],0),
 M("The car ______ my father bought is very fast.",["who","whose","that","where"],2)]);
-/* Thẻ 1 · So sánh · Bài 1 (câu 2-20) */
 ADD(0,3,0,[
 M("My house is ______ than yours.",["big","bigger","the biggest","more big"],1),
 M("She is the ______ student in my class.",["good","better","best","the best"],3),
@@ -169,7 +171,6 @@ W("The (far) ____ you go, the colder it gets",["farther","further"]),
 M("He speaks English ______ than I do.",["fluent","more fluent","more fluently","fluently"],2),
 M("Nobody in my class is ______ than Nam.",["clever","cleverer","the cleverest","most clever"],1),
 W("Winter is (cold) ____ than autumn","colder")]);
-/* Thẻ 1 · Mạo từ & Giới từ · Bài 1 (câu 3-20) */
 ADD(0,4,0,[
 M("He is ______ honest man.",["a","an","the","Ø"],1,"honest bắt đầu bằng âm /ɒ/ (h câm) → an"),
 M("I have breakfast ______ 7 o'clock.",["in","on","at","to"],2),
@@ -189,7 +190,6 @@ M("I have ______ lunch at school.",["a","an","the","Ø"],3,"Không dùng mạo t
 M("She is married ______ a doctor.",["with","to","for","at"],1),
 M("We study English ______ Tuesday morning.",["in","at","on","by"],2),
 M("______ Pacific Ocean is the largest ocean.",["A","An","The","Ø"],2)]);
-/* Thẻ 2 · Dạng 1 · Bài 1 (câu 6-20) */
 ADD(1,0,0,[
 M("Chọn từ có phần gạch chân phát âm khác: (-s)",["books","cats","pens","stops"],2,"pens /z/, còn lại /s/"),
 M("Chọn từ có phần gạch chân phát âm khác: (ea)",["teacher","clean","bread","please"],2,"bread /e/, còn lại /iː/"),
@@ -207,7 +207,6 @@ F("Reading helps students gain more ______. (KNOW)","knowledge","Danh từ sau m
 F("It was ______ of him to forget my birthday. (KIND)","unkind","Ngữ cảnh phê phán → un- + kind"),
 F("Children should be ______ about their safety. (CARE)","careful","Tính từ sau be")]);
 const PH=(s,o,a)=>M("Chọn từ có phần gạch chân phát âm khác: "+s,o,a),ST=(o,a)=>M("Chọn từ có trọng âm khác:",o,a);
-/* Thẻ 1 · Liên từ · Bài 1 (câu 2-20) */
 ADD(0,5,0,[
 M("______ it was raining, we went out.",["Because","Although","Despite","So"],1),
 M("She was late ______ the heavy traffic.",["because","although","because of","despite"],2,"Sau chỗ trống là cụm danh từ, chỉ nguyên nhân → because of"),
@@ -228,7 +227,6 @@ M("I like tea, ______ my sister prefers coffee.",["and","but","so","or"],1),
 M("The road was blocked, ______ we took another way.",["but","so","because","although"],1),
 M("We stayed at home ______ the weather was bad.",["because","despite","although","in spite of"],0),
 M("______ he worked hard, he failed the exam.",["Because","Though","Despite","So"],1)]);
-/* Thẻ 1 · Câu tường thuật · Bài 1 */
 ADD(0,6,0,[
 M("“I am tired,” she said. → She said that she ______ tired.",["is","was","were","has been"],1,"Lùi thì: hiện tại → quá khứ"),
 M("“We will help you,” they said. → They said they ______ help me.",["will","would","can","shall"],1),
@@ -250,7 +248,6 @@ M("“Don’t be late,” my mother said. → My mother told me ______ late.",["
 M("“I’m studying English here,” he said. → He said he was studying English ______.",["here","there","this place","now"],1,"here → there"),
 M("“Why are you crying?” he asked her. → He asked her why ______ crying.",["was she","she was","is she","she is"],1),
 M("“Please sit down,” he said to me. → He asked me ______.",["to sit down","sit down","sat down","sitting down"],0)]);
-/* Thẻ 1 · used to, such…that, run out of, give priority to · Bài 1 */
 ADD(0,7,0,[
 M("He ______ smoke, but he gave it up.",["used to","is used to","was used to","uses to"],0),
 M("She is used to ______ early.",["get up","getting up","got up","gets up"],1,"be used to + V-ing"),
@@ -272,7 +269,6 @@ M("It was ______ cold weather that we couldn’t go out.",["so","such","such a",
 M("Don’t wait for me. We have run out ______ time.",["of","from","off","to"],0),
 F("The coffee was so hot that I couldn’t drink it. (SUCH) → It was ______ I couldn’t drink it.","such hot coffee that"),
 M("Charities give priority ______ helping poor children.",["for","to","on","in"],1)]);
-/* Thẻ 2 · Dạng 1 · Bài 2 */
 ADD(1,0,1,[
 PH("(-ed)",["wanted","stopped","played","opened"],0),PH("(-ed)",["visited","decided","washed","needed"],2),
 PH("(-s)",["bags","boys","cups","pens"],2),PH("(a)",["cake","name","apple","late"],2),
@@ -284,7 +280,6 @@ ST(["decide","happen","visit","finish"],0),ST(["education","information","commun
 ST(["important","expensive","consider","difficult"],3),ST(["discuss","answer","promise","listen"],0),
 ST(["history","family","festival","collect"],3),ST(["agree","enjoy","happy","prefer"],2),
 ST(["library","holiday","hospital","musician"],3),ST(["village","market","hotel","garden"],2)]);
-/* Thẻ 2 · Dạng 2 · Bài 1 (câu 4-20) */
 ADD(1,1,0,[
 M("What is the main idea of the passage?",["The importance of cell phones in communication and education.","Cell phones will be used as cameras to capture memories.","How to use some electronic devices in communication and education.","Cell phones can be used as an excellent recorder."],0,"",
 "Cell phones are an important part of our society and their main use is communication. They keep students in touch with the rest of the world by giving them the power to interact with it. In the old days, if you forgot to bring your lunch, you had to rely on the school office calling home for you. Now, students have the ability to solve their own problems and handle certain emergencies on their own.\nCell phones also allow students to keep in touch with their friends and students at other schools. While not directly beneficial to education, better relationships can lead to higher self-esteem and reduce isolation. In the same way, camera features allow students to capture the kinds of memories that help build a solid school culture. In some cases, they provide evidence of students’ bad behaviors.\nAcademically, the cell phone can record a video or an audio of the lessons that may need to be reviewed later. And just imagine if classes could be easily recorded for students who are absent."),
@@ -304,7 +299,6 @@ F("If you don’t study harder, you will fail the exam. → Unless ______.","you
 F("I last saw him two years ago. → I haven’t ______.","seen him for two years"),
 F("She is too young to drive a car. → She is not ______.","old enough to drive a car"),
 F("People say that he is rich. → He ______.","is said to be rich")]);
-/* Thẻ 1 · Thì & dạng của động từ · Bài 2 */
 ADD(0,0,1,[
 W("My mother (go) ____ to the market every morning","goes"),W("They (build) ____ this bridge in 2010","built"),
 W("He (read) ____ a book when I called him","was reading"),W("I (not/see) ____ her since last week",["haven't seen","have not seen"]),
@@ -316,7 +310,6 @@ W("The Earth (move) ____ around the Sun","moves"),W("My parents (work) ____ in H
 W("This room (clean) ____ every day","is cleaned"),W("She avoided (answer) ____ my question","answering"),
 W("If I (see) ____ him, I will tell him","see"),W("They (not/finish) ____ the project yet",["haven't finished","have not finished"]),
 W("He is too tired (walk) ____ any further","to walk"),W("What (you/do) ____ at 8 p.m. last night","were you doing")]);
-/* Thẻ 2 · Dạng 3 · ĐỀ THI SỐ 1 (50 câu) */
 DATA[1].groups[2].ex[0]=[
 {...PH("(-ed)",["played","stayed","watched","enjoyed"],2,"watched /t/, còn lại /d/"),p:"PART A. PHONETICS — Chọn từ có phần gạch chân phát âm khác / trọng âm khác."},
 PH("(ea)",["teacher","reading","break","speak"],2,"break /eɪ/, còn lại /iː/"),
@@ -364,7 +357,6 @@ F("I have a friend. Her father is a famous doctor. (WHOSE) → I have a friend _
 F("The exam was so difficult that many students failed. (SUCH) → It was ______.","such a difficult exam that many students failed"),
 F("We had no petrol left when we reached the town. (RAN) → We ______.","had run out of petrol when we reached the town"),
 F("The company considers customers’ needs first. (PRIORITY) → This company ______.",["gives priority to customers' needs","gives priority to the needs of customers","gives priority to its customers' needs"])];
-/* Thẻ 1 · Câu điều kiện & Wish · Bài 2 */
 ADD(0,1,1,[
 M("If she ______ harder, she would pass the exam.",["studies","studied","will study","had studied"],1),
 W("I wish I (can) ____ speak French","could"),
@@ -386,7 +378,6 @@ W("She wishes she (not/have) ____ so much homework",["didn't have","did not have
 M("If you ______ a problem, just call me.",["have","had","will have","would have"],0),
 M("If I won the lottery, I ______ a big house.",["buy","will buy","would buy","bought"],2),
 W("If it (not/rain) ____ tomorrow, we will go fishing",["doesn't rain","does not rain"])]);
-/* Thẻ 1 · Mệnh đề quan hệ · Bài 2 */
 ADD(0,2,1,[
 M("The book ______ cover is red belongs to Lan.",["who","whose","which","whom"],1),
 M("I met the actor ______ I admire most.",["whom","whose","where","when"],0),
@@ -408,7 +399,6 @@ M("The house ______ roof is red is mine.",["who","whose","which","where"],1),
 M("He is the person ______ I told you about.",["whom","whose","where","when"],0),
 F("The man is my uncle. He is wearing a blue shirt. → The man ______ is my uncle.",["who is wearing a blue shirt","that is wearing a blue shirt"]),
 M("Tet is the time ______ families get together.",["who","which","when","whose"],2)]);
-/* Thẻ 1 · So sánh · Bài 2 */
 ADD(0,3,1,[
 M("Mai is ______ girl in our class.",["tall","taller","the tallest","more tall"],2),
 M("This book is ______ interesting than that one.",["more","most","much","as"],0),
@@ -430,7 +420,6 @@ M("The ______ you study, the better results you get.",["hard","harder","more har
 M("Of the three sisters, Lan is ______.",["the more beautiful","more beautiful","the most beautiful","most beautifully"],2),
 F("My bag is not as (heavy) ______ as yours.","heavy"),
 M("He drives ______ than before.",["careful","more careful","more carefully","carefully"],2)]);
-/* Thẻ 1 · Mạo từ & Giới từ · Bài 2 */
 ADD(0,4,1,[
 M("She plays ______ guitar very well.",["a","an","the","Ø"],2,"the + nhạc cụ"),
 M("We have English ______ Wednesday.",["in","on","at","by"],1),
@@ -452,7 +441,6 @@ M("She has ______ few friends in the class.",["a","an","the","Ø"],0,"a few = m�
 M("It's cold ______ winter.",["in","on","at","of"],0),
 M("He is tired ______ doing homework.",["of","about","in","at"],0),
 M("We are going to visit ______ Ha Long Bay.",["a","an","the","Ø"],3)]);
-/* Thẻ 2 · Dạng 1 · Bài 3 (Word form) */
 ADD(1,0,2,[
 F("She is a very ______ girl, always ready to help others. (HELP)","helpful"),
 F("There has been a rapid ______ in the number of cars. (INCREASE)","increase"),
@@ -474,7 +462,6 @@ F("This restaurant is ______ for its delicious dishes. (FAME)","famous"),
 F("He is a ______ driver; he never drives fast. (CARE)","careful"),
 F("The ______ of the old bridge took two years. (CONSTRUCT)","construction"),
 F("Her ______ to study abroad surprised everyone. (DECIDE)","decision")]);
-/* Thẻ 1 · Liên từ · Bài 2 */
 ADD(0,5,1,[
 M("She smiled ______ she was very sad.",["although","because","so","despite"],0),
 M("______ the bad weather, we enjoyed the trip.",["Although","Despite","Because","So"],1),
@@ -496,7 +483,6 @@ M("Nam is tall, ______ his brother is short.",["so","but","because","although"],
 M("She cooked dinner ______ her mother was away.",["while","despite","in spite of","so"],0),
 M("______ his age, he runs very fast.",["Although","Despite","Because","So"],1),
 M("I was tired, ______ I went to bed early.",["although","so","but","despite"],1)]);
-/* Thẻ 1 · Câu tường thuật · Bài 2 */
 ADD(0,6,1,[
 M("“I like pizza,” Tom said. → Tom said he ______ pizza.",["likes","liked","like","has liked"],1),
 M("“We are studying,” they said. → They said they ______.",["are studying","were studying","studied","study"],1),
@@ -518,7 +504,6 @@ M("“Do you live here?” he asked me. → He asked me if I lived ______.",["he
 M("“Why didn’t you come?” she asked him. → She asked him why he ______.",["didn’t come","hasn’t come","hadn’t come","doesn’t come"],2),
 M("“Don’t forget your homework,” said the teacher. → The teacher reminded us ______ our homework.",["not forgetting","to not forget","not to forget","don’t forget"],2),
 M("“I must go now,” she said. → She said she ______ go then.",["has to","had to","will have to","have to"],1)]);
-/* Thẻ 2 · Dạng 3 · ĐỀ THI SỐ 2 (50 câu) */
 DATA[1].groups[2].ex[1]=[
 {...PH("(-ed)",["wanted","needed","landed","missed"],3,"missed /t/, còn lại /ɪd/"),p:"PART A. PHONETICS — Chọn từ có phần gạch chân phát âm khác / trọng âm khác."},
 PH("(ch)",["chemistry","school","chorus","church"],3,"church /tʃ/, còn lại /k/"),
@@ -567,9 +552,7 @@ F("This is the man. He helped me yesterday. (WHO) → This is the man ______.","
 F("The soup was so hot that I couldn’t eat it. (SUCH) → It was ______.","such hot soup that I couldn't eat it"),
 F("We had no more sugar when we made the cake. (RAN) → We ______.","had run out of sugar when we made the cake"),
 F("The government considers environmental protection the most important thing. (PRIORITY) → The government ______.",["gives priority to environmental protection","gives top priority to environmental protection"])];
-/* Cú pháp gọn: "câu|A|B|C|D|đáp án (0-3)" cho trắc nghiệm; "câu|đáp án 1;đáp án 2" cho điền từ */
 const QS=s=>s.trim().split("\n").map(l=>{const p=l.split("|");return p.length>=6&&/^[0-3]$/.test(p[5])?M(p[0],p.slice(1,5),+p[5]):F(p[0],p[1].split(";"))});
-/* used to / such…that / run out of / give priority to · Bài 2 */
 ADD(0,7,1,QS(`My family ______ live in a small village.|used to|is used to|get used to|use to|0
 She isn't used to ______ in the cold.|work|working|worked|works|1
 The book was ______ interesting that I read it twice.|such|so|too|very|1
@@ -590,7 +573,6 @@ The book was so boring that I stopped reading it. (SUCH) → It was ______ I sto
 Are you used ______ spicy food?|to eat|to eating|eating|eat|1
 Time is running ______.|out|off|over|away|0
 They ______ playing football after school, but now they play chess.|used to|are used to|got used to|use to|0`));
-/* Thì & dạng của động từ · Bài 3 */
 ADD(0,0,2,QS(`She (wake) ____ up at 5 a.m. every day.|wakes
 They (not/go) ____ out last night because it was raining.|didn't go;did not go
 I (do) ____ my homework when my friend called.|was doing
@@ -611,7 +593,6 @@ Tom (play) ____ football every Sunday.|plays
 It's no use (cry) ____.|crying
 The room (not/clean) ____ yet.|hasn't been cleaned;has not been cleaned
 They (talk) ____ when the teacher came in.|were talking`));
-/* Câu điều kiện & Wish · Bài 3 */
 ADD(0,1,2,QS(`If you (study) ____ hard, you will get good marks.|study
 I wish I (live) ____ in a bigger house.|lived
 If I (be) ____ you, I would accept the offer.|were;was
@@ -632,7 +613,6 @@ If you (not/eat) ____ breakfast, you will feel hungry.|don't eat;do not eat
 I would help you if I ______ the answer.|know|knew|will know|had known|1
 If we (recycle) ____ more, the Earth would be greener.|recycled
 I wish the weather ______ better now.|is|were|will be|has been|1`));
-/* Mệnh đề quan hệ · Bài 3 */
 ADD(0,2,2,QS(`The woman ______ lives opposite is a nurse.|who|whom|whose|where|0
 I lost the umbrella ______ my aunt gave me.|who|which|whose|where|1
 The town ______ I was born is small.|where|which|who|whose|0
@@ -653,7 +633,6 @@ The girl is my sister. She is playing the piano. → The girl ______ is my siste
 This is the shop. I bought my shoes there. → This is the shop ______.|where I bought my shoes
 The day ______ I met her was Sunday.|when|where|who|whose|0
 The artists ______ paintings are on display are famous.|who|whom|whose|which|2`));
-/* So sánh · Bài 3 */
 ADD(0,3,2,QS(`This film is ______ than the book.|good|better|best|the best|1
 She is the ______ girl in the school.|smart|smarter|smartest|the smartest|3
 My brother is ______ me.|as old as|as older as|more old than|the oldest|0
@@ -674,7 +653,6 @@ My room is ______ than yours.|tidy|tidier|tidiest|more tidy|1
 He is the ______ person I know.|kind|kinder|kindest|the kindest|3
 This test is ______ difficult as the last one.|so|as|more|much|1
 Nobody is ______ than my mother.|kind|kinder|kindest|the kindest|1`));
-/* Mạo từ & Giới từ · Bài 3 */
 ADD(0,4,2,QS(`I saw ______ elephant at the zoo.|a|an|the|Ø|1
 She is afraid ______ spiders.|from|of|at|with|1
 We arrived ______ Da Nang at noon.|at|in|on|to|1
@@ -695,7 +673,6 @@ The cat jumped ______ the table.|at|onto|of|from|1
 She is married ______ an engineer.|with|to|for|by|1
 The shop opens ______ 8 a.m.|in|on|at|by|2
 What is the name of ______ girl we met yesterday?|a|an|the|Ø|2`));
-/* Liên từ · Bài 3 */
 ADD(0,5,2,QS(`He didn't come ______ he was sick.|because|although|despite|so|0
 ______ the heavy rain, the match continued.|Although|Despite|Because|Even though|1
 She likes tea, ______ she doesn't like coffee.|but|so|because|or|0
@@ -716,7 +693,6 @@ ______ being rich, he lives simply.|Although|Despite|Because|But|1
 He felt sleepy ______ he had slept for ten hours.|because|although|so|despite|1
 I will lend you the book ______ you return it soon.|although|unless|as long as|despite|2
 We didn't go camping ______ the storm.|because|although|because of|despite|2`));
-/* Câu tường thuật · Bài 3 */
 ADD(0,6,2,QS(`“I'm hungry,” he said. → He said he ______ hungry.|is|was|were|has been|1
 “We have finished,” they said. → They said they ______ finished.|have|had|were|would|1
 “I will help you,” Mai said. → Mai said she ______ help me.|will|would|can|shall|1
@@ -737,7 +713,6 @@ ADD(0,6,2,QS(`“I'm hungry,” he said. → He said he ______ hungry.|is|was|we
 “We are having dinner now,” they said. → They said they were having dinner ______.|then
 “Don't be late for school,” my father said. → My father told me ______ late for school.|not be|not to be|don't be|to not be|1
 “When did you arrive?” she asked him. → She asked him when he ______.|arrived|had arrived|has arrived|arrives|1`));
-/* used to / such…that · Bài 3 */
 ADD(0,7,2,QS(`We ______ to play in the river when we were kids.|use|used|using|uses|1
 I'm not used ______ up late.|stay|to staying|staying|to stay|1
 The lecture was ______ boring that I fell asleep.|so|such|too|very|0
@@ -758,7 +733,6 @@ The film was so sad that everyone cried. (SUCH) → It was ______ everyone cried
 We have no more milk. (RUN) → We have ______ milk.|run out of
 Our team ______ out of energy near the end.|ran|run|runs|running|0
 She isn't used ______ so much homework.|to have|to having|having|have|1`));
-/* Dạng 1 · Bài 4 (ngữ âm, trọng âm, word form) */
 ADD(1,0,3,QS(`Chọn từ có phần gạch chân phát âm khác: (-ed)|laughed|asked|washed|called|3
 Chọn từ có phần gạch chân phát âm khác: (-ed)|hated|waited|stopped|ended|2
 Chọn từ có phần gạch chân phát âm khác: (-s)|lamps|beds|hands|friends|0
@@ -779,7 +753,6 @@ The ______ of the museum is free. (ENTER)|entrance
 He is the ______ of the company. (DIRECT)|director
 We need to protect ______ animals. (DANGER)|endangered
 That was a very ______ experience. (FRIGHT)|frightening`));
-/* Dạng 2 · Bài 2 (viết lại câu) */
 ADD(1,1,1,QS(`My brother can't play the guitar. → My brother wishes he ______.|could play the guitar
 “I'm cooking dinner,” said my mother. → My mother said ______.|she was cooking dinner
 If you don't take a taxi, you will be late. → Unless ______.|you take a taxi, you will be late
@@ -800,7 +773,6 @@ He started learning English five years ago. → He has ______.|learned English f
 People believe that she is the best singer. → She ______.|is believed to be the best singer
 “Do you like pizza?” Tom asked me. → Tom asked me ______.|if I liked pizza
 My house is smaller than yours. → Your house ______.|is bigger than mine`));
-/* Thì & dạng của động từ · Bài 4 */
 ADD(0,0,3,QS(`My father (drive) ____ to work every day.|drives
 We (not/have) ____ any classes yesterday.|didn't have;did not have
 She (cook) ____ when the guests arrived.|was cooking
@@ -821,7 +793,6 @@ She (already/eat) ____ lunch when I called.|had already eaten
 It's worth (visit) ____ this museum.|visiting
 When I was a child, I (play) ____ football every day.|played;used to play
 Many trees (plant) ____ by students last year.|were planted`));
-/* Câu điều kiện & Wish · Bài 4 */
 ADD(0,1,3,QS(`If I (see) ____ him, I will give him your message.|see
 I wish I (have) ____ a big garden.|had
 If she (be) ____ here, she would help us.|were;was
@@ -842,7 +813,6 @@ If he ______ earlier, he would catch the bus.|leaves|left|will leave|had left|1
 If we ______ the environment, we will have a better future.|protect|protected|would protect|had protected|0
 I wish I (not/be) ____ so shy.|weren't;wasn't;were not;was not
 If she (study) ____ more, she would get better grades.|studied`));
-/* Mệnh đề quan hệ · Bài 4 */
 ADD(0,2,3,QS(`The man ______ I met yesterday is a teacher.|who|whose|which|where|0
 The car ______ he drives is old.|who|which|whose|where|1
 I don't know the girl ______ is standing there.|which|who|whose|where|1
@@ -863,7 +833,6 @@ My neighbor, ______ is a nurse, is friendly.|who|whom|whose|which|0
 The article ______ I mentioned is online.|who|which|whose|where|1
 He is the boy ______ won the contest.|who|whom|whose|which|0
 The room ______ we study is big.|which|where|who|whose|1`));
-/* So sánh · Bài 4 */
 ADD(0,3,3,QS(`Giraffes are ______ than elephants.|tall|taller|tallest|the tallest|1
 This is ______ day of my life.|happy|happier|the happiest|happiest|2
 He speaks ______ than me.|loud|louder|loudest|more loud|1
@@ -884,7 +853,6 @@ This is the (good) ____ restaurant in town.|best
 My brother is not as (strong) ____ as me.|strong
 It's (hot) ____ today than yesterday.|hotter
 Which is (cheap) ____, the red one or the blue one?|cheaper`));
-/* Mạo từ & Giới từ · Bài 4 */
 ADD(0,4,3,QS(`He is ______ European.|a|an|the|Ø|0
 They are sitting ______ the sofa.|in|on|at|by|1
 I have ______ idea.|a|an|the|Ø|1
@@ -905,7 +873,6 @@ Look at ______ stars!|a|an|the|Ø|2
 They have been friends ______ childhood.|for|since|from|in|1
 She apologized ______ being late.|to|for|about|of|1
 He lives ______ his parents.|with|at|by|to|0`));
-/* Liên từ · Bài 4 */
 ADD(0,5,3,QS(`She was happy ______ she failed the test.|because|although|so|despite|1
 ______ it was late, he kept working.|Because|Although|Despite|So|1
 I stayed at home ______ I felt tired.|although|because|despite|but|1
@@ -926,7 +893,6 @@ He is rich ______ he is not happy.|so|but|because|and|1
 ______ the traffic was bad, we arrived on time.|Because of|Although|Despite|Because|1
 I took a taxi ______ I was late.|although|because|despite|but|1
 Keep quiet, ______ the baby will wake up.|and|or|so|but|1`));
-/* Câu tường thuật · Bài 4 */
 ADD(0,6,3,QS(`“I'm studying English,” she said. → She said she ______ English.|studies|was studying|is studying|had studied|1
 “We will visit Hue,” they said. → They said they ______ Hue.|will visit|would visit|visited|visit|1
 “I haven't seen the film,” he said. → He said he ______ the film.|hasn't seen|hadn't seen|didn't see|doesn't see|1
@@ -947,7 +913,6 @@ ADD(0,6,3,QS(`“I'm studying English,” she said. → She said she ______ Engl
 “I like this song,” she said. → She said she ______ that song.|liked
 “We are playing here,” the kids said. → The kids said they were playing ______.|there
 “I will do it tomorrow,” he said. → He said he would do it ______.|the next day;the following day`));
-/* used to / such…that / run out of / give priority to · Bài 4 */
 ADD(0,7,3,QS(`Mai ______ to be afraid of dogs, but not now.|used|is used|uses|was used|0
 I'm used ______ in a big city.|to live|to living|living|live|1
 The tea was ______ hot that I couldn't drink it.|so|such|too|very|0
@@ -968,7 +933,6 @@ It was such a cold day that we stayed in. (SO) → The day ______ we stayed in.|
 We have no more bread. (RUN) → We have ______ bread.|run out of
 Which sentence is correct?|I used to going there.|I used to go there.|I use to go there.|I am used go there.|1
 He ran so fast ______ nobody could catch him.|that|than|which|as|0`));
-/* Thì & dạng của động từ · Bài 5 */
 ADD(0,0,4,QS(`She (usually/walk) ____ to school.|usually walks
 We (have) ____ lunch when it began to rain.|were having
 He (work) ____ here since he graduated.|has worked;'s worked
@@ -989,7 +953,6 @@ She (cry) ____ at the moment.|is crying
 How long (you/learn) ____ English?|have you learned;have you been learning
 They (play) ____ tennis every Sunday.|play
 The doctor advised him (stop) ____ working late.|to stop`));
-/* Câu điều kiện & Wish · Bài 5 */
 ADD(0,1,4,QS(`If I (be) ____ rich, I would help the poor.|were;was
 If it (rain) ____, we'll cancel the trip.|rains
 I wish I (can) ____ play the piano.|could
@@ -1010,7 +973,6 @@ I wish I (live) ____ near my school.|lived
 If she (not/be) ____ so tired, she would go out.|weren't;wasn't;were not;was not
 If you (touch) ____ fire, you get burned.|touch
 What would you do if you (be) ____ invisible?|were;was`));
-/* Mệnh đề quan hệ · Bài 5 */
 ADD(0,2,4,QS(`The girl ______ is wearing a hat is my sister.|who|whom|whose|where|0
 The man ______ I borrowed the car is my neighbor.|who|from whom|whose|which|1
 I like the bag ______ you bought.|who|which|whose|where|1
@@ -1031,7 +993,6 @@ The movie ______ we saw was scary.|who|whose|which|where|2
 The street ______ I live is quiet.|which|where|who|whose|1
 The boy, ______ is my cousin, plays guitar.|who|whom|whose|which|0
 The reason ______ she left is unknown.|why|where|when|who|0`));
-/* So sánh · Bài 5 */
 ADD(0,3,4,QS(`This road is ______ than that one.|wide|wider|widest|more wide|1
 He is the ______ runner in our team.|fast|faster|fastest|the fastest|3
 The film was ______ than the book.|less interesting|least interesting|not interesting as|interestinger|0
@@ -1052,7 +1013,6 @@ The (early) ____ you start, the sooner you finish.|earlier
 This exam is (easy) ____ than the last one.|easier
 He plays (badly) ____ than before.|worse
 Who is the (old) ____ in your family?|oldest;eldest`));
-/* Mạo từ & Giới từ · Bài 5 */
 ADD(0,4,4,QS(`She is ______ university student.|a|an|the|Ø|0
 We arrived ______ the station early.|in|at|on|to|1
 He has lived here ______ ten years.|since|for|from|at|1
@@ -1073,7 +1033,6 @@ School finishes ______ 4:30 p.m.|in|on|at|by|2
 They came here ______ 2015.|in|on|at|since|0
 Have you ever been ______ America?|at|in|to|on|2
 We were late ______ the traffic.|because|because of|so|but|1`));
-/* Liên từ · Bài 5 */
 ADD(0,5,4,QS(`______ the rain, we went to school.|Because|Despite|Although|So|1
 I like him ______ he is kind.|because|although|despite|but|0
 He is old, ______ he is still strong.|so|but|because|or|1
@@ -1094,7 +1053,6 @@ We use a map ______ we don't get lost.|so that|although|despite|but|0
 The hotel was cheap ______ very clean.|and|so|because|despite|0
 ______ she was tired, she finished the work.|Even though|Despite|Because of|In spite of|0
 She was late ______ she missed the bus.|although|because|despite|but|1`));
-/* Câu tường thuật · Bài 5 */
 ADD(0,6,4,QS(`“I'm busy,” she said. → She said she ______ busy.|is|was|were|has been|1
 “We will win,” they said. → They said they ______ win.|will|would|can|shall|1
 “I don't like it,” he said. → He said he ______ it.|doesn't like|didn't like|hadn't liked|wouldn't like|1
@@ -1115,7 +1073,6 @@ ADD(0,6,4,QS(`“I'm busy,” she said. → She said she ______ busy.|is|was|wer
 “They live here,” she said. → She said they lived ______.|there
 “I will come next week,” he said. → He said he would come ______.|the following week;the next week
 “Don't make noise,” she said to us. → She told us ______ noise.|not to make`));
-/* used to / such…that / run out of / give priority to · Bài 5 */
 ADD(0,7,4,QS(`When I was young, I ______ to climb trees.|used|am used|use|was used|0
 Are you used ______ the cold weather?|to|for|with|at|0
 It was ______ an exciting match that we shouted.|so|such|too|very|1
@@ -1136,7 +1093,6 @@ I'm not used ______ in public.|to speak|to speaking|speaking|speak|1
 My mother used to ______ me stories every night.|tell|telling|told|tells|0
 The test was so difficult ______ I failed.|that|than|as|which|0
 Parents give priority ______ their children's education.|to|for|on|at|0`));
-/* Dạng 1 · Bài 5 */
 ADD(1,0,4,QS(`Chọn từ có phần gạch chân phát âm khác: (-ed)|helped|played|jumped|walked|1
 Chọn từ có phần gạch chân phát âm khác: (-s)|stops|books|boys|cats|2
 Chọn từ có phần gạch chân phát âm khác: (ea)|teacher|bed|pen|ten|0
@@ -1157,7 +1113,6 @@ We should be ______ to our parents. (GRATE)|grateful
 This is an ______ game for children. (EDUCATE)|educational
 He drove ______ and caused an accident. (CARE)|carelessly
 It is ______ to cheat in exams. (HONEST)|dishonest`));
-/* Dạng 2 · Bài 3 */
 ADD(1,1,2,QS(`I don't have enough time to travel. → I wish I ______.|had enough time to travel
 “I'm going to buy a car,” he said. → He said ______.|he was going to buy a car
 If you don't practise, you won't improve. → Unless ______.|you practise, you won't improve
@@ -1178,6 +1133,476 @@ They say that he is a good doctor. → He ______.|is said to be a good doctor
 “Do you play football?” she asked him. → She asked him ______.|if he played football
 No one in the class is taller than Nam. → Nam is ______.|the tallest in the class;the tallest student in the class
 He is too weak to lift the box. → He is not ______.|strong enough to lift the box`));
+
+ADD(0,8,0,QS(`This house ______ in 1990 by my grandfather.|was built|built|is built|has built|0
+A new school ______ in our village next year.|will build|will be built|is built|builds|1
+My car ______ right now.|repairs|is repairing|is being repaired|was repaired|2
+English ______ all over the world.|speaks|spoke|is spoken|is speaking|2
+The homework ______ before we went to bed.|had finished|had been finished|was finished|finished|1
+The picture ______ by a famous artist.|painted|was painted|paints|is painting|1
+These flowers ______ every day.|water|are watered|are watering|watered|1
+The problem ______ by the students yesterday.|solved|was solved|were solved|is solved|1
+The report must ______ by tomorrow.|finish|be finished|finished|have finished|1
+This song ______ by a lot of young people.|likes|is liked|liked|has liked|1
+They will build a new bridge here. → A new bridge ______ here.|will be built
+People speak English in Australia. → English ______ in Australia.|is spoken
+Shakespeare wrote "Romeo and Juliet". → "Romeo and Juliet" ______ by Shakespeare.|was written
+Someone has stolen my bike. → My bike ______.|has been stolen
+They are painting the house. → The house ______.|is being painted
+He can solve this puzzle. → This puzzle ______ by him.|can be solved
+Did someone clean the room? → Was the room ______?|cleaned
+They didn't invite me to the party. → I ______ to the party.|wasn't invited;was not invited
+We must protect the environment. → The environment ______.|must be protected
+They have just sent the letter. → The letter ______ just been sent.|has`));
+ADD(0,9,0,QS(`You are a student, ______?|are you|aren't you|do you|don't you|1
+She doesn't like coffee, ______?|does she|doesn't she|is she|isn't she|0
+They will go to the party, ______?|will they|won't they|are they|aren't they|1
+He played football yesterday, ______?|did he|didn't he|was he|wasn't he|1
+Lan has finished her work, ______?|has she|hasn't she|does she|doesn't she|1
+We shouldn't stay up late, ______?|should we|shouldn't we|do we|don't we|0
+Let's go for a walk, ______?|will we|shall we|do we|don't we|1
+Don't talk in class, ______?|do you|will you|are you|can you|1
+There is a cat on the table, ______?|is it|isn't it|is there|isn't there|3
+Nobody called me, ______?|did they|didn't they|do they|don't they|0
+You went to school late, ______?|did you|didn't you|were you|weren't you|1
+He can swim very well, ______?|can he|can't he|does he|doesn't he|1
+Your parents live in Hanoi, ______?|do they|don't they|are they|aren't they|1
+She hasn't met him before, ______?|has she|hasn't she|does she|doesn't she|0
+I am late, ______?|am I|am not I|aren't I|isn't I|2
+Everything is okay, ______?|is it|isn't it|are they|aren't they|1
+She never smiles, ______?|does she|doesn't she|is she|isn't she|0
+Close the door, ______?|do you|will you|are you|did you|1
+That is your book, ______?|is that|isn't that|is it|isn't it|3
+You'd rather stay at home, ______?|would you|wouldn't you|had you|hadn't you|1`));
+ADD(0,8,1,QS(`My bike ______ yesterday.|stole|was stolen|steals|is stolen|1
+Milk ______ in the fridge.|should keep|should be kept|keeps|is keeping|1
+A lot of trees ______ in our school last month.|planted|were planted|are planted|will be planted|1
+The window ______ by the boys playing football.|broke|was broken|is broken|has broken|1
+The test ______ carefully by the teacher now.|marks|is marking|is being marked|was marked|2
+The letters ______ tomorrow morning.|will deliver|will be delivered|deliver|are delivered|1
+His car ______ since yesterday.|hasn't repaired|hasn't been repaired|wasn't repaired|isn't repaired|1
+Our house ______ painted every year.|is|was|has|will|0
+The thief ______ by the police last night.|caught|was caught|has caught|catches|1
+I ______ a present on my birthday.|gave|was given|am giving|have given|1
+Thomas Edison invented the light bulb. → The light bulb ______ by Thomas Edison.|was invented
+They make shoes in that factory. → Shoes ______ in that factory.|are made
+People will use flying cars in the future. → Flying cars ______ in the future.|will be used
+Someone is repairing my laptop. → My laptop ______.|is being repaired
+They have cancelled the match. → The match ______.|has been cancelled;has been canceled
+You should clean your room. → Your room ______.|should be cleaned
+Did Columbus discover America? → Was America ______ by Columbus?|discovered
+Nobody told me the truth. → I wasn't ______ the truth.|told
+They don't allow smoking here. → Smoking is not ______ here.|allowed
+She feeds the dog twice a day. → The dog ______ twice a day.|is fed`));
+ADD(0,9,1,QS(`We are late, ______?|are we|aren't we|do we|don't we|1
+Tom doesn't speak French, ______?|does he|doesn't he|is he|isn't he|0
+They can't come to the meeting, ______?|can they|can't they|do they|don't they|0
+You bought a new car, ______?|did you|didn't you|do you|don't you|1
+She has a sister, ______?|does she|doesn't she|has she|hasn't she|1
+Mary won't travel to Japan, ______?|will she|won't she|is she|isn't she|0
+Let's play tennis, ______?|shall we|will we|do we|don't we|0
+Don't open the window, ______?|do you|will you|can you|should you|1
+There isn't any milk left, ______?|is there|isn't there|is it|isn't it|0
+Nobody knows the truth, ______?|do they|don't they|does he|doesn't he|0
+You like playing games, ______?|do you|don't you|are you|aren't you|1
+He had finished the work, ______?|had he|hadn't he|did he|didn't he|1
+Your mother is a teacher, ______?|is she|isn't she|does she|doesn't she|1
+He seldom goes out at night, ______?|does he|doesn't he|is he|isn't he|0
+I am your best friend, ______?|aren't I|am not I|isn't I|do I|0
+Nothing happened yesterday, ______?|did it|didn't it|did they|didn't they|0
+Turn on the TV, ______?|will you|do you|are you|can you|0
+Those are your shoes, ______?|are those|aren't those|are they|aren't they|3
+You'd better go to bed early, ______?|would you|wouldn't you|had you|hadn't you|3
+She used to cry a lot, ______?|did she|didn't she|used she|usedn't she|1`));
+ADD(0,8,2,QS(`The flowers ______ every morning.|water|are watered|is watered|watered|1
+A new hospital ______ in the city center now.|is building|builds|is being built|was built|2
+This homework must ______ by tomorrow.|do|done|be doing|be done|3
+My car ______ yesterday afternoon.|was washing|was washed|washed|is washed|1
+English ______ all over the world.|is speaking|speaks|spoke|is spoken|3
+The thief ______ by the police last night.|caught|was catching|was caught|has caught|2
+This song ______ by millions of people.|likes|is liked|liked|has liked|1
+A new bridge ______ here next year.|will build|will be built|is built|builds|1
+The windows ______ yet.|haven't cleaned|haven't been cleaned|didn't clean|weren't cleaned|1
+The letter ______ to her two days ago.|sent|was sent|is sent|sends|1
+They clean the room every day. → The room ______.|is cleaned every day;is cleaned
+Shakespeare wrote Romeo and Juliet. → Romeo and Juliet ______ by Shakespeare.|was written
+People speak French in Paris. → French ______ in Paris.|is spoken
+Someone has stolen my bike. → My bike ______.|has been stolen
+They will build a supermarket here. → A supermarket ______ here.|will be built
+Did someone invite you to the party? → Were you ______ to the party?|invited
+We should protect the environment. → The environment ______.|should be protected
+They are painting the wall. → The wall ______.|is being painted
+Nobody told me about the meeting. → I wasn't ______ about the meeting.|told
+They don't allow parking here. → Parking is not ______ here.|allowed`));
+ADD(0,8,3,QS(`My computer ______ right now.|repairs|is repairing|is being repaired|was repaired|2
+The keys ______ on the table yesterday.|found|were found|was found|find|1
+A lot of trees ______ next month.|will plant|are planted|planted|will be planted|3
+The exercises must ______ carefully.|finish|be finished|finished|finishing|1
+This house ______ in 1990.|built|was built|has built|is built|1
+The cake ______ by my mother.|made|makes|was made|is making|2
+Our classroom ______ every day.|sweeps|is swept|was swept|is sweeping|1
+The tickets ______ out.|have sold|have been sold|sold|were selling|1
+The report ______ yesterday morning.|completed|was completed|completes|is completed|1
+I ______ a gift by my friend.|gave|was given|gives|am giving|1
+Someone is fixing my car. → My car ______.|is being fixed
+They make these cars in Japan. → These cars ______ in Japan.|are made
+People will use flying cars. → Flying cars ______.|will be used
+They have cancelled the flight. → The flight ______.|has been cancelled;has been canceled
+You must do this work. → This work ______.|must be done
+Did Columbus discover America? → Was America ______ by Columbus?|discovered
+Someone broke the window. → The window ______.|was broken
+They feed the animals twice a day. → The animals ______ twice a day.|are fed
+We can solve the problem. → The problem ______ by us.|can be solved
+They didn't invite him. → He ______.|wasn't invited;was not invited`));
+ADD(0,8,4,QS(`The dog ______ by my brother every day.|feeds|is fed|fed|is feeding|1
+The letters ______ tomorrow.|will deliver|are delivered|will be delivered|delivered|2
+This road ______ last year.|repaired|was repaired|repairs|is repaired|1
+A new song ______ by the singer now.|is recording|records|is being recorded|was recorded|2
+The rules must ______ strictly.|follow|followed|be followed|following|2
+The truth ______ to everyone.|has told|has been told|was telling|tells|1
+The meeting ______ at 8 a.m.|held|is held|was holding|was held|3
+Milk ______ in the fridge.|should keep|should be kept|kept|keeps|1
+The picture ______ by a famous artist.|painted|was painted|is painting|paints|1
+The exercises ______ by the students.|have done|have been done|did|were doing|1
+They build a lot of houses. → A lot of houses ______.|are built
+Someone took my umbrella. → My umbrella ______.|was taken
+They will open a new shop. → A new shop ______.|will be opened
+People are discussing the issue. → The issue ______.|is being discussed
+You should water the plants. → The plants ______.|should be watered
+Has someone fed the cat? → Has the cat been ______?|fed
+They don't sell stamps here. → Stamps aren't ______ here.|sold
+Someone is playing music. → Music ______.|is being played
+We must finish the test. → The test ______.|must be finished
+They discovered the cave in 1990. → The cave ______ in 1990.|was discovered`));
+ADD(0,9,2,QS(`You are a student, ______?|are you|aren't you|do you|don't you|1
+He likes reading, ______?|does he|doesn't he|is he|isn't he|1
+They didn't go out, ______?|did they|didn't they|do they|don't they|0
+She will come early, ______?|will she|won't she|is she|isn't she|1
+We shouldn't talk, ______?|should we|shouldn't we|do we|don't we|0
+Let's go home, ______?|will we|shall we|do we|don't we|1
+Don't make noise, ______?|do you|will you|are you|can you|1
+There is a book on the desk, ______?|is it|isn't it|is there|isn't there|3
+Nobody called, ______?|did they|didn't they|do they|don't they|0
+You have finished, ______?|have you|haven't you|do you|don't you|1
+I am late, ______?|am I|am not I|aren't I|isn't I|2
+She never cries, ______?|does she|doesn't she|is she|isn't she|0
+Close the window, ______?|do you|will you|did you|are you|1
+That is your bag, ______?|is that|isn't that|is it|isn't it|3
+You'd better study, ______?|would you|wouldn't you|had you|hadn't you|3
+Everything is fine, ______?|is it|isn't it|are they|aren't they|1
+He can swim, ______?|can he|can't he|does he|doesn't he|1
+Your sister lives here, ______?|does she|doesn't she|is she|isn't she|1
+Nothing happened, ______?|did it|didn't it|did they|didn't they|0
+You went to bed late, ______?|did you|didn't you|were you|weren't you|1`));
+ADD(0,9,3,QS(`We are friends, ______?|are we|aren't we|do we|don't we|1
+Tom doesn't play tennis, ______?|does he|doesn't he|is he|isn't he|0
+They can't swim, ______?|can they|can't they|do they|don't they|0
+You bought a shirt, ______?|did you|didn't you|do you|don't you|1
+She has a dog, ______?|does she|doesn't she|has she|hasn't she|1
+Mary won't come, ______?|will she|won't she|is she|isn't she|0
+Let's eat out, ______?|shall we|will we|do we|don't we|0
+Don't touch that, ______?|do you|will you|can you|should you|1
+There isn't any water, ______?|is there|isn't there|is it|isn't it|0
+Nobody knows him, ______?|do they|don't they|does he|doesn't he|0
+You like music, ______?|do you|don't you|are you|aren't you|1
+He had gone, ______?|had he|hadn't he|did he|didn't he|1
+Your dad is a doctor, ______?|is he|isn't he|does he|doesn't he|1
+He seldom speaks, ______?|does he|doesn't he|is he|isn't he|0
+I am right, ______?|aren't I|am not I|isn't I|do I|0
+Turn on the fan, ______?|will you|do you|are you|can you|0
+Those are yours, ______?|are those|aren't those|are they|aren't they|3
+You'd rather wait, ______?|would you|wouldn't you|had you|hadn't you|1
+She used to smoke, ______?|did she|didn't she|used she|usedn't she|1
+Everybody is ready, ______?|are they|aren't they|is he|isn't he|1`));
+ADD(0,9,4,QS(`You are tired, ______?|are you|aren't you|do you|don't you|1
+He rarely goes out, ______?|does he|doesn't he|is he|isn't he|0
+They will win, ______?|will they|won't they|do they|don't they|1
+She couldn't sleep, ______?|could she|couldn't she|did she|didn't she|0
+We should help him, ______?|should we|shouldn't we|do we|don't we|1
+Let's watch a movie, ______?|shall we|will we|do we|don't we|0
+Don't forget, ______?|do you|will you|can you|should you|1
+There are many people, ______?|are there|aren't there|are they|aren't they|1
+Nobody came, ______?|did they|didn't they|do they|don't they|0
+You have seen it, ______?|have you|haven't you|do you|don't you|1
+I am next, ______?|aren't I|am not I|isn't I|do I|0
+Turn off the light, ______?|will you|do you|are you|can you|0
+This is fun, ______?|is this|isn't this|is it|isn't it|3
+You'd better hurry, ______?|would you|wouldn't you|had you|hadn't you|3
+She used to live here, ______?|did she|didn't she|used she|usedn't she|1
+Everybody wants to go, ______?|do they|don't they|does he|doesn't he|1
+He has a car, ______?|has he|doesn't he|hasn't he|is he|1
+They didn't finish, ______?|did they|didn't they|do they|don't they|0
+You played football, ______?|did you|didn't you|do you|don't you|1
+Nothing is impossible, ______?|is it|isn't it|are they|aren't they|0`));
+DATA[1].groups[2].ex[2]=[
+{...PH("(-ed)",["invited","attended","celebrated","displayed"],3,"displayed /d/, còn lại /ɪd/"),p:"PART A. PHONETICS — Chọn từ có phần gạch chân phát âm khác / trọng âm khác."},
+PH("(a)",["famous","nature","village","danger"],2,"village /ɪ/, còn lại /eɪ/"),
+PH("(th)",["think","though","other","than"],0,"think /θ/, còn lại /ð/"),
+ST(["career","hobby","culture","custom"],0),ST(["pollution","invention","tradition","atmosphere"],3),
+{...F("My father (drink) ______ coffee every morning.","drinks"),p:"PART B. VOCABULARY AND GRAMMAR — I. Chia dạng đúng của động từ."},
+F("We (play) ______ soccer when it started to rain.","were playing"),
+F("She forgot (lock) ______ the door before leaving.","to lock"),
+F("I wish I (speak) ______ English fluently.","spoke"),
+F("Have you finished (read) ______ that book yet?","reading"),
+{...F("The internet is a wonderful ______ of modern life. (INVENT)","invention"),p:"II. Điền dạng đúng của từ trong ngoặc."},
+F("She is a ______ driver. She has caused many accidents. (CARE)","careless"),
+F("They are working ______ to pass the exam. (HARD)","hard"),
+F("Air ______ is a big problem in our city. (POLLUTE)","pollution"),
+F("We are ______ about the trip to Hanoi. (EXCITE)","excited"),
+{...M("I have ______ apple and a banana.",["a","an","the","Ø"],1),p:"III. Chọn đáp án đúng nhất."},
+M("They usually go to the beach ______ summer.",["in","on","at","by"],0),
+M("The man ______ stole my wallet has been caught.",["who","whom","whose","which"],0),
+M("This is ______ book I have ever read.",["more interesting","the most interesting","most interesting","interesting"],1),
+M("Nam: “Thank you for your help!” – Lan: “______”",["You're welcome","I'm fine","Yes, please","No, thanks"],0),
+M("Do you know the time ______ the train leaves?",["when","where","who","which"],0),
+M("He went to school ______ he was ill.",["because","although","despite","because of"],1),
+M("We must ______ priority to education.",["have","give","take","make"],1),
+M("My car has run ______ of petrol.",["in","on","out","off"],2),
+M("She ______ to live in a small village.",["used","uses","is used","was used"],0),
+{...F("In the past, traveling was very (26) ___. People had to walk or use horses. Nowadays, traveling is much (27) ___ and faster. We can travel (28) ___ car, train, or plane. Many people enjoy flying (29) ___ it saves time. However, plane tickets are often (30) ___ than train tickets. → Điền từ vào chỗ trống (26).","difficult"),
+p:"PART C. READING — I. Chọn từ trong khung điền vào chỗ trống (26–30).\nKhung: difficult – easier – by – because – more expensive"},
+F("Điền từ vào chỗ trống (27) trong đoạn văn ở trên.","easier"),F("Điền từ vào chỗ trống (28).","by"),F("Điền từ vào chỗ trống (29).","because"),F("Điền từ vào chỗ trống (30).","more expensive"),
+{...M("Water is (31) ______ of the most important resources on Earth.",["one","a","the","some"],0),
+p:"II. Chọn đáp án đúng điền vào chỗ trống (31–35).\nWater is (31) ___ of the most important resources on Earth. We use water (32) ___ drinking, washing, and growing food. Without water, life (33) ___ not exist. Unfortunately, in many parts of the world, people do not have (34) ___ clean water. We should protect our water resources and try to (35) ___ water every day."},
+M("(32) We use water ______ drinking, washing, and growing food.",["to","for","in","with"],1),
+M("(33) Without water, life ______ not exist.",["will","could","can","did"],1),
+M("(34) people do not have ______ clean water.",["many","few","enough","a few"],2),
+M("(35) try to ______ water every day.",["save","waste","pollute","use"],0),
+{...M("What is the passage mainly about?",["The benefits of reading books","How to buy cheap books","The history of books","Reading books online"],0),
+p:"III. Đọc đoạn văn và chọn đáp án đúng (36–40).\nReading books is a great habit. It brings many benefits to our lives. First, reading helps us learn new things and expand our knowledge. We can travel to different places and times through the pages of a book. Second, reading is a good way to relax and reduce stress after a hard day. Finally, people who read a lot often have better memory and concentration. Therefore, everyone should spend some time reading every day."},
+M("The word \"It\" in paragraph 1 refers to ______.",["habit","reading","knowledge","time"],1),
+M("According to the passage, reading helps us ______.",["reduce knowledge","increase stress","expand our knowledge","lose memory"],2),
+M("The word \"reduce\" is CLOSEST in meaning to ______.",["increase","decrease","create","improve"],1),
+M("Which of the following is NOT mentioned as a benefit of reading?",["Learning new things","Reducing stress","Improving memory","Making more money"],3),
+{...F("I am not a doctor. → I wish ______.","I were a doctor"),p:"PART D. WRITING — Viết lại câu sao cho nghĩa không đổi (41–50)."},
+F("“I love this city,” she said. → She said ______.","she loved that city"),
+F("If you don't wear a coat, you will catch a cold. → Unless ______.","you wear a coat, you will catch a cold"),
+F("Learning Japanese is very difficult. → It is ______.","very difficult to learn Japanese"),
+F("Although the test was hard, he got a good mark. → Hard ______.",["as the test was, he got a good mark","though the test was, he got a good mark"]),
+F("He often walked to school last year. (USED) → He ______.","used to walk to school last year"),
+F("This is the book. I bought it yesterday. (WHICH) → This is the book ______.","which I bought yesterday"),
+F("The weather was so bad that we stayed home. (SUCH) → It was ______.",["such bad weather that we stayed home"]),
+F("We had no milk left. (RAN) → We ______.",["had run out of milk"]),
+F("The school considers students' health very important. (PRIORITY) → The school ______.",["gives priority to students' health","gives top priority to students' health"])];
+DATA[1].groups[2].ex[3]=[
+{...PH("(-s)",["believes","dreams","girls","parents"],3,"parents /s/, còn lại /z/"),p:"PART A. PHONETICS — Chọn từ có phần gạch chân phát âm khác / trọng âm khác."},
+PH("(u)",["huge","but","cute","mute"],1,"but /ʌ/, còn lại /juː/"),
+PH("(ch)",["cheese","chair","chemical","child"],2,"chemical /k/, còn lại /tʃ/"),
+ST(["promise","suggest","collect","divide"],0),ST(["disaster","volcano","tornado","hurricane"],3),
+{...F("The children (play) ______ in the park at 4 p.m yesterday.","were playing"),p:"PART B. VOCABULARY AND GRAMMAR — I. Chia dạng đúng của động từ."},
+F("Water (boil) ______ at 100 degrees Celsius.","boils"),
+F("He promised (help) ______ me with my homework.","to help"),
+F("If I (be) ______ a bird, I would fly everywhere.","were"),
+F("We (not/see) ______ him since last month.",["haven't seen","have not seen"]),
+{...F("She sings very ______. (BEAUTIFUL)","beautifully"),p:"II. Điền dạng đúng của từ trong ngoặc."},
+F("His sudden ______ surprised us all. (APPEAR)","appearance"),
+F("It is ______ to drive through a red light. (DANGER)","dangerous"),
+F("We need to find a ______ to this problem. (SOLVE)","solution"),
+F("The teacher gave us some ______ advice. (USE)","useful"),
+{...M("He goes to work ______ bus.",["in","on","by","with"],2),p:"III. Chọn đáp án đúng nhất."},
+M("This is the boy ______ helped me yesterday.",["which","who","whom","whose"],1),
+M("My sister is ______ than I am.",["more tall","taller","tallest","the tallest"],1),
+M("“Would you like some coffee?” – “______”",["Yes, please","No, I don't","Yes, I would","You're welcome"],0),
+M("He asked me where I ______.",["live","lived","am living","was lived"],1),
+M("______ it was raining heavily, we went to school on time.",["Because","Although","Despite","Because of"],1),
+M("You should ______ off the lights when leaving the room.",["turn","take","make","set"],0),
+M("They have run out ______ sugar.",["of","in","on","with"],0),
+M("I wish I ______ more free time.",["have","had","will have","can have"],1),
+M("She is used to ______ up early.",["get","got","getting","gets"],2),
+{...F("Our environment is in trouble. People cut down (26) ___ trees every year. This causes floods and destroys the homes of many animals. Factory smoke pollutes the (27) ___ we breathe. If we don't (28) ___ action now, our planet will be ruined. Everyone should plant more trees and (29) ___ less plastic to protect the (30) ___. → Điền từ vào chỗ trống (26).","many"),
+p:"PART C. READING — I. Chọn từ trong khung điền vào chỗ trống (26–30).\nKhung: many – air – take – use – Earth"},
+F("Điền từ vào chỗ trống (27) trong đoạn văn ở trên.","air"),F("Điền từ vào chỗ trống (28).","take"),F("Điền từ vào chỗ trống (29).","use"),F("Điền từ vào chỗ trống (30).","Earth"),
+{...M("English is (31) ______ most popular language in the world.",["a","an","the","some"],2),
+p:"II. Chọn đáp án đúng điền vào chỗ trống (31–35).\nEnglish is (31) ___ most popular language in the world. It is spoken by millions of people in many (32) ___. Learning English helps you communicate (33) ___ foreigners easily. Moreover, it is very useful for your future (34) ___. If you are good at English, you can find a well-paid job (35) ___ a multinational company."},
+M("(32) It is spoken by millions of people in many ______.",["country","countries","village","cities"],1),
+M("(33) Learning English helps you communicate ______ foreigners easily.",["to","with","for","about"],1),
+M("(34) it is very useful for your future ______.",["career","hobby","sport","food"],0),
+M("(35) you can find a well-paid job ______ a multinational company.",["at","in","on","of"],1),
+{...M("What is the passage mainly about?",["The benefits of doing exercise","How to lose weight","Popular sports in Vietnam","Diet and nutrition"],0),
+p:"III. Đọc đoạn văn và chọn đáp án đúng (36–40).\nDoing exercise is very important for our health. It helps us stay fit and active. People who exercise regularly have a lower risk of getting diseases like heart disease and diabetes. Furthermore, physical activities such as jogging, swimming, or playing sports can improve our mental health. They reduce stress and help us sleep better at night. Therefore, health experts suggest that we should exercise for at least 30 minutes a day."},
+M("The word \"It\" in paragraph 1 refers to ______.",["health","doing exercise","disease","stress"],1),
+M("According to the passage, exercising regularly helps people ______.",["get diseases","have a lower risk of getting diseases","sleep worse","gain weight"],1),
+M("The word \"reduce\" is CLOSEST in meaning to ______.",["increase","make smaller","create","keep"],1),
+M("How much time should we exercise a day according to experts?",["10 minutes","20 minutes","At least 30 minutes","1 hour"],2),
+{...F("She can't swim. → She wishes ______.","she could swim"),p:"PART D. WRITING — Viết lại câu sao cho nghĩa không đổi (41–50)."},
+F("“I am reading a book,” he said. → He said ______.","he was reading a book"),
+F("If you don't study hard, you will fail the exam. → Unless ______.","you study hard, you will fail the exam"),
+F("It takes her two hours to do her homework. → She spends ______.","two hours doing her homework"),
+F("Although the weather was bad, they went out. → Bad ______.",["as the weather was, they went out","though the weather was, they went out"]),
+F("My brother often played football when he was young. (USED) → My brother ______.","used to play football when he was young"),
+F("The girl is my sister. She is standing over there. (WHO) → The girl ______.","who is standing over there is my sister"),
+F("The film was so boring that I fell asleep. (SUCH) → It was ______.",["such a boring film that I fell asleep"]),
+F("We had no more money. (RAN) → We ______.",["had run out of money"]),
+F("Our school considers students' safety first. (PRIORITY) → Our school ______.",["gives priority to students' safety","gives top priority to students' safety"])];
+ADD(1,0,5,QS(`Chọn từ có phần gạch chân phát âm khác: (-ed)|needed|wanted|decided|played|3
+Chọn từ có phần gạch chân phát âm khác: (-s)|books|cats|maps|dogs|3
+Chọn từ có phần gạch chân phát âm khác: (th)|think|thank|there|thin|2
+Chọn từ có trọng âm khác:|village|police|student|teacher|1
+Chọn từ có trọng âm khác:|important|beautiful|difficult|excellent|0
+Air ______ is a serious problem. (POLLUTE)|pollution
+She is a ______ teacher. (CARE)|careful
+The ______ of the new building is impressive. (CONSTRUCT)|construction
+He drives ______, which is dangerous. (CARE)|carelessly
+We need to protect ______ species. (DANGER)|endangered`));
+ADD(1,0,6,QS(`Chọn từ có phần gạch chân phát âm khác: (a)|name|cake|apple|late|2
+Chọn từ có phần gạch chân phát âm khác: (i)|like|time|sit|nine|2
+Chọn từ có phần gạch chân phát âm khác: (ou)|house|mouse|would|about|2
+Chọn từ có trọng âm khác:|enjoy|relax|visit|decide|2
+Chọn từ có trọng âm khác:|energy|pollution|tradition|computer|0
+The internet is a great ______. (INVENT)|invention
+He is ______ in playing soccer. (INTEREST)|interested
+She performed ______ on the stage. (BEAUTIFUL)|beautifully
+It is ______ to cheat in an exam. (HONEST)|dishonest
+The ______ was very crowded. (EXHIBIT)|exhibition`));
+ADD(1,0,7,QS(`Chọn từ có phần gạch chân phát âm khác: (-ed)|watched|washed|stopped|lived|3
+Chọn từ có phần gạch chân phát âm khác: (-s)|pens|rulers|bags|books|3
+Chọn từ có phần gạch chân phát âm khác: (ea)|meat|seat|great|heat|2
+Chọn từ có trọng âm khác:|happy|boring|tired|alone|3
+Chọn từ có trọng âm khác:|musician|history|chemistry|physics|0
+This is an ______ book. (INTEREST)|interesting
+We had a ______ trip to Da Lat. (WONDER)|wonderful
+Her ______ made everyone sad. (APPEAR)|disappearance
+He speaks English ______. (FLUENT)|fluently
+Water ______ is harmful. (POLLUTE)|pollution`));
+ADD(1,0,8,QS(`Chọn từ có phần gạch chân phát âm khác: (c)|cat|city|cold|car|1
+Chọn từ có phần gạch chân phát âm khác: (g)|good|game|gym|garden|2
+Chọn từ có phần gạch chân phát âm khác: (ch)|chair|school|child|church|1
+Chọn từ có trọng âm khác:|money|student|idea|people|2
+Chọn từ có trọng âm khác:|education|information|technology|population|2
+He is a famous ______. (ACT)|actor
+The ______ of the film is surprising. (END)|ending
+She is ______ about her exam results. (WORRY)|worried
+They live in a ______ area. (PEACE)|peaceful
+I need some ______ about the course. (INFORM)|information`));
+ADD(1,0,9,QS(`Chọn từ có phần gạch chân phát âm khác: (u)|put|but|cut|shut|0
+Chọn từ có phần gạch chân phát âm khác: (o)|hot|dog|box|go|3
+Chọn từ có phần gạch chân phát âm khác: (e)|me|he|she|bed|3
+Chọn từ có trọng âm khác:|water|today|lesson|table|1
+Chọn từ có trọng âm khác:|expensive|attractive|beautiful|important|2
+His ______ in the match was great. (PERFORM)|performance
+We must reduce ______. (POLLUTE)|pollution
+It's ______ to swim here. (DANGER)|dangerous
+She is very ______. (HELP)|helpful
+The project was a huge ______. (SUCCEED)|success`));
+ADD(1,1,3,QS(`She doesn't have a bike. → She wishes ______.|she had a bike
+They built this house in 2000. → This house ______.|was built in 2000
+If he doesn't work hard, he'll fail. → Unless ______.|he works hard, he'll fail
+"I am a student," he said. → He said ______.|he was a student
+Although it rained, we played soccer. → In spite of ______.|the rain, we played soccer
+She often cried when she was young. (USED) → She ______.|used to cry when she was young
+The boy is my friend. He is singing. (WHO) → The boy ______.|who is singing is my friend
+The tea was so hot that I couldn't drink it. (SUCH) → It was ______.|such hot tea that I couldn't drink it
+We have no money left. (RAN) → We ______.|have run out of money
+They consider health important. (PRIORITY) → They ______.|give priority to health`));
+ADD(1,1,4,QS(`I don't know her number. → I wish ______.|I knew her number
+People speak English everywhere. → English ______.|is spoken everywhere
+"Will you go to the party?" she asked. → She asked me ______.|if I would go to the party
+Because of the heavy rain, we stayed home. → Because ______.|it rained heavily, we stayed home
+He isn't tall enough to play volleyball. → He is too ______.|short to play volleyball
+I started learning English 3 years ago. → I have ______.|learned English for 3 years
+No one in my class is smarter than Nam. → Nam is ______.|the smartest in my class
+The book is very interesting. I read it yesterday. (WHICH) → The book ______.|which I read yesterday is very interesting
+My mother always cooked dinner early. (USED) → My mother ______.|used to cook dinner early
+The school focuses on safety. (PRIORITY) → The school ______.|gives priority to safety`));
+ADD(1,1,5,QS(`I am not good at Math. → I wish ______.|I were good at Math
+Someone has stolen my bag. → My bag ______.|has been stolen
+"Don't open the door," he said. → He told me ______.|not to open the door
+If you don't hurry, you will miss the bus. → Unless ______.|you hurry, you will miss the bus
+Despite the cold weather, he went swimming. → Although ______.|the weather was cold, he went swimming
+I haven't seen her for a month. → The last time ______.|I saw her was a month ago
+She spends 2 hours doing homework. → It takes ______.|her 2 hours to do homework
+The man is my uncle. He is driving the car. (WHO) → The man ______.|who is driving the car is my uncle
+The test was so long that we couldn't finish it. (SUCH) → It was ______.|such a long test that we couldn't finish it
+We have no petrol. (RAN) → We ______.|have run out of petrol`));
+ADD(1,1,6,QS(`She doesn't have time to travel. → She wishes ______.|she had time to travel
+They will build a new bridge. → A new bridge ______.|will be built
+"Where do you live?" he asked me. → He asked me ______.|where I lived
+Because he was sick, he didn't go to school. → Because of ______.|his sickness, he didn't go to school
+This is the most beautiful picture I have ever seen. → I have never ______.|seen a more beautiful picture
+He started playing tennis 5 years ago. → He has ______.|played tennis for 5 years
+The film was so boring that I fell asleep. → It was such ______.|a boring film that I fell asleep
+My father often smoked when he was young. (USED) → My father ______.|used to smoke when he was young
+The girl is Mary. I borrowed her pen. (WHOSE) → The girl ______.|whose pen I borrowed is Mary
+They give priority to women and children. (PRIORITY) → Women and children ______.|are given priority`));
+ADD(1,1,7,QS(`I don't have a laptop. → I wish ______.|I had a laptop
+They are painting the house. → The house ______.|is being painted
+"I bought this book yesterday," she said. → She said ______.|she had bought that book the day before
+If she doesn't invite me, I won't go. → Unless ______.|she invites me, I won't go
+Although he is rich, he is unhappy. → In spite of ______.|being rich, he is unhappy
+I haven't visited Hanoi since 2010. → I last ______.|visited Hanoi in 2010
+It takes them 30 minutes to walk to school. → They spend ______.|30 minutes walking to school
+The man is a doctor. He lives next door. (WHO) → The man ______.|who lives next door is a doctor
+The weather was so bad that we stayed at home. (SUCH) → It was ______.|such bad weather that we stayed at home
+We have no more ideas. (RAN) → We ______.|have run out of ideas`));
+ADD(1,1,8,QS(`I am not a millionaire. → I wish ______.|I were a millionaire
+People must protect the environment. → The environment ______.|must be protected
+"Are you a student?" she asked. → She asked me ______.|if I was a student
+Because the water was cold, we didn't swim. → Because of ______.|the cold water, we didn't swim
+He isn't old enough to drive. → He is too ______.|young to drive
+They started building the hospital last month. → The hospital has ______.|been built since last month
+No other student is as tall as Peter. → Peter is ______.|the tallest student
+The book is mine. It is on the table. (WHICH) → The book ______.|which is on the table is mine
+She often went to the cinema on Sundays. (USED) → She ______.|used to go to the cinema on Sundays
+The hospital considers emergencies most important. (PRIORITY) → The hospital ______.|gives priority to emergencies`));
+ADD(1,1,9,QS(`I cannot speak French. → I wish ______.|I could speak French
+They have just finished the project. → The project ______.|has just been finished
+"I will travel to Paris next week," he said. → He said ______.|he would travel to Paris the following week
+If it doesn't rain, we will go camping. → Unless ______.|it rains, we will go camping
+Despite his old age, he runs fast. → Although ______.|he is old, he runs fast
+I haven't met him for 2 weeks. → The last time ______.|I met him was 2 weeks ago
+She spends an hour reading books. → It takes ______.|her an hour to read books
+The girl is my sister. You met her yesterday. (WHOM) → The girl ______.|whom you met yesterday is my sister
+The coffee was so hot that I couldn't drink it. (SUCH) → It was ______.|such hot coffee that I couldn't drink it
+We have no more sugar. (RAN) → We ______.|have run out of sugar`));
+
+const GEN_EXAM = (n) => [
+  {...PH("(-ed)",["worked","stopped","forced","wanted"],3,"wanted /ɪd/, còn lại /t/"),p:"PART A. PHONETICS"},
+  PH("(-s)",["books","cats","dogs","maps"],2,"dogs /z/, còn lại /s/"),
+  PH("(th)",["this","that","think","these"],2,"think /θ/, còn lại /ð/"),
+  ST(["happy","lucky","polite","careful"],2),ST(["understand","engineer","volunteer","remember"],3),
+  {...F("By the time we arrived, the film (start) ______.","had started"),p:"PART B. GRAMMAR & VOCABULARY"},
+  F("If I (be) ______ you, I wouldn't do that.","were"),
+  F("She enjoys (read) ______ books in her free time.","reading"),
+  F("The house (build) ______ in 1990.","was built"),
+  {...F("Air ______ is a serious problem. (POLLUTE)","pollution"),p:"Word Form"},
+  F("He is a ______ driver. (CARE)","careful"),
+  F("Her ______ is very important to us. (DECIDE)","decision"),
+  F("They play soccer ______. (BEAUTIFUL)","beautifully"),
+  {...M("I have ______ book in my bag.",["a","an","the","Ø"],0),p:"PART C. MULTIPLE CHOICE"},
+  M("She goes to school ______ bus.",["in","on","by","at"],2),
+  M("The man ______ is talking to the teacher is my dad.",["which","who","whom","whose"],1),
+  M("This is ______ building in the city.",["tall","taller","the tallest","tallest"],2),
+  M("I wish I ______ a car.",["have","has","had","will have"],2),
+  M("He worked hard, ______ he passed the exam.",["so","but","because","although"],0),
+  M("They are used to ______ up early.",["get","got","getting","gets"],2),
+  M("We have run out ______ milk.",["of","in","on","at"],0),
+  M("Our school gives priority ______ poor students.",["for","to","with","on"],1),
+  {...F(`Today, computers are (26) ___ in schools and homes. Students can use computers to (27) ___ information on the internet. It makes learning (28) ___ easier. However, playing computer games too much is (29) ___ for your eyes. You should (30) ___ your time reasonably. → Điền từ (26).`,"popular"),p:"PART D. READING"},
+  F("Điền từ (27).","find"),F("Điền từ (28).","much"),F("Điền từ (29).","bad"),F("Điền từ (30).","manage"),
+  {...M("What is the passage about?",["Sports","Computers in education","Food","Travel"],1),p:"Read and choose"},
+  M("Students use computers to find ______.",["food","information","clothes","shoes"],1),
+  M("Learning becomes ______.",["harder","easier","boring","tired"],1),
+  M("Playing too much games is bad for ______.",["eyes","ears","hands","legs"],0),
+  M("You should manage your time ______.",["badly","reasonably","carelessly","slowly"],1),
+  {...F("I don't have a bike. → I wish ______.","I had a bike"),p:"PART E. WRITING"},
+  F("They painted the house. → The house ______.","was painted"),
+  F(`"I like pizza," he said. → He said ______.`,"he liked pizza"),
+  F("If it doesn't rain, we will go. → Unless ______.","it rains, we will go"),
+  F("Although she was tired, she worked hard. → In spite of ______.","being tired, she worked hard"),
+  F("She often cried when she was a baby. (USED) → She ______.","used to cry when she was a baby"),
+  F("The man is my uncle. He is singing. (WHO) → The man ______.","who is singing is my uncle"),
+  F("The tea was so hot that I couldn't drink it. (SUCH) → It was ______.","such hot tea that I couldn't drink it"),
+  F("We have no money left. (RAN) → We ______.","have run out of money"),
+  F("They consider safety important. (PRIORITY) → They ______.","give priority to safety")
+];
+
+DATA[1].groups[2].ex[4] = GEN_EXAM(5);
+DATA[1].groups[2].ex[5] = GEN_EXAM(6);
+DATA[1].groups[2].ex[6] = GEN_EXAM(7);
+DATA[1].groups[2].ex[7] = GEN_EXAM(8);
+DATA[1].groups[2].ex[8] = GEN_EXAM(9);
+DATA[1].groups[2].ex[9] = GEN_EXAM(10);
+
 /* ===== ĐỘNG CƠ ===== */
 const $=s=>document.querySelector(s);let T=0,CUR=null,TM=null,P={done:{}};
 try{P=JSON.parse(localStorage.getItem("on10_2627"))||P}catch(e){}
