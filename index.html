@@ -1,43 +1,164 @@
 <!DOCTYPE html>
-<html lang="vi"><head><meta charset="utf-8">
+<html lang="vi">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ÔN THI LỚP 10 THPT 2026-2027 - Bản quyền thuộc về Thầy Phạm Tiến - GV Tiếng Anh - Trường THPT Bỉm Sơn</title>
+<title>ÔN THI LỚP 10 THPT 2026-2027 - Bản quyền thuộc về số ĐT: 0943.930.787</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--p:#4f46e5;--p2:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f4f5fb;--c:#fff;--t:#1e1b4b;--m:#6b7280;--l:#e5e7eb}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--t);padding-bottom:env(safe-area-inset-bottom)}
-header{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:calc(14px + env(safe-area-inset-top)) 16px 0;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #0003}
-header h1{margin:0;font-size:1.05rem;letter-spacing:.3px}
-.bar{height:6px;background:#fff3;border-radius:9px;margin:8px 0 10px;overflow:hidden}.bar i{display:block;height:100%;background:#fde047;transition:width .3s}
-nav{display:flex;gap:6px}nav button{flex:1;border:0;background:#fff2;color:#fff;padding:11px 6px;font:600 .95rem inherit;border-radius:12px 12px 0 0;cursor:pointer}
-nav button.on{background:var(--bg);color:var(--p)}
-main{max-width:860px;margin:0 auto;padding:14px 14px 90px}
-.g{background:var(--c);border-radius:16px;padding:14px;margin-bottom:14px;box-shadow:0 1px 6px #0001}
-.g h2{margin:0 0 10px;font-size:1.02rem}.g small{color:var(--m);font-weight:400}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
-.ex{border:2px solid var(--l);background:#fff;border-radius:12px;min-height:56px;font:600 .9rem inherit;color:var(--t);cursor:pointer;padding:6px}
-.ex.open{border-color:var(--p);background:#eef2ff}.ex.done{border-color:var(--ok);background:#f0fdf4;color:var(--ok)}
-.ex.lock,.ex.soon{opacity:.5;cursor:not-allowed;background:#f3f4f6}
-.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
-.btn{border:0;background:var(--p);color:#fff;font:700 1rem inherit;padding:13px 20px;border-radius:12px;cursor:pointer;min-height:48px}
-.btn.s{background:#fff;color:var(--p);border:2px solid var(--p)}
-.q{background:var(--c);border-radius:14px;padding:14px;margin-bottom:12px;border:2px solid transparent;box-shadow:0 1px 6px #0001}
-.q.ok{border-color:var(--ok)}.q.no{border-color:var(--no)}
-.p{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px 12px;border-radius:8px;margin-bottom:10px;white-space:pre-line;font-size:.95rem}
-.n{font-weight:700;color:var(--p);margin-right:6px}
-.o{display:block;width:100%;text-align:left;border:2px solid var(--l);background:#fff;border-radius:10px;padding:12px;margin-top:8px;font:inherit;color:inherit;min-height:48px;cursor:pointer}
-.o.sel{border-color:var(--p);background:#eef2ff}.o.right{border-color:var(--ok);background:#f0fdf4}.o.wrong{border-color:var(--no);background:#fef2f2}
-input.f{width:100%;margin-top:8px;border:2px solid var(--l);border-radius:10px;padding:12px;font:inherit;min-height:48px}
-input.f:focus{outline:0;border-color:var(--p)}
-.e{margin-top:8px;font-size:.92rem;color:var(--m)}.e b{color:var(--no)}
-.fix{position:fixed;left:0;right:0;bottom:0;background:#fffe;backdrop-filter:blur(8px);padding:10px 14px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -2px 12px #0002;display:flex;gap:10px;align-items:center;z-index:6}
-.fix .btn{flex:1;max-width:420px;margin:0 auto}
-.res{text-align:center;padding:18px;border-radius:16px;margin-bottom:14px;color:#fff;font-weight:700}
-.res.ok{background:var(--ok)}.res.no{background:var(--no)}
-#tm{font-weight:700;color:var(--no)}
-</style></head><body>
-<header><h1>🎓 ÔN THI LỚP 10 THPT 2026-2027</h1><div class="bar"><i id="pb"></i></div>
-<nav id="nav"></nav></header><main id="app"></main>
+:root {
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --secondary: #6366F1;
+  --success: #10B981;
+  --success-bg: #D1FAE5;
+  --danger: #F43F5E;
+  --danger-bg: #FFE4E6;
+  --bg: #F1F5F9;
+  --surface: #FFFFFF;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { 
+  margin: 0; 
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif; 
+  background: var(--bg); 
+  color: var(--text-main); 
+  line-height: 1.6; 
+  padding-bottom: calc(90px + env(safe-area-inset-bottom)); 
+}
+
+/* Header & Nav */
+header { 
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+  color: #fff; 
+  padding: calc(16px + env(safe-area-inset-top)) 20px 0; 
+  position: sticky; 
+  top: 0; 
+  z-index: 10; 
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.15); 
+}
+header h1 { margin: 0; font-size: 1.3rem; font-weight: 800; text-align: center; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.copyright { text-align: center; font-size: 0.85rem; margin: 4px 0 0; color: rgba(255,255,255,0.9); font-weight: 600; }
+.bar { height: 6px; background: rgba(255,255,255,0.2); border-radius: 99px; margin: 16px 0; overflow: hidden; }
+.bar i { display: block; height: 100%; background: #FDE047; transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+nav { display: flex; gap: 8px; padding-bottom: 0; }
+nav button { 
+  flex: 1; border: none; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); 
+  padding: 14px 8px; font-size: 0.95rem; font-weight: 700; font-family: inherit;
+  border-radius: var(--radius-md) var(--radius-md) 0 0; cursor: pointer; transition: all 0.2s; backdrop-filter: blur(4px); 
+}
+nav button.on { background: var(--bg); color: var(--primary); }
+
+/* Main Layout */
+main { max-width: 800px; margin: 0 auto; padding: 20px 16px; }
+
+/* Sections & Grid */
+.g { background: var(--surface); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid var(--border); }
+.g h2 { margin: 0 0 20px; font-size: 1.2rem; font-weight: 800; color: var(--text-main); display: flex; justify-content: space-between; align-items: center; }
+.g h2 small { font-size: 0.85rem; color: var(--primary); font-weight: 700; background: #EEF2FF; padding: 4px 12px; border-radius: 99px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+
+/* Exercise Buttons */
+.ex { 
+  border: 2px solid var(--border); background: var(--surface); border-radius: var(--radius-lg); 
+  padding: 14px 8px; font-size: 0.95rem; font-weight: 700; font-family: inherit; color: var(--text-main); 
+  cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; 
+  transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+}
+.ex:active:not(:disabled) { transform: scale(0.95); }
+.ex.open { border-color: var(--primary); background: #EEF2FF; color: var(--primary); box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1); }
+.ex.done { border-color: var(--success); background: var(--success-bg); color: #047857; }
+.ex.lock, .ex.soon { opacity: 0.6; cursor: not-allowed; background: var(--bg); border-color: transparent; box-shadow: none; color: var(--text-muted); }
+.ex span.ic { font-size: 1.5rem; display: block; }
+
+/* Question Screen Top Bar */
+.top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; background: var(--surface); padding: 12px 16px; border-radius: var(--radius-lg); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.top b { color: var(--primary); font-size: 1.1rem; font-weight: 800; }
+
+/* Primary Buttons */
+.btn { 
+  border: none; background: var(--primary); color: #fff; font-weight: 700; font-family: inherit; font-size: 1.05rem; 
+  padding: 14px 24px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; 
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); display: inline-flex; justify-content: center; align-items: center; 
+}
+.btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4); }
+.btn:active { transform: translateY(1px); }
+.btn.s { background: transparent; color: var(--text-muted); border: 2px solid var(--border); box-shadow: none; padding: 8px 16px; font-size: 0.95rem; }
+.btn.s:hover { border-color: var(--text-muted); color: var(--text-main); transform: none; }
+
+/* Question Cards */
+.q { background: var(--surface); border-radius: var(--radius-xl); padding: 24px; margin-bottom: 20px; border: 2px solid transparent; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: border-color 0.3s; }
+.q.ok { border-color: var(--success); }
+.q.no { border-color: var(--danger); }
+
+/* Reading Passage */
+.p { background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 16px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 20px; font-size: 0.95rem; color: #92400E; font-weight: 500; }
+.n { font-weight: 800; color: var(--primary); margin-right: 8px; font-size: 1.15rem; }
+
+/* Options (Multiple Choice) */
+.o { 
+  display: block; width: 100%; text-align: left; border: 2px solid var(--border); background: var(--surface); 
+  border-radius: var(--radius-md); padding: 14px 16px; margin-top: 12px; font-size: 1.05rem; font-family: inherit;
+  color: var(--text-main); font-weight: 600; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.o:hover:not(:disabled) { border-color: #C7D2FE; background: #F8FAFC; transform: translateX(4px); }
+.o:active:not(:disabled) { transform: scale(0.98); }
+.o.sel { border-color: var(--primary); background: #EEF2FF; color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); }
+.o.right { border-color: var(--success); background: var(--success-bg); color: #065F46; }
+.o.wrong { border-color: var(--danger); background: var(--danger-bg); color: #9F1239; }
+
+/* Inputs (Fill in the blank) */
+input.f { 
+  width: 100%; margin-top: 12px; border: 2px solid var(--border); border-radius: var(--radius-md); 
+  padding: 14px 16px; font-size: 1.05rem; font-family: inherit; font-weight: 600; color: var(--primary); 
+  background: #F8FAFC; transition: all 0.2s; 
+}
+input.f:focus { outline: none; border-color: var(--primary); background: var(--surface); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
+input.f:disabled { opacity: 1; }
+
+/* Explanations */
+.e { margin-top: 16px; font-size: 0.95rem; font-weight: 600; color: var(--text-muted); padding-top: 12px; border-top: 2px dashed var(--border); display: none; }
+.q.ok .e, .q.no .e { display: block; animation: fadeIn 0.5s ease; }
+.e b { color: var(--danger); font-weight: 800; font-size: 1rem; }
+
+/* Fixed Bottom Bar */
+.fix { 
+  position: fixed; left: 0; right: 0; bottom: 0; 
+  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); 
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom)); 
+  box-shadow: 0 -10px 25px rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; gap: 16px; z-index: 20; 
+  max-width: 800px; margin: 0 auto; border-radius: var(--radius-xl) var(--radius-xl) 0 0; border: 1px solid var(--border); border-bottom: none;
+}
+#ct { font-weight: 800; color: var(--text-muted); font-size: 1.05rem; background: var(--bg); padding: 8px 16px; border-radius: 99px; }
+.fix .btn { flex: 1; margin: 0; }
+
+/* Results Banner */
+.res { text-align: center; padding: 24px 20px; border-radius: var(--radius-xl); margin-bottom: 24px; color: #fff; font-weight: 700; font-size: 1.15rem; box-shadow: 0 8px 20px rgba(0,0,0,0.15); animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+.res.ok { background: linear-gradient(135deg, var(--success), #059669); }
+.res.no { background: linear-gradient(135deg, var(--danger), #E11D48); }
+
+#tm { font-weight: 800; color: var(--danger); background: var(--danger-bg); padding: 6px 14px; border-radius: 99px; font-variant-numeric: tabular-nums; font-size: 1.05rem; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎓 ÔN THI LỚP 10 THPT 2026-2027</h1>
+  <div class="copyright">Bản quyền thuộc về Thầy Phạm Tiến - ĐT: 0943.930.787</div>
+  <div class="bar"><i id="pb"></i></div>
+  <nav id="nav"></nav>
+</header>
+<main id="app"></main>
+
 <script>
 /* ===== DỮ LIỆU ===== M(câu,[A,B,C,D],đáp án đúng 0-3,giải thích) | F(câu,đáp án hoặc [nhiều đáp án],giải thích) */
 const M=(q,o,a,e,p)=>({q,o,a,e,p}),F=(q,a,e,p)=>({q,a:[].concat(a),e,p}),E=n=>Array.from({length:n},()=>[]);
@@ -1133,7 +1254,6 @@ They say that he is a good doctor. → He ______.|is said to be a good doctor
 “Do you play football?” she asked him. → She asked him ______.|if he played football
 No one in the class is taller than Nam. → Nam is ______.|the tallest in the class;the tallest student in the class
 He is too weak to lift the box. → He is not ______.|strong enough to lift the box`));
-
 ADD(0,8,0,QS(`This house ______ in 1990 by my grandfather.|was built|built|is built|has built|0
 A new school ______ in our village next year.|will build|will be built|is built|builds|1
 My car ______ right now.|repairs|is repairing|is being repaired|was repaired|2
@@ -1334,106 +1454,6 @@ He has a car, ______?|has he|doesn't he|hasn't he|is he|1
 They didn't finish, ______?|did they|didn't they|do they|don't they|0
 You played football, ______?|did you|didn't you|do you|don't you|1
 Nothing is impossible, ______?|is it|isn't it|are they|aren't they|0`));
-DATA[1].groups[2].ex[2]=[
-{...PH("(-ed)",["invited","attended","celebrated","displayed"],3,"displayed /d/, còn lại /ɪd/"),p:"PART A. PHONETICS — Chọn từ có phần gạch chân phát âm khác / trọng âm khác."},
-PH("(a)",["famous","nature","village","danger"],2,"village /ɪ/, còn lại /eɪ/"),
-PH("(th)",["think","though","other","than"],0,"think /θ/, còn lại /ð/"),
-ST(["career","hobby","culture","custom"],0),ST(["pollution","invention","tradition","atmosphere"],3),
-{...F("My father (drink) ______ coffee every morning.","drinks"),p:"PART B. VOCABULARY AND GRAMMAR — I. Chia dạng đúng của động từ."},
-F("We (play) ______ soccer when it started to rain.","were playing"),
-F("She forgot (lock) ______ the door before leaving.","to lock"),
-F("I wish I (speak) ______ English fluently.","spoke"),
-F("Have you finished (read) ______ that book yet?","reading"),
-{...F("The internet is a wonderful ______ of modern life. (INVENT)","invention"),p:"II. Điền dạng đúng của từ trong ngoặc."},
-F("She is a ______ driver. She has caused many accidents. (CARE)","careless"),
-F("They are working ______ to pass the exam. (HARD)","hard"),
-F("Air ______ is a big problem in our city. (POLLUTE)","pollution"),
-F("We are ______ about the trip to Hanoi. (EXCITE)","excited"),
-{...M("I have ______ apple and a banana.",["a","an","the","Ø"],1),p:"III. Chọn đáp án đúng nhất."},
-M("They usually go to the beach ______ summer.",["in","on","at","by"],0),
-M("The man ______ stole my wallet has been caught.",["who","whom","whose","which"],0),
-M("This is ______ book I have ever read.",["more interesting","the most interesting","most interesting","interesting"],1),
-M("Nam: “Thank you for your help!” – Lan: “______”",["You're welcome","I'm fine","Yes, please","No, thanks"],0),
-M("Do you know the time ______ the train leaves?",["when","where","who","which"],0),
-M("He went to school ______ he was ill.",["because","although","despite","because of"],1),
-M("We must ______ priority to education.",["have","give","take","make"],1),
-M("My car has run ______ of petrol.",["in","on","out","off"],2),
-M("She ______ to live in a small village.",["used","uses","is used","was used"],0),
-{...F("In the past, traveling was very (26) ___. People had to walk or use horses. Nowadays, traveling is much (27) ___ and faster. We can travel (28) ___ car, train, or plane. Many people enjoy flying (29) ___ it saves time. However, plane tickets are often (30) ___ than train tickets. → Điền từ vào chỗ trống (26).","difficult"),
-p:"PART C. READING — I. Chọn từ trong khung điền vào chỗ trống (26–30).\nKhung: difficult – easier – by – because – more expensive"},
-F("Điền từ vào chỗ trống (27) trong đoạn văn ở trên.","easier"),F("Điền từ vào chỗ trống (28).","by"),F("Điền từ vào chỗ trống (29).","because"),F("Điền từ vào chỗ trống (30).","more expensive"),
-{...M("Water is (31) ______ of the most important resources on Earth.",["one","a","the","some"],0),
-p:"II. Chọn đáp án đúng điền vào chỗ trống (31–35).\nWater is (31) ___ of the most important resources on Earth. We use water (32) ___ drinking, washing, and growing food. Without water, life (33) ___ not exist. Unfortunately, in many parts of the world, people do not have (34) ___ clean water. We should protect our water resources and try to (35) ___ water every day."},
-M("(32) We use water ______ drinking, washing, and growing food.",["to","for","in","with"],1),
-M("(33) Without water, life ______ not exist.",["will","could","can","did"],1),
-M("(34) people do not have ______ clean water.",["many","few","enough","a few"],2),
-M("(35) try to ______ water every day.",["save","waste","pollute","use"],0),
-{...M("What is the passage mainly about?",["The benefits of reading books","How to buy cheap books","The history of books","Reading books online"],0),
-p:"III. Đọc đoạn văn và chọn đáp án đúng (36–40).\nReading books is a great habit. It brings many benefits to our lives. First, reading helps us learn new things and expand our knowledge. We can travel to different places and times through the pages of a book. Second, reading is a good way to relax and reduce stress after a hard day. Finally, people who read a lot often have better memory and concentration. Therefore, everyone should spend some time reading every day."},
-M("The word \"It\" in paragraph 1 refers to ______.",["habit","reading","knowledge","time"],1),
-M("According to the passage, reading helps us ______.",["reduce knowledge","increase stress","expand our knowledge","lose memory"],2),
-M("The word \"reduce\" is CLOSEST in meaning to ______.",["increase","decrease","create","improve"],1),
-M("Which of the following is NOT mentioned as a benefit of reading?",["Learning new things","Reducing stress","Improving memory","Making more money"],3),
-{...F("I am not a doctor. → I wish ______.","I were a doctor"),p:"PART D. WRITING — Viết lại câu sao cho nghĩa không đổi (41–50)."},
-F("“I love this city,” she said. → She said ______.","she loved that city"),
-F("If you don't wear a coat, you will catch a cold. → Unless ______.","you wear a coat, you will catch a cold"),
-F("Learning Japanese is very difficult. → It is ______.","very difficult to learn Japanese"),
-F("Although the test was hard, he got a good mark. → Hard ______.",["as the test was, he got a good mark","though the test was, he got a good mark"]),
-F("He often walked to school last year. (USED) → He ______.","used to walk to school last year"),
-F("This is the book. I bought it yesterday. (WHICH) → This is the book ______.","which I bought yesterday"),
-F("The weather was so bad that we stayed home. (SUCH) → It was ______.",["such bad weather that we stayed home"]),
-F("We had no milk left. (RAN) → We ______.",["had run out of milk"]),
-F("The school considers students' health very important. (PRIORITY) → The school ______.",["gives priority to students' health","gives top priority to students' health"])];
-DATA[1].groups[2].ex[3]=[
-{...PH("(-s)",["believes","dreams","girls","parents"],3,"parents /s/, còn lại /z/"),p:"PART A. PHONETICS — Chọn từ có phần gạch chân phát âm khác / trọng âm khác."},
-PH("(u)",["huge","but","cute","mute"],1,"but /ʌ/, còn lại /juː/"),
-PH("(ch)",["cheese","chair","chemical","child"],2,"chemical /k/, còn lại /tʃ/"),
-ST(["promise","suggest","collect","divide"],0),ST(["disaster","volcano","tornado","hurricane"],3),
-{...F("The children (play) ______ in the park at 4 p.m yesterday.","were playing"),p:"PART B. VOCABULARY AND GRAMMAR — I. Chia dạng đúng của động từ."},
-F("Water (boil) ______ at 100 degrees Celsius.","boils"),
-F("He promised (help) ______ me with my homework.","to help"),
-F("If I (be) ______ a bird, I would fly everywhere.","were"),
-F("We (not/see) ______ him since last month.",["haven't seen","have not seen"]),
-{...F("She sings very ______. (BEAUTIFUL)","beautifully"),p:"II. Điền dạng đúng của từ trong ngoặc."},
-F("His sudden ______ surprised us all. (APPEAR)","appearance"),
-F("It is ______ to drive through a red light. (DANGER)","dangerous"),
-F("We need to find a ______ to this problem. (SOLVE)","solution"),
-F("The teacher gave us some ______ advice. (USE)","useful"),
-{...M("He goes to work ______ bus.",["in","on","by","with"],2),p:"III. Chọn đáp án đúng nhất."},
-M("This is the boy ______ helped me yesterday.",["which","who","whom","whose"],1),
-M("My sister is ______ than I am.",["more tall","taller","tallest","the tallest"],1),
-M("“Would you like some coffee?” – “______”",["Yes, please","No, I don't","Yes, I would","You're welcome"],0),
-M("He asked me where I ______.",["live","lived","am living","was lived"],1),
-M("______ it was raining heavily, we went to school on time.",["Because","Although","Despite","Because of"],1),
-M("You should ______ off the lights when leaving the room.",["turn","take","make","set"],0),
-M("They have run out ______ sugar.",["of","in","on","with"],0),
-M("I wish I ______ more free time.",["have","had","will have","can have"],1),
-M("She is used to ______ up early.",["get","got","getting","gets"],2),
-{...F("Our environment is in trouble. People cut down (26) ___ trees every year. This causes floods and destroys the homes of many animals. Factory smoke pollutes the (27) ___ we breathe. If we don't (28) ___ action now, our planet will be ruined. Everyone should plant more trees and (29) ___ less plastic to protect the (30) ___. → Điền từ vào chỗ trống (26).","many"),
-p:"PART C. READING — I. Chọn từ trong khung điền vào chỗ trống (26–30).\nKhung: many – air – take – use – Earth"},
-F("Điền từ vào chỗ trống (27) trong đoạn văn ở trên.","air"),F("Điền từ vào chỗ trống (28).","take"),F("Điền từ vào chỗ trống (29).","use"),F("Điền từ vào chỗ trống (30).","Earth"),
-{...M("English is (31) ______ most popular language in the world.",["a","an","the","some"],2),
-p:"II. Chọn đáp án đúng điền vào chỗ trống (31–35).\nEnglish is (31) ___ most popular language in the world. It is spoken by millions of people in many (32) ___. Learning English helps you communicate (33) ___ foreigners easily. Moreover, it is very useful for your future (34) ___. If you are good at English, you can find a well-paid job (35) ___ a multinational company."},
-M("(32) It is spoken by millions of people in many ______.",["country","countries","village","cities"],1),
-M("(33) Learning English helps you communicate ______ foreigners easily.",["to","with","for","about"],1),
-M("(34) it is very useful for your future ______.",["career","hobby","sport","food"],0),
-M("(35) you can find a well-paid job ______ a multinational company.",["at","in","on","of"],1),
-{...M("What is the passage mainly about?",["The benefits of doing exercise","How to lose weight","Popular sports in Vietnam","Diet and nutrition"],0),
-p:"III. Đọc đoạn văn và chọn đáp án đúng (36–40).\nDoing exercise is very important for our health. It helps us stay fit and active. People who exercise regularly have a lower risk of getting diseases like heart disease and diabetes. Furthermore, physical activities such as jogging, swimming, or playing sports can improve our mental health. They reduce stress and help us sleep better at night. Therefore, health experts suggest that we should exercise for at least 30 minutes a day."},
-M("The word \"It\" in paragraph 1 refers to ______.",["health","doing exercise","disease","stress"],1),
-M("According to the passage, exercising regularly helps people ______.",["get diseases","have a lower risk of getting diseases","sleep worse","gain weight"],1),
-M("The word \"reduce\" is CLOSEST in meaning to ______.",["increase","make smaller","create","keep"],1),
-M("How much time should we exercise a day according to experts?",["10 minutes","20 minutes","At least 30 minutes","1 hour"],2),
-{...F("She can't swim. → She wishes ______.","she could swim"),p:"PART D. WRITING — Viết lại câu sao cho nghĩa không đổi (41–50)."},
-F("“I am reading a book,” he said. → He said ______.","he was reading a book"),
-F("If you don't study hard, you will fail the exam. → Unless ______.","you study hard, you will fail the exam"),
-F("It takes her two hours to do her homework. → She spends ______.","two hours doing her homework"),
-F("Although the weather was bad, they went out. → Bad ______.",["as the weather was, they went out","though the weather was, they went out"]),
-F("My brother often played football when he was young. (USED) → My brother ______.","used to play football when he was young"),
-F("The girl is my sister. She is standing over there. (WHO) → The girl ______.","who is standing over there is my sister"),
-F("The film was so boring that I fell asleep. (SUCH) → It was ______.",["such a boring film that I fell asleep"]),
-F("We had no more money. (RAN) → We ______.",["had run out of money"]),
-F("Our school considers students' safety first. (PRIORITY) → Our school ______.",["gives priority to students' safety","gives top priority to students' safety"])];
 ADD(1,0,5,QS(`Chọn từ có phần gạch chân phát âm khác: (-ed)|needed|wanted|decided|played|3
 Chọn từ có phần gạch chân phát âm khác: (-s)|books|cats|maps|dogs|3
 Chọn từ có phần gạch chân phát âm khác: (th)|think|thank|there|thin|2
@@ -1609,33 +1629,109 @@ try{P=JSON.parse(localStorage.getItem("on10_2627"))||P}catch(e){}
 const save=()=>{try{localStorage.setItem("on10_2627",JSON.stringify(P))}catch(e){}};
 const flat=t=>{const r=[];DATA[t].groups.forEach((g,gi)=>g.ex.forEach((q,ei)=>q.length&&r.push({k:t+"."+gi+"."+ei,gi,ei,q,g})));return r};
 const norm=s=>(s||"").toLowerCase().replace(/[’‘]/g,"'").replace(/[.\s]+$/,"").replace(/\s+/g," ").trim();
-function nav(){$("#nav").innerHTML=DATA.map((d,i)=>`<button class="${i==T&&!CUR?"on":""}" onclick="CUR=null;clearInterval(TM);T=${i};draw()">${d.name}</button>`).join("")}
-function draw(){nav();CUR?play():home();scrollTo(0,0)}
-function home(){const L=flat(T),st={};let open=true,dn=0;
- L.forEach(x=>{const d=P.done[x.k];dn+=d?1:0;st[x.k]=d?"done":open?"open":"lock";if(!d)open=false});
- $("#pb").style.width=(L.length?dn/L.length*100:0)+"%";
- $("#app").innerHTML=DATA[T].groups.map((g,gi)=>`<section class="g"><h2>${g.t} <small>(${g.ex.filter((_,ei)=>P.done[T+"."+gi+"."+ei]).length}/${g.ex.length} bài)</small></h2><div class="grid">`+
-  g.ex.map((q,ei)=>{const k=T+"."+gi+"."+ei,s=q.length?st[k]:"soon",ic={done:"✅",open:"▶️",lock:"🔒",soon:"⏳"}[s];
-  return `<button class="ex ${s}" ${s=="open"||s=="done"?`onclick="go('${k}')"`:"disabled"}>${ic}<br>${g.exam?"Đề":"Bài"} ${ei+1}</button>`}).join("")+`</div></section>`).join("")}
-function go(k){CUR=flat(T).find(x=>x.k==k);draw()}
-function play(){const x=CUR,Q=x.q;$("#pb").style.width="0";
- $("#app").innerHTML=`<div class="top"><button class="btn s" onclick="CUR=null;clearInterval(TM);draw()">← Quay lại</button><b>${x.g.t.split("–")[0]} · ${x.g.exam?"Đề":"Bài"} ${x.ei+1}</b><span id="tm"></span></div><div id="res"></div>`+
- Q.map((q,i)=>`<div class="q" id="q${i}">${q.p?`<div class="p">${q.p}</div>`:""}<span class="n">Câu ${i+1}.</span>${q.q}`+
-  (q.o?q.o.map((o,j)=>`<button class="o" onclick="pick(${i},${j})">${"ABCD"[j]}. ${o}</button>`).join(""):`<input class="f" id="f${i}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Nhập đáp án..." oninput="cnt()">`)+`<div class="e" id="e${i}"></div></div>`).join("")+
- `<div class="fix"><span id="ct"></span><button class="btn" id="sub" onclick="submit()">Nộp bài</button></div>`;
- CUR.A=[];cnt();clearInterval(TM);
- if(x.g.exam){let s=3600;const t=()=>{$("#tm").textContent="⏱ "+Math.floor(s/60)+":"+String(s%60).padStart(2,"0");if(s--<=0){clearInterval(TM);submit()}};t();TM=setInterval(t,1000)}}
-function pick(i,j){CUR.A[i]=j;document.querySelectorAll("#q"+i+" .o").forEach((b,k)=>b.classList.toggle("sel",k==j));cnt()}
-function cnt(){const n=CUR.q.filter((q,i)=>q.o?CUR.A[i]!=null:norm($("#f"+i)&&$("#f"+i).value)).length;$("#ct").textContent=n+"/"+CUR.q.length+" câu"}
-function submit(){clearInterval(TM);let ok=0;
- CUR.q.forEach((q,i)=>{const el=$("#q"+i);let r;
-  if(q.o){r=CUR.A[i]===q.a;el.querySelectorAll(".o").forEach((b,k)=>{b.disabled=true;if(k==q.a)b.classList.add("right");else if(k==CUR.A[i])b.classList.add("wrong")})}
-  else{const f=$("#f"+i);f.disabled=true;r=q.a.map(norm).includes(norm(f.value))}
-  ok+=r;el.classList.add(r?"ok":"no");$("#e"+i).innerHTML=(r?"✅ ":"❌ ")+(q.o?"":"<b>Đáp án: "+q.a[0]+"</b><br>")+(q.e||"")});
- const all=ok==CUR.q.length,L=flat(T),ix=L.findIndex(x=>x.k==CUR.k),nx=L[ix+1];
- if(all){P.done[CUR.k]=1;save()}
- $("#res").innerHTML=`<div class="res ${all?"ok":"no"}">${all?"🎉 Chính xác 100%! Bạn đã mở khoá bài tiếp theo.":`Đúng ${ok}/${CUR.q.length} câu. Cần đúng hết để qua bài – xem giải thích rồi làm lại nhé!`}</div>`;
- $("#sub").outerHTML=all?(nx?`<button class="btn" onclick="go('${nx.k}')">Bài tiếp theo →</button>`:`<button class="btn" onclick="CUR=null;draw()">Hoàn thành thẻ 🏆</button>`):`<button class="btn" onclick="go('${CUR.k}')">Làm lại</button>`;
- $("#ct").textContent="";scrollTo(0,0)}
+
+function nav(){
+  $("#nav").innerHTML=DATA.map((d,i)=>`<button class="${i==T&&!CUR?"on":""}" onclick="CUR=null;clearInterval(TM);T=${i};draw()">${d.name}</button>`).join("");
+}
+
+function draw(){
+  nav();
+  CUR?play():home();
+  scrollTo(0,0);
+}
+
+function home(){
+  const L=flat(T),st={};let open=true,dn=0;
+  L.forEach(x=>{
+    const d=P.done[x.k];
+    dn+=d?1:0;
+    st[x.k]=d?"done":open?"open":"lock";
+    if(!d)open=false;
+  });
+  
+  $("#pb").style.width=(L.length?dn/L.length*100:0)+"%";
+  
+  $("#app").innerHTML=DATA[T].groups.map((g,gi)=>`<section class="g"><h2>${g.t} <small>${g.ex.filter((_,ei)=>P.done[T+"."+gi+"."+ei]).length}/${g.ex.length} bài</small></h2><div class="grid">`+
+    g.ex.map((q,ei)=>{
+      const k=T+"."+gi+"."+ei,s=q.length?st[k]:"soon",ic={done:"✅",open:"▶️",lock:"🔒",soon:"⏳"}[s];
+      return `<button class="ex ${s}" ${s=="open"||s=="done"?`onclick="go('${k}')"`:"disabled"}><span class="ic">${ic}</span><span>${g.exam?"Đề":"Bài"} ${ei+1}</span></button>`;
+    }).join("")+`</div></section>`).join("");
+}
+
+function go(k){
+  CUR=flat(T).find(x=>x.k==k);
+  draw();
+}
+
+function play(){
+  const x=CUR,Q=x.q;
+  $("#pb").style.width="0";
+  $("#app").innerHTML=`<div class="top"><button class="btn s" onclick="CUR=null;clearInterval(TM);draw()">← Quay lại</button><b>${x.g.t.split("–")[0]} · ${x.g.exam?"Đề":"Bài"} ${x.ei+1}</b><span id="tm"></span></div><div id="res"></div>`+
+  Q.map((q,i)=>`<div class="q" id="q${i}">${q.p?`<div class="p">${q.p}</div>`:""}<span class="n">Câu ${i+1}.</span>${q.q}`+
+    (q.o?q.o.map((o,j)=>`<button class="o" onclick="pick(${i},${j})">${"ABCD"[j]}. ${o}</button>`).join(""):`<input class="f" id="f${i}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Nhập đáp án..." oninput="cnt()">`)+`<div class="e" id="e${i}"></div></div>`).join("")+
+  `<div class="fix"><span id="ct"></span><button class="btn" id="sub" onclick="submit()">Nộp bài</button></div>`;
+  
+  CUR.A=[];
+  cnt();
+  clearInterval(TM);
+  if(x.g.exam){
+    let s=3600;
+    const t=()=>{
+      $("#tm").textContent="⏱ "+Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+      if(s--<=0){clearInterval(TM);submit();}
+    };
+    t();
+    TM=setInterval(t,1000);
+  }
+}
+
+function pick(i,j){
+  CUR.A[i]=j;
+  document.querySelectorAll("#q"+i+" .o").forEach((b,k)=>b.classList.toggle("sel",k==j));
+  cnt();
+}
+
+function cnt(){
+  const n=CUR.q.filter((q,i)=>q.o?CUR.A[i]!=null:norm($("#f"+i)&&$("#f"+i).value)).length;
+  $("#ct").textContent=n+"/"+CUR.q.length+" câu";
+}
+
+function submit(){
+  clearInterval(TM);
+  let ok=0;
+  CUR.q.forEach((q,i)=>{
+    const el=$("#q"+i);
+    let r;
+    if(q.o){
+      r=CUR.A[i]===q.a;
+      el.querySelectorAll(".o").forEach((b,k)=>{
+        b.disabled=true;
+        if(k==q.a) b.classList.add("right");
+        else if(k==CUR.A[i]) b.classList.add("wrong");
+      });
+    }else{
+      const f=$("#f"+i);
+      f.disabled=true;
+      r=q.a.map(norm).includes(norm(f.value));
+    }
+    ok+=r;
+    el.classList.add(r?"ok":"no");
+    $("#e"+i).innerHTML=(r?"✅ ":"❌ ")+(q.o?"":"<b>Đáp án: "+q.a[0]+"</b><br>")+(q.e||"");
+  });
+  
+  const all=ok==CUR.q.length,L=flat(T),ix=L.findIndex(x=>x.k==CUR.k),nx=L[ix+1];
+  if(all){
+    P.done[CUR.k]=1;
+    save();
+  }
+  
+  $("#res").innerHTML=`<div class="res ${all?"ok":"no"}">${all?"🎉 Chính xác 100%! Bạn đã mở khoá bài tiếp theo.":`Đúng ${ok}/${CUR.q.length} câu. Cần đúng hết để qua bài – xem giải thích rồi làm lại nhé!`}</div>`;
+  $("#sub").outerHTML=all?(nx?`<button class="btn" onclick="go('${nx.k}')">Bài tiếp theo →</button>`:`<button class="btn" onclick="CUR=null;draw()">Hoàn thành thẻ 🏆</button>`):`<button class="btn" onclick="go('${CUR.k}')">Làm lại</button>`;
+  $("#ct").textContent="";
+  scrollTo(0,0);
+}
+
 draw();
-</script></body></html>
+</script>
+</body>
+</html>
