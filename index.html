@@ -567,6 +567,134 @@ F("This is the man. He helped me yesterday. (WHO) → This is the man ______.","
 F("The soup was so hot that I couldn’t eat it. (SUCH) → It was ______.","such hot soup that I couldn't eat it"),
 F("We had no more sugar when we made the cake. (RAN) → We ______.","had run out of sugar when we made the cake"),
 F("The government considers environmental protection the most important thing. (PRIORITY) → The government ______.",["gives priority to environmental protection","gives top priority to environmental protection"])];
+/* Cú pháp gọn: "câu|A|B|C|D|đáp án (0-3)" cho trắc nghiệm; "câu|đáp án 1;đáp án 2" cho điền từ */
+const QS=s=>s.trim().split("\n").map(l=>{const p=l.split("|");return p.length>=6&&/^[0-3]$/.test(p[5])?M(p[0],p.slice(1,5),+p[5]):F(p[0],p[1].split(";"))});
+/* used to / such…that / run out of / give priority to · Bài 2 */
+ADD(0,7,1,QS(`My family ______ live in a small village.|used to|is used to|get used to|use to|0
+She isn't used to ______ in the cold.|work|working|worked|works|1
+The book was ______ interesting that I read it twice.|such|so|too|very|1
+It was ______ a long trip that we were exhausted.|so|such|too|very|1
+He was ______ an honest boy that everybody trusted him.|so|such|too|very|1
+We have run ______ of ideas.|out|off|away|up|0
+Our company gives priority ______ quality.|for|to|on|at|1
+I didn't ______ to like vegetables.|use|used|using|uses|0
+The storm was ______ strong that many trees fell.|so|such|too|very|0
+They are used to ______ up early.|get|getting|got|gets|1
+She ______ to have long hair when she was a child.|used|is used|uses|was used|0
+The water ran ______ yesterday.|out|off|away|up|0
+Doctors give priority ______ patients in serious condition.|to|for|on|with|0
+It was ______ delicious food that we ate it all.|so|such|too|very|1
+He was ______ busy that he forgot lunch.|so|such|such a|too|0
+My brother never ate fish when he was young. (USED) → My brother ______ fish when he was young.|didn't use to eat;never used to eat
+The book was so boring that I stopped reading it. (SUCH) → It was ______ I stopped reading it.|such a boring book that
+Are you used ______ spicy food?|to eat|to eating|eating|eat|1
+Time is running ______.|out|off|over|away|0
+They ______ playing football after school, but now they play chess.|used to|are used to|got used to|use to|0`));
+/* Thì & dạng của động từ · Bài 3 */
+ADD(0,0,2,QS(`She (wake) ____ up at 5 a.m. every day.|wakes
+They (not/go) ____ out last night because it was raining.|didn't go;did not go
+I (do) ____ my homework when my friend called.|was doing
+He (live) ____ in London for two years.|has lived;'s lived
+The kids (be) ____ interested in watching cartoons.|are
+I'm looking forward to (receive) ____ your letter.|receiving
+She wants (study) ____ medicine.|to study
+We (see) ____ a strange man in the park yesterday.|saw
+This bridge (build) ____ in 1990.|was built
+If it (be) ____ sunny tomorrow, we will go swimming.|is
+I wish I (be) ____ taller.|were;was
+He (just/leave) ____ the office.|has just left;'s just left
+The students (listen) ____ to the teacher at the moment.|are listening
+My mother let me (go) ____ out.|go
+Don't forget (lock) ____ the door.|to lock
+By the time we arrived, the film (already/begin) ____.|had already begun
+Tom (play) ____ football every Sunday.|plays
+It's no use (cry) ____.|crying
+The room (not/clean) ____ yet.|hasn't been cleaned;has not been cleaned
+They (talk) ____ when the teacher came in.|were talking`));
+/* Câu điều kiện & Wish · Bài 3 */
+ADD(0,1,2,QS(`If you (study) ____ hard, you will get good marks.|study
+I wish I (live) ____ in a bigger house.|lived
+If I (be) ____ you, I would accept the offer.|were;was
+If I had enough money, I ______ a new car.|will buy|would buy|bought|buy|1
+Unless you (hurry) ____, you'll be late.|hurry
+She wishes she ______ a car.|has|had|will have|would have|1
+If the sun ______, it gets warm.|shines|shone|will shine|would shine|0
+I wish I ______ how to cook.|know|knew|will know|have known|1
+If it ______ now, we would stay inside.|rains|rained|is raining|will rain|1
+He would travel more if he (have) ____ time.|had
+Unless he ______ the rules, he will be punished.|follows|doesn't follow|followed|will follow|0
+I wish they (not/shout) ____ so loudly.|didn't shout;wouldn't shout
+If I (find) ____ your keys, I'll tell you.|find
+What would happen if everyone ______ cars?|stops using|stopped using|stopping|will stop using|1
+She wishes she ______ shy.|isn't|weren't|won't be|hasn't been|1
+If you press this button, the machine ______.|starts|started|would start|had started|0
+If you (not/eat) ____ breakfast, you will feel hungry.|don't eat;do not eat
+I would help you if I ______ the answer.|know|knew|will know|had known|1
+If we (recycle) ____ more, the Earth would be greener.|recycled
+I wish the weather ______ better now.|is|were|will be|has been|1`));
+/* Mệnh đề quan hệ · Bài 3 */
+ADD(0,2,2,QS(`The woman ______ lives opposite is a nurse.|who|whom|whose|where|0
+I lost the umbrella ______ my aunt gave me.|who|which|whose|where|1
+The town ______ I was born is small.|where|which|who|whose|0
+The boy ______ mother is a teacher is my friend.|who|whom|whose|which|2
+She is the girl ______ I told you about.|whose|whom|where|when|1
+This is the museum ______ we visited last year.|which|who|whose|where|0
+Summer is the season ______ many people go swimming.|which|when|who|whose|1
+The friend ______ I borrowed this book is kind.|who|from whom|whose|where|1
+I have a cousin ______ lives in Canada.|who|whom|whose|which|0
+The laptop ______ I bought is very light.|who|which|whose|where|1
+The scientist ______ discovery changed the world died.|who|whom|whose|which|2
+Do you know the place ______ they met?|which|where|who|whose|1
+The people ______ live next door are friendly.|who|whom|whose|where|0
+The pizza ______ we ordered was cold.|who|whose|that|where|2
+He is the teacher ______ I admire most.|whom|whose|where|when|0
+That is the hotel ______ we stayed last summer.|which|where|who|whose|1
+The girl is my sister. She is playing the piano. → The girl ______ is my sister.|who is playing the piano;that is playing the piano
+This is the shop. I bought my shoes there. → This is the shop ______.|where I bought my shoes
+The day ______ I met her was Sunday.|when|where|who|whose|0
+The artists ______ paintings are on display are famous.|who|whom|whose|which|2`));
+/* So sánh · Bài 3 */
+ADD(0,3,2,QS(`This film is ______ than the book.|good|better|best|the best|1
+She is the ______ girl in the school.|smart|smarter|smartest|the smartest|3
+My brother is ______ me.|as old as|as older as|more old than|the oldest|0
+It is getting ______ every day.|hot|hotter|hottest|more hot|1
+The ______ you eat, the fatter you get.|more|most|much|many|0
+Her English is ______ than mine.|good|better|best|well|1
+Which is the ______ city in Vietnam?|large|larger|largest|the largest|3
+He works ______ than his colleagues.|hard|harder|hardest|more hardly|1
+This task is ______ difficult than I thought.|less|least|little|fewer|0
+The Mekong is not as ______ as the Amazon.|long|longer|longest|more long|0
+He is (young) ____ than his wife.|younger
+This is the (interesting) ____ book I've read.|most interesting
+She sings (well) ____ than her sister.|better
+Sam runs (fast) ____ of all.|the fastest;fastest
+The more you read, ______ you know.|the more|more|the most|most|0
+Travelling by plane is ______ than by train.|fast|faster|fastest|the fastest|1
+My room is ______ than yours.|tidy|tidier|tidiest|more tidy|1
+He is the ______ person I know.|kind|kinder|kindest|the kindest|3
+This test is ______ difficult as the last one.|so|as|more|much|1
+Nobody is ______ than my mother.|kind|kinder|kindest|the kindest|1`));
+/* Mạo từ & Giới từ · Bài 3 */
+ADD(0,4,2,QS(`I saw ______ elephant at the zoo.|a|an|the|Ø|1
+She is afraid ______ spiders.|from|of|at|with|1
+We arrived ______ Da Nang at noon.|at|in|on|to|1
+He was born ______ July 5th.|in|at|on|of|2
+My sister plays ______ piano well.|a|an|the|Ø|2
+Are you interested ______ science?|at|in|on|of|1
+______ moon goes around the Earth.|A|An|The|Ø|2
+I go to bed ______ night at 10.|at|in|on|by|0
+She's been ill ______ Monday.|for|since|from|in|1
+They'll stay here ______ two weeks.|for|since|at|in|0
+He sat ______ the chair and read.|in|on|at|to|1
+Please look ______ the board.|at|to|for|after|0
+We have ______ homework to do tonight.|a|an|the|some|3
+He is ______ best player in the team.|a|an|the|Ø|2
+She is good ______ Maths.|in|at|on|with|1
+I usually go to school ______ foot.|by|on|in|with|1
+The cat jumped ______ the table.|at|onto|of|from|1
+She is married ______ an engineer.|with|to|for|by|1
+The shop opens ______ 8 a.m.|in|on|at|by|2
+What is the name of ______ girl we met yesterday?|a|an|the|Ø|2`));
 /* ===== ĐỘNG CƠ ===== */
 const $=s=>document.querySelector(s);let T=0,CUR=null,TM=null,P={done:{}};
 try{P=JSON.parse(localStorage.getItem("on10_2627"))||P}catch(e){}
